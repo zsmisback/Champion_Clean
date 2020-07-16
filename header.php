@@ -108,7 +108,7 @@ $base = basename($path);
 								</a>
 								<!-- Dropdown list -->
 								<div class="dropdown-menu">
-								<a class="dropdown-item" href="?page=aboutus">About Us</a>
+								<a class="dropdown-item" href="?page=aboutus">The Company</a>
 								<a class="dropdown-item" href="?page=abouttheteam">The Team</a>
 								<a class="dropdown-item" href="?page=listofsport">List of Sports</a>
 								</div>
