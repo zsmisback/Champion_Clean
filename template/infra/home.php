@@ -4,7 +4,7 @@
 =            Hero Area            =
 ================================-->
 
-<section class="hero-area bg-1 overly">
+<section class="hero-area bg-1 overly" style="background: url('images/home/hero.jpg');">
 	<!-- Container Start -->
 	<div class="container">
 		<div class="row">

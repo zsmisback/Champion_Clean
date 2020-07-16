@@ -1,6 +1,6 @@
 <?php include("header.php"); ?> 
 
-<section class="search-banner text-white py-3 form-arka-plan" id="search-banner"style="background: url('../images/home/sportsbg1.jpg');">
+<section class="search-banner text-white py-3 form-arka-plan" id="search-banner"style="background: url('images/home/sportsbg1.jpg');">
     <div class="container py-5 my-5">
         
         <div class="row">
