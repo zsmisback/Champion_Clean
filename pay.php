@@ -1,0 +1,1 @@
+<div class='pm-button'><a href='https://www.payumoney.com/paybypayumoney/#/1AF7C562AB35F98ADDEB8DFB0A98472E'><img src='https://www.payumoney.com/media/images/payby_payumoney/new_buttons/21.png' /></a></div> 

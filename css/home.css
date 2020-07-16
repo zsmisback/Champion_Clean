@@ -1,0 +1,13 @@
+.firma-ara{
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+.form-arka-plan{
+    background-image: url("../images/home/sportsbg1.jpg");
+        background-position: top;
+       background-repeat: no-repeat;
+        background-size: cover;
+}
+.acik-renk-form{
+    background: rgba(255, 255, 255, 0.58);
+}
