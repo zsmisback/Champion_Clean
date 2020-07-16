@@ -34,6 +34,13 @@ $base = basename($path);
   <link href="css/style.css" rel="stylesheet">
   <link href="css/services.css" rel="stylesheet">
   <link href="css/aboutus.css" rel="stylesheet">
+  <?php
+  
+  if($_GET['page'] == 'abouttheteam' || $_GET['page'] == 'listofsport')
+  {
+	echo'<link href="css/team.css" rel="stylesheet">';
+  }
+  ?>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -95,8 +102,16 @@ $base = basename($path);
 							<li class="nav-item active">
 								<a class="nav-link" href="?page=home">Home</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="?page=aboutus">About Us</a>
+							<li class="nav-item dropdown dropdown-slide">
+								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									About <span><i class="fa fa-angle-down"></i></span>
+								</a>
+								<!-- Dropdown list -->
+								<div class="dropdown-menu">
+								<a class="dropdown-item" href="?page=aboutus">About Us</a>
+								<a class="dropdown-item" href="?page=abouttheteam">The Team</a>
+								<a class="dropdown-item" href="?page=listofsport">List of Sports</a>
+								</div>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="?page=concept">How it works?</a>

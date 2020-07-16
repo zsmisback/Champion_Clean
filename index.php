@@ -12,7 +12,7 @@ $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 }*/
 
 
-if ( $page != "login" && $page != "logout" && !$username && $page != "signup" && $page != "home" && $page != "contactus" && $page != "aboutus" && $page != "faq" && $page != "search" && $page != "concept" && $page != 'launch') {
+if ( $page != "login" && $page != "logout" && !$username && $page != "signup" && $page != "home" && $page != "contactus" && $page != "aboutus" && $page != "abouttheteam" && $page != "listofsport" && $page != "faq" && $page != "search" && $page != "concept" && $page != 'launch') {
   login();
   exit;
 }
@@ -31,6 +31,12 @@ switch ( $page ) {
 	case 'aboutus':	
 	  aboutus();
 	  break;  
+	case 'abouttheteam':
+	  abouttheteam();
+	  break;
+	case 'listofsport':
+	  listofsport();
+	  break;
 	case 'contactus':	
 	  contactus();
 	  break;        
@@ -96,6 +102,14 @@ function concept(){
 
 function aboutus(){
 	include(TEMPLATE_PATH."aboutus.php");			
+}
+
+function abouttheteam(){
+	include(TEMPLATE_PATH."abouttheteam.php");
+}
+
+function listofsport(){
+	include(TEMPLATE_PATH."listofsport.php");
 }
 
 function contactus(){

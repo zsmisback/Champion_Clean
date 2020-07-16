@@ -10,7 +10,7 @@ if(isset($_SESSION["type"]) && $_SESSION["type"] != "vendor"){
 	//header("location: /sport/infra/?page=home");exit();
 }
 
-if ( $page != "login" && $page != "logout" && !$username && $page != "signup" && $page != "home" && $page != "contactus" && $page != "aboutus" && $page != "faq" && $page != "concept" ) {
+if ( $page != "login" && $page != "logout" && !$username && $page != "signup" && $page != "home" && $page != "contactus" && $page != "aboutus" && $page != "abouttheteam" && $page != "listofsport" && $page != "faq" && $page != "concept" ) {
   login();
   exit;
 }
@@ -29,6 +29,12 @@ switch ( $page ) {
 	  break;
 	case 'aboutus':	
 	  aboutus();
+	  break; 
+	case 'abouttheteam':	
+	  abouttheteam();
+	  break;
+	case 'listofsport':	
+	  listofsport();
 	  break;  
 	case 'contactus':	
 	  contactus();
@@ -61,6 +67,14 @@ function concept(){
 
 function aboutus(){
 	include(TEMPLATE_PATH."aboutus.php");			
+}
+
+function abouttheteam(){
+	include(TEMPLATE_PATH."abouttheteam.php");
+}
+
+function listofsport(){
+	include(TEMPLATE_PATH."listofsport.php");
 }
 
 function contactus(){
