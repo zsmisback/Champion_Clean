@@ -117,7 +117,7 @@
 					<div class="card">
 						<div class="card-block block-3">
 							<h3 class="card-title">For Sport Professionals</h3>
-							<p class="card-text">Register with as as trainers, commentator, medical staff, coaches and bloggers. We will make sure that your talent doesn't go waste. </p>
+							<p class="card-text">Register with us as trainers, commentator, medical staff, coaches and bloggers. We will make sure that your talent doesn't go waste. </p>
 							<a href="trainer.php?page=home" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>

@@ -51,7 +51,7 @@
 	          <div class="block">
           <h4>Address</h4>
 		  <ul>
-		  <li>IP 4-5, RIICO Growth Center, Phase II, Aburoad, Rajasthan 307026</li>
+		  <li>IP 3, RIICO Growth Center, Phase II, Abu, Rajasthan 307026</li>
 		  </ul>
 		  </div>
 	  </div>

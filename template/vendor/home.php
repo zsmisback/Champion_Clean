@@ -88,9 +88,9 @@
                                 <div class="service-block" style="visibility: visible;">
                                     <div class="ico fa fa-money highlight"></div>
                                     <div class="text-block">
-                                        <div class="name">Earn Money</div>
-                                        <div class="info">Listing for money</div>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames </div>
+                                        <div class="name">Easy Listing</div>
+                                      <!--  <div class="info">Listing for money</div> -->
+                                        <div>Champion.in helps you list yourself as a vendor with the help of a few easy steps. You can sit back and relax while customers come find you with their requirements</div>
                                     </div>
                                 </div>
                             </div>
@@ -99,8 +99,8 @@
                                     <div class="ico fa fa-code highlight"></div>
                                     <div class="text-block">
                                         <div class="name">Technical Support</div>
-                                        <div class="info">Quality code that lasts</div>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames </div>
+                                     <!--   <div class="info">Quality code that lasts</div> -->
+                                        <div>Our team is here to guide and support you with regards to any query you have about any orders, payments, etc.</div>
                                     </div>
                                 </div>
                             </div>
@@ -108,9 +108,9 @@
                                 <div class="service-block" style="visibility: visible;">
                                     <div class="ico fa fa-pencil highlight"></div>
                                     <div class="text-block">
-                                        <div class="name">Easy Listing</div>
-                                        <div class="info">Words that tell your story</div>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames </div>
+                                        <div class="name">Hassle-free customers</div>
+                                      <!--  <div class="info">Words that tell your story</div> -->
+                                        <div>The customers that have a specific requirement can now easily check out the listed vendors and contact you’ll directly. Here, customers come to you and you do not go to them</div>
                                     </div>
                                 </div>
                             </div>
@@ -118,9 +118,9 @@
                                 <div class="service-block" style="visibility: visible;">
                                     <div class="ico fa fa-bullhorn highlight"></div>
                                     <div class="text-block">
-                                        <div class="name">Social Media Shout-out</div>
-                                        <div class="info">Converting users to customers</div>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames </div>
+                                        <div class="name">Events </div>
+                                     <!--   <div class="info">Converting users to customers</div> -->
+                                        <div>Whenever there is an event that takes place, the sponsors will be sent to you as per their requirements and you can provide them in quantity as per their needs </div>
                                     </div>
                                 </div>
                             </div>
@@ -128,9 +128,9 @@
                                 <div class="service-block" style="visibility: visible;">
                                     <div class="ico fa fa-eye highlight"></div>
                                     <div class="text-block">
-                                        <div class="name">Branding/Identity</div>
-                                        <div class="info">Leave a lasting impression</div>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames </div>
+                                        <div class="name">Identity and Branding</div>
+                                    <!--    <div class="info">Leave a lasting impression</div> -->
+                                        <div>Once you are listed with us your branding and identity responsibility lies with us </div>
                                     </div>
                                 </div>
                             </div>
@@ -138,9 +138,9 @@
                                 <div class="service-block" style="visibility: visible;">
                                     <div class="ico fa fa-umbrella highlight"></div>
                                     <div class="text-block">
-                                        <div class="name">Strategy/Planning</div>
-                                        <div class="info">Thinking beyond tomorrow</div>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames </div>
+                                        <div class="name">All Across India</div>
+                                       <!-- <div class="info">Thinking beyond tomorrow</div> -->
+                                        <div>You can now provide your products to everyone across India </div>
                                     </div>
                                 </div>
                             </div>

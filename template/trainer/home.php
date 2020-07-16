@@ -86,8 +86,8 @@ Champion.in is a platform to fulfill every necessity required to perform a sport
                                     <div class="ico fa fa-money highlight"></div>
                                     <div class="text-block">
                                         <div class="name">Hassle-free clients</div>
-                                        <div class="info">Listing for money</div>
-                                        <div class="text">With our help, you do not need to go and fetch clients. Clients are the ones to fetch the correct trainer for themselves and match their requirements with you</div>
+                                   <!-- <div class="info">Listing for money</div> -->
+                                        <div>With our help, you do not need to go and fetch clients. Clients are the ones to fetch the correct trainer for themselves and match their requirements with you</div>
                                     </div>
                                 </div>
                             </div>
@@ -96,8 +96,8 @@ Champion.in is a platform to fulfill every necessity required to perform a sport
                                     <div class="ico fa fa-code highlight"></div>
                                     <div class="text-block">
                                         <div class="name">Technical Support</div>
-                                        <div class="info">Quality code that lasts</div>
-                                        <div class="text">Our team is here to help you out with any query you have with regards to your slot bookings, location etc.</div>
+                                     <!--   <div class="info">Quality code that lasts</div> -->
+                                        <div>Our team is here to help you out with any query you have with regards to your slot bookings, location etc.</div>
                                     </div>
                                 </div>
                             </div>
@@ -106,28 +106,19 @@ Champion.in is a platform to fulfill every necessity required to perform a sport
                                     <div class="ico fa fa-pencil highlight"></div>
                                     <div class="text-block">
                                         <div class="name">Easy Listing</div>
-                                        <div class="info">Words that tell your story</div>
-                                        <div class="text">The steps to be followed for listing yourself on champion.in are really easy and feasible for every trainer out there. Champion.in is a platform for all the trainers (Sports, Gym, Yoga) to list yourself and let clients find you for their respective training needs.</div>
+                                   <!--     <div class="info">Words that tell your story</div> -->
+                                        <div>The steps to be followed for listing yourself on champion.in are really easy and feasible for every trainer out there. Champion.in is a platform for all the trainers (Sports, Gym, Yoga) to list yourself and let clients find you for their respective training needs.</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-4 col-md-4">
-                                <div class="service-block" style="visibility: visible;">
-                                    <div class="ico fa fa-bullhorn highlight"></div>
-                                    <div class="text-block">
-                                        <div class="name">Social Media Shout-out</div>
-                                        <div class="info">Converting users to customers</div>
-                                        <div class="text">We help you market the services you provide via various social media apps.</div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="col-sm-6 col-md-4 col-md-4">
                                 <div class="service-block" style="visibility: visible;">
                                     <div class="ico fa fa-eye highlight"></div>
                                     <div class="text-block">
                                         <div class="name">Branding/Identity</div>
-                                        <div class="info">Leave a lasting impression</div>
-                                        <div class="text">Your identity and branding responsibility lies with us. We maintain the correct and required decorum for a client to make the right choice for their trainers. </div>
+                                    <!--    <div class="info">Leave a lasting impression</div> -->
+                                        <div>Your identity and branding responsibility lies with us. We maintain the correct and required decorum for a client to make the right choice for their trainers. </div>
                                     </div>
                                 </div>
                             </div>
@@ -136,8 +127,18 @@ Champion.in is a platform to fulfill every necessity required to perform a sport
                                     <div class="ico fa fa-umbrella highlight"></div>
                                     <div class="text-block">
                                         <div class="name">Location availability</div>
-                                        <div class="info">Thinking beyond tomorrow</div>
-                                        <div class="text">Any client that requires a ground , turf for their activity , we extend a helping hand a fetch the appropriate place for you to conduct the training</div>
+                                    <!--    <div class="info">Thinking beyond tomorrow</div> -->
+                                        <div>Any client that requires a ground , turf for their activity , we extend a helping hand a fetch the appropriate place for you to conduct the training</div>
+                                    </div>
+                                </div>
+                            </div>
+	                       <div class="col-sm-6 col-md-4 col-md-4">
+                                <div class="service-block" style="visibility: visible;">
+                                    <div class="ico fa fa-bullhorn highlight"></div>
+                                    <div class="text-block">
+                                        <div class="name">Social Media Shout-out</div>
+                                   <!--     <div class="info">Converting users to customers</div> -->
+                                        <div>We help you market the services you provide via various social media apps.</div>
                                     </div>
                                 </div>
                             </div>

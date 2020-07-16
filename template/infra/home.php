@@ -95,7 +95,7 @@
                                     <div class="text-block">
                                         <div class="name">Hassle-free customers</div>
                                         <div class="info">The customers that have a specific requirement
-can now easily check out the listed vendors and contact you’ll directly.
+can now easily check out the listed vendors and contact the owner directly.
 Here, customers come to you and you do not go to them</div>
                                     </div>
                                 </div>
@@ -125,7 +125,7 @@ come find you with their requirements </div>
                                 <div class="service-block" style="visibility: visible;">
                                     <div class="ico fa fa-bullhorn highlight"></div>
                                     <div class="text-block">
-                                        <div class="name">Globally</div>
+                                        <div class="name">All Across India</div>
                                         <div class="info">You can now provide your products to everyone across India </div>
                                     </div>
                                 </div>

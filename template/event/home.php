@@ -98,8 +98,8 @@ Champion.in is a platform to fulfill every necessity required to perform a sport
                                     <div class="ico fa fa-money highlight"></div>
                                     <div class="text-block">
                                         <div class="name">Location</div>
-                                        <div class="info">Anywhere you want</div>
-                                        <div class="text">We have plenty of options for your perfection event location. You just need to give us your event details and consider your work done.</div>
+                                     <!--   <div class="info">Anywhere you want</div> -->
+                                        <div>We have plenty of options for your perfection event location. You just need to give us your event details and consider your work done.</div>
                                     </div>
                                 </div>
                             </div>
@@ -108,8 +108,8 @@ Champion.in is a platform to fulfill every necessity required to perform a sport
                                     <div class="ico fa fa-code highlight"></div>
                                     <div class="text-block">
                                         <div class="name">Technical Support</div>
-                                        <div class="info">Quality code that lasts</div>
-                                        <div class="text">Our team is on toes to help you with any query or problem that comes your way</div>
+                                  <!--       <div class="info">Quality code that lasts</div> -->
+                                        <div>Our team is on toes to help you with any query or problem that comes your way</div>
                                     </div>
                                 </div>
                             </div>
@@ -118,28 +118,19 @@ Champion.in is a platform to fulfill every necessity required to perform a sport
                                     <div class="ico fa fa-pencil highlight"></div>
                                     <div class="text-block">
                                         <div class="name">Sponsors</div>
-                                        <div class="info">Here for that extra support</div>
-                                        <div class="text">As we have a pool of vendors registered with us, we can provide you with the needed vendor of your choice and you can get your work done</div>
+                                   <!--      <div class="info">Here for that extra support</div> -->
+                                        <div>As we have a pool of vendors registered with us, we can provide you with the needed vendor of your choice and you can get your work done</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-4 col-md-4">
-                                <div class="service-block" style="visibility: visible;">
-                                    <div class="ico fa fa-bullhorn highlight"></div>
-                                    <div class="text-block">
-                                        <div class="name">Social Media Shout-out</div>
-                                        <div class="info">Converting users to customers</div>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
                             <div class="col-sm-6 col-md-4 col-md-4">
                                 <div class="service-block" style="visibility: visible;">
                                     <div class="ico fa fa-eye highlight"></div>
                                     <div class="text-block">
                                         <div class="name">Marketing</div>
                                        <!-- <div class="info">Leave a lasting impression</div> -->
-                                        <div class="text">We are here to market your event and get you plenty of registrations with the help of our platform</div>
+                                        <div>We are here to market your event and get you plenty of registrations with the help of our platform</div>
                                     </div>
                                 </div>
                             </div>
@@ -148,8 +139,18 @@ Champion.in is a platform to fulfill every necessity required to perform a sport
                                     <div class="ico fa fa-umbrella highlight"></div>
                                     <div class="text-block">
                                         <div class="name">Other requirements</div>
-                                        <div class="info">Thinking beyond tomorrow</div>
-                                        <div class="text">Any requirements such as medical staff etc. will be handled by us</div>
+                                    <!--     <div class="info">Thinking beyond tomorrow</div> -->
+                                        <div>Any requirements such as medical staff etc. will be handled by us</div>
+                                    </div>
+                                </div>
+                            </div>
+							 <div class="col-sm-6 col-md-4 col-md-4">
+                                <div class="service-block" style="visibility: visible;">
+                                    <div class="ico fa fa-bullhorn highlight"></div>
+                                    <div class="text-block">
+                                        <div class="name">Social Media Shout-out</div>
+                                    <!--     <div class="info">Converting users to customers</div> -->
+                                        <div>We help you market your events via various social media apps. </div>
                                     </div>
                                 </div>
                             </div>
