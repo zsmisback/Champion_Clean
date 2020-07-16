@@ -7,9 +7,9 @@ $page = isset( $_GET['page'] ) ? $_GET['page'] : "home";
 $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 
 
-if(isset($_SESSION["type"]) && $_SESSION["type"] != "User"){	
-	header("location: /sport/infra/?page=home");exit();
-}
+/*if(isset($_SESSION["type"]) && $_SESSION["type"] != "User"){	
+	header("location: index.php?page=home");exit();
+}*/
 
 
 if ( $page != "login" && $page != "logout" && !$username && $page != "signup" && $page != "home" && $page != "contactus" && $page != "aboutus" && $page != "faq" && $page != "search" && $page != "concept" && $page != 'launch') {
@@ -126,11 +126,11 @@ function logout()
 
 function login()
 {
-	$result["redirect_to"] = "dashboard";
+	$result["redirect_to"] = "home";
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		include("getdata_single.php");
-		$response = singletable( "users", $where = "WHERE type = 'Trainer' AND username='".$_POST['users|username']."' AND password ='".$_POST['users|password']."'", $param = "*" );	
+		$response = singletable( "users", $where = "WHERE type = 'User' AND username='".$_POST['users|username']."' AND password ='".$_POST['users|password']."'", $param = "*" );	
 		
 		if(!isset($response["error"])){
 			session_start();		

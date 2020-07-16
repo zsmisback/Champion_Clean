@@ -109,7 +109,7 @@
 						<div class="card-block block-2">
 							<h3 class="card-title">List your sports location</h3>
 							<p class="card-text">You can list clubs, sports ground, turf on our website and then they will never be empty. Be found on the India's local sports network!</p>
-							<a href="infra/?page=home" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<a href="infra.php?page=home" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
 				</div>
@@ -118,7 +118,7 @@
 						<div class="card-block block-3">
 							<h3 class="card-title">For Sport Professionals</h3>
 							<p class="card-text">Register with as as trainers, commentator, medical staff, coaches and bloggers. We will make sure that your talent doesn't go waste. </p>
-							<a href="trainer/?page=trainer" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<a href="trainer.php?page=home" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
 				</div>
@@ -138,7 +138,7 @@
 						<div class="card-block block-4">
 							<h3 class="card-title">Events</h3>
 							<p class="card-text">Want to compete against others ? You can find events across India and register online. We are coming out with something amazing soon.</p>
-							<a href="events/" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a></i>
+							<a href="event.php?page=home" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a></i>
 						</div>
 					</div>
 				</div>			
@@ -147,7 +147,7 @@
 						<div class="card-block block-6">
 							<h3 class="card-title">Buy Your Favourite Sports Gear</h3>
 							<p class="card-text">Buy sports gear suggested and used by professional players. We will be bringing exclusive sports gear to you soon. </p>							
-														<a href="vendor/" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a></i>
+						<a href="vendor.php?page=home" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a></i>
 						</div>
 					</div>
 				</div>

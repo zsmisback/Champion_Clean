@@ -17,8 +17,15 @@
 					<div class="content-holder"><br>
 					<?php 
 					if(!isset($_SESSION['username']))
-					{echo '
-						<a class="nav-link text-white add-button" href="?page=signup"><i class="fa fa-plus-circle"></i> Click here to Join</a>';}
+					{
+						echo '
+						<a class="nav-link text-white add-button" href="?page=login"><i class="fa fa-plus-circle"></i> Add an event</a>';
+					}
+					else
+					{
+						echo '
+						<a class="nav-link text-white add-button" href="?page=events"><i class="fa fa-plus-circle"></i> Add an event</a>';
+					}
 						?>
 					</div>	
 				</div>

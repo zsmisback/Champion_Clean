@@ -1,3 +1,10 @@
+<?php
+
+//Get the folder path
+$path = $_SERVER['PHP_SELF'];
+//Get the basename from the path and store it in a variable
+$base = basename($path);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +52,38 @@
 		<div class="row">
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg navbar-light navigation">
-					<a class="navbar-brand" href="index.php?page=home">
+				<!-- Change the logo's link depending on the current page -->
+				<?php
+				
+				switch ( $base ) { 
+				
+				case 'index.php':	
+				echo'<a class="navbar-brand" href="index.php?page=home">';
+				break;
+				
+				case 'infra.php':	
+				echo'<a class="navbar-brand" href="infra.php?page=home">';
+				break;  
+				
+				case 'trainer.php':	
+				echo'<a class="navbar-brand" href="trainer.php?page=home">';
+				break;  
+				
+				case 'vendor.php':
+				echo'<a class="navbar-brand" href="vendor.php?page=home">';
+				break; 
+				
+				case 'event.php':	
+				echo'<a class="navbar-brand" href="event.php?page=home">';	 
+				break;	
+				
+				default:
+				echo'<a class="navbar-brand" href="index.php?page=home">';		
+				}
+
+				
+				
+				?>
 						<img src="images/home/logo.png" width="200px" height="40" class="d-inline-block align-top" alt="">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -92,23 +130,25 @@
 						</ul>
 						<ul class="navbar-nav ml-auto mt-10">
 							<li class="nav-item">
-								<?php if(!isset($_SESSION['uid'])){
+								<?php 
+								
+								if(!isset($_SESSION['uid'])){
 								echo '  
 								      <a class="nav-link login-button" href="?page=login">Login</a>';
-								}else{echo '<a class="nav-link login-button" href="?page=logout">Logout</a>';}?>
+								}else{echo '<a class="nav-link login-button" href="?page=logout">Logout</a>';}
+								
+								
+								?>
 							</li>
 							<?php 
 							
-							//Get the folder path
-							$path = $_SERVER['PHP_SELF'];
-							//Get the basename from the path and store it in a variable
-							$base = basename($path);
+							
 							if($base == "index.php")
 							{
 							if(!isset($_SESSION['uid'])){
 								echo'
 							<li class="nav-item">
-								<a class="nav-link text-white add-button" href="?page=signup"><i class="fa fa-plus-circle"></i> Register as owner</a>
+								<a class="nav-link text-white add-button" href="?page=signup"><i class="fa fa-plus-circle"></i> Become a Champion</a>
 							</li>';}else{//echo '<li class="nav-item"><a class="nav-link text-white add-button" href="?page=login"><i class="fa fa-user-circle"></i> View Profile</a></li>';
 							}
 							}
@@ -150,15 +190,7 @@
 							}
 							elseif($base == "event.php")
 							{
-								if(!isset($_SESSION['uid'])){
-									echo'
-									<li class="nav-item">
-									<a class="nav-link text-white add-button" href="?page=signup"><i class="fa fa-plus-circle"></i> Register as something,wip</a>
-									</li>';
-								}
-							    else{
-									//echo '<li class="nav-item"><a class="nav-link text-white add-button" href="?page=login"><i class="fa fa-user-circle"></i> View Profile</a></li>';
-									}
+								echo'';
 							}
 							?>	
                          						

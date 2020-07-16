@@ -15,6 +15,11 @@
 							if($base == "index.php")
 							{	
                              echo'							
+							 <input type="hidden" name="users|type" value="User">';
+							}
+							elseif($base == "infra.php")
+							{
+								echo'							
 							 <input type="hidden" name="users|type" value="Infra">';
 							}
 							elseif($base == "trainer.php")
