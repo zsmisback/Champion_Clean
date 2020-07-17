@@ -116,10 +116,14 @@ echo '
 
 
 		<div class="ad-listing-list mt-20">
-			<div class="row p-lg-3 p-sm-5 p-4">
+		<?php
+		foreach($response as $trainers)
+		{
+		
+		echo'<div class="row p-lg-3 p-sm-5 p-4">
 				<div class="col-lg-4 align-self-center">
 					
-						<img src="https://upaca.edu.in/wp-content/uploads/2015/12/indoor-sports-activities/pool-table.jpg" class="img-fluid" alt="">
+						<img src="'.$trainers['profilepic'].'" class="img-fluid" alt="">
 					
 				</div>
 				<div class="col-lg-8">
@@ -127,21 +131,30 @@ echo '
 						<div class="col-lg-9 col-md-10">
 							<div class="ad-listing-content">
 								<div>
-									<h2 class="font-weight-bold">UPACA Center Of Excellence</h2>
-									<p class="font-weight-bold">Located in Abu Road Rajasthan</p>
+									<h2 class="font-weight-bold">'.$trainers['name'].'</h2>
+									<p class="font-weight-bold">'.$trainers['type'].'</p>
 								</div>
-								<ul class="list-inline mt-2 mb-3">
-									<li class="list-inline-item"><a href="category.html"> <i class="fa fa-flag-checkered" aria-hidden="true"></i> Cricket</a></li>
-										<li class="list-inline-item"><a href="category.html"> <i class="fa fa-flag-checkered" aria-hidden="true"></i> Football</a></li>
-									<li class="list-inline-item"><a href=""><i class="fa fa-calendar"></i> 12th July</a></li>									
+								<ul class="list-inline mt-2 mb-3">';
+								 $sports = explode(",",$trainers['sports']);
+								foreach($sports as $sport)
+								{
+									echo'<li class="list-inline-item"><i class="fa fa-flag-checkered" aria-hidden="true"></i> '.$sport.'</li>';
+								}
+								echo'<li class="list-inline-item"><a href=""><i class="fa fa-calendar"></i> 12th July</a></li>									
 								</ul>								
 								<p class="pr-5"></p>
 							</div>
 						</div>
 						<div class="col-lg-3 align-self-center">
 							<div class="row">
-							<div style="background-color:#EAEDED; width:100%;" class="p-4"><i class="fa fa-shower" aria-hidden="true"></i> Shower Room<br><i class="fa fa-lock" aria-hidden="true"></i> &nbsp&nbspLocker Room<br><i class="fa fa-users" aria-hidden="true"></i> Bleachers							
-							</div>							
+							<div style="background-color:#EAEDED; width:100%;" class="p-4">';
+							if($trainers['question_1'] == 1)echo'<i class="fa fa-globe" aria-hidden="true"></i> Online Services<br>';
+							if($trainers['question_2'] == 1)echo'<i class="fa fa-thumbs-up" aria-hidden="true"></i>Verified Member<br>';
+							if($trainers['question_3'] == 1)echo'<i class="fa fa-clock-o" aria-hidden="true"></i> Flexible timings<br>';	
+							if($trainers['question_4'] == 1)echo'<i class="fa fa-cutlery" aria-hidden="true"></i> Diet Plans<br>';	
+							if($trainers['question_5'] == 1)echo'<i class="fa fa-music" aria-hidden="true"></i> Workout Music<br>';	
+							
+					   echo'</div>							
 							<div style="background-color:#EAEDED; width:100%;" class="pl-4 pb-4 pr-4">							
 							<div class="product-ratings float-lg">
 							<h3>Rating</h3>
@@ -160,7 +173,10 @@ echo '
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>';
+		}
+		
+		?>
 		<!-- pagination -->
 				<div class="pagination justify-content-center py-4">
 					<nav aria-label="Page navigation example">

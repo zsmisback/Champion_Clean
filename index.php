@@ -68,10 +68,12 @@ switch ( $page ) {
 
 
 function search(){	
-	include("getdata_all.php");
+	include("getarraydata.php");
 	
 //	$table = "cricketform_info JOIN users ON users.randomid = cricketform_info.uid";
 //	$response =  singletable_all( $table, $where = "", $param = "*" );	
+	$sql = "SELECT * FROM users LEFT JOIN user_profilepic ON user_profilepic.uid = users.randomid LEFT JOIN trainer_details ON trainer_details.uid = users.randomid LEFT JOIN trainer_charges ON trainer_charges.uid = users.randomid WHERE users.type = 'Trainer'";
+	$response = getallarray($sql);
 	
 	include(TEMPLATE_PATH."search.php");			
 	

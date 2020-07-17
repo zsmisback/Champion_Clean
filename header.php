@@ -36,9 +36,12 @@ $base = basename($path);
   <link href="css/aboutus.css" rel="stylesheet">
   <?php
   
+  if(isset($_GET['page']))
+  {
   if($_GET['page'] == 'abouttheteam' || $_GET['page'] == 'listofsport')
   {
 	echo'<link href="css/team.css" rel="stylesheet">';
+  }
   }
   ?>
 
