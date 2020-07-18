@@ -40,6 +40,12 @@
 
 </div>
 <input type="text" class="form-control mb-4" name="trainer_details|address" placeholder="Enter your address" value="">
+<label for="name " class="control-label">City</label>
+<input type="text" id="search" class="form-control py-2" name="trainer_details|city">
+<br>
+<div id="cities">
+	
+</div>
 <textarea class="form-control mb-4" rows="5" name="trainer_details|about_us" placeholder="Enter information about you"></textarea>
 
 	
@@ -70,4 +76,26 @@
 
     </div>
 </section>
+    <script>
+$(document).ready(function(){
+	$("#search").keyup(function(){
+		var search = $("#search").val();
+		if(search.length > 2)
+	{
+		$.ajax({
+			url:"getcities.php",
+			method:"POST",
+			data:{search:search},
+			success:function(data){
+				$('#cities').html(data);
+			}
+		})
+		$(document).on('click','li',function(){
+			$('#search').val($(this).text());
+		});
+	}	
+	});
+	
+});
+</script>
 <?php include_once("footer.php"); ?>

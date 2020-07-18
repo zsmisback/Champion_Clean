@@ -5,7 +5,7 @@
         
         <div class="row">
             <div class="col-md-12">
-			<form action="index.php" method="get">
+			<form action="index.php?page=search" method="get">
 			<input type="hidden" name="page" value="search"/>
                 <div class="card acik-renk-form  bg-white">
                     <div class="card-body">
@@ -39,20 +39,21 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">									
-                                    <select class="border w-100 form-control" placeholder="">
-									<option>Mumbai</option>
-									<option>Delhi</option>
+                                    <select class="border w-100 form-control" placeholder="" name="city">
+									<?php
+									
+									foreach($response as $city)
+									{
+										echo'<option value='.$city['city'].'>'.$city['city'].'</option>';
+									}
+									?>
 									</select>
                                 </div>
                             </div>  
-							<div class="col-md-3">
-                                <div class="form-group">									
-                                <input type="date" class="border w-100 form-control">
-                                </div>
-                            </div>  
+ 
 								
                             <div class="col-md-2">
-                                <a href="?page=search"><button type="button" class="btn btn-warning  pl-5 pr-5">Go !</button></a>
+                             <button type="submit" class="btn btn-warning  pl-5 pr-5">Go !</button>
                             </div>
                         </div>                        
                     </div>

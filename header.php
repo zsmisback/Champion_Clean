@@ -22,6 +22,7 @@ $base = basename($path);
   <!-- Bootstrap -->
   <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap-slider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Font Awesome -->
   <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Owl Carousel -->
@@ -52,6 +53,13 @@ $base = basename($path);
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+<style>
+     #cities{z-index:1;
+		     background-color:#f2f2f2;
+	         color:black;}
+	 .cits{padding-left:5px;}	 
+     .cits:hover{cursor:pointer;}
+</style>
 </head>
 
 <body class="body-wrapper">
