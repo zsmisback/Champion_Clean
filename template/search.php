@@ -181,21 +181,41 @@ echo '
 				<div class="pagination justify-content-center py-4">
 					<nav aria-label="Page navigation example">
 						<ul class="pagination">
-							<li class="page-item">
-								<a class="page-link" href="#" aria-label="Previous">
+						<?php
+						
+				if($results['totalRows'] < 12)
+				{
+					echo "";
+				}
+				else
+				{	
+				
+					if($results['count'] == 1)
+					{
+						echo"";
+					}
+					else
+					{
+						echo'<li class="page-item">
+								<a class="page-link" href="index.php?page=search&count='.$results['prev'].'" aria-label="Previous">
 									<span aria-hidden="true">&laquo;</span>
 									<span class="sr-only">Previous</span>
 								</a>
-							</li>
-							<li class="page-item"><a class="page-link" href="#">1</a></li>
-							<li class="page-item active"><a class="page-link" href="#">2</a></li>
-							<li class="page-item"><a class="page-link" href="#">3</a></li>
-							<li class="page-item">
-								<a class="page-link" href="#" aria-label="Next">
+							</li>';
+					}
+							for($pageNumbers=1;$pageNumbers<=$results['total_pages'];$pageNumbers++) :
+							echo'
+							<li class="page-item"><a class="page-link" href="index.php?page=search&count='.$pageNumbers.'">'.$pageNumbers.'</a></li>';
+							endfor;
+						echo'<li class="page-item">
+								<a class="page-link" href="index.php?page=search&count='.$results['next'].'" aria-label="Next">
 									<span aria-hidden="true">&raquo;</span>
 									<span class="sr-only">Next</span>
 								</a>
-							</li>
+							</li>';
+				}
+							
+							?>
 						</ul>
 					</nav>
 				</div>

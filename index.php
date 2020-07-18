@@ -68,13 +68,25 @@ switch ( $page ) {
 
 
 function search(){	
-	include("getarraydata.php");
+
+$limit = 12;
+$count = isset($_GET['count']) ? $_GET['count'] : 1;
+$start = ($count - 1) * $limit;
+	$results = array();
 	
+	include("getarraydata.php");
+	include("getpagination.php");
 //	$table = "cricketform_info JOIN users ON users.randomid = cricketform_info.uid";
 //	$response =  singletable_all( $table, $where = "", $param = "*" );	
-	$sql = "SELECT * FROM users LEFT JOIN user_profilepic ON user_profilepic.uid = users.randomid LEFT JOIN trainer_details ON trainer_details.uid = users.randomid LEFT JOIN trainer_charges ON trainer_charges.uid = users.randomid WHERE users.type = 'Trainer'";
+	$sql = "SELECT * FROM users LEFT JOIN user_profilepic ON user_profilepic.uid = users.randomid LEFT JOIN trainer_details ON trainer_details.uid = users.randomid LEFT JOIN trainer_charges ON trainer_charges.uid = users.randomid WHERE users.type = 'Trainer' LIMIT $start,$limit";
 	$response = getallarray($sql);
-	
+	$sql2 = "SELECT * FROM users LEFT JOIN user_profilepic ON user_profilepic.uid = users.randomid LEFT JOIN trainer_details ON trainer_details.uid = users.randomid LEFT JOIN trainer_charges ON trainer_charges.uid = users.randomid WHERE users.type = 'Trainer'";
+	$data = getpagination($sql2);
+	$results['totalRows'] = $data['total_pages']; 
+	$results['next'] = $data['next'];
+	$results['prev'] = $data['prev'];
+	$results['total_pages'] = $data['total_pages'];
+	$results['count'] = $count;
 	include(TEMPLATE_PATH."search.php");			
 	
 }

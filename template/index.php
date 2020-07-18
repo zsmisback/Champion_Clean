@@ -5,6 +5,8 @@
         
         <div class="row">
             <div class="col-md-12">
+			<form action="index.php" method="get">
+			<input type="hidden" name="page" value="search"/>
                 <div class="card acik-renk-form  bg-white">
                     <div class="card-body">
 					<div class="row p-2">
@@ -12,14 +14,26 @@
                 <h2 class="">Search for the sport you plan to play </h2>
             </div>
         </div>
-                        <div class="row">						
+                        <div class="row">	
+                           <div class="col-md-3">
+                               <div class="form-group">									
+                                 <select class="border w-100 form-control" placeholder="" name="sport">
+									<option value="cricket">Cricket</option>
+									<option value="football">Football</option>
+									<option value="basketball">BasketBall</option>
+									<option value="mma">MMA</option>
+								</select>
+                                </div>
+                            </div> 						
                             <div class="col-md-3">
                                 <div class="form-group">									
-                                    <select class="border w-100 form-control" placeholder="">
-									<option>Cricket</option>
-									<option>Football</option>
-									<option>Boxing</option>
-									<option>Tennis</option>
+                                    <select class="border w-100 form-control" placeholder="" name="type">
+									<option value="Coach">Coach</option>
+									<option value="Fitness">Fitness Trainer</option>
+									<option value="Referee">Referee / Umpire</option>
+									<option value="Commentator">Commentator</option>
+									<option value="Medical">Medical Staff</option>
+									<option value="Blogger">Blogger</option>
 									</select>
                                 </div>
                             </div>
@@ -43,6 +57,7 @@
                         </div>                        
                     </div>
                 </div>
+				</form>
             </div>
         </div>
 		<br><br><br><br>
