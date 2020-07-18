@@ -6,6 +6,7 @@
                         <form method="post" enctype="multipart/form-data">						
 						
 <?php if(isset($error_mysql)){echo "<br>".$error_mysql;} ?>
+<input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="infra_images|uid"/>
 <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="footballform_info|uid"/>
 <input type="hidden" class="form-control" id="" name="infra_timings|ground_uid" value="<?php echo $random_ground; ?>"/>
 <input type="hidden" class="form-control" id="" name="footballform_info|ground_uid" value="<?php echo $random_ground; ?>"/>
@@ -49,7 +50,7 @@
 			 </div><div class='form-check'>
 		     <input type='checkbox' class='form-check-input mb-4' name='footballform_info|locker_room' value='locker_room'>Do you provide locker rooms?
 			 </div><div class='form-check'>
-		     <input type='checkbox' class='form-check-input mb-4' name='footballform_info|showers' value='showers'>Do you provide showers?
+		     <input type='checkbox' class='form-check-input mb-4' name='footballform_info|shower' value='showers'>Do you provide showers?
 			 </div>
 <br>
 <textarea class="form-control mb-4" rows="5" name="footballform_info|summary" id="footsummary" placeholder="Add a summary about your football field"></textarea>

@@ -4,6 +4,7 @@
     <div class="container">
         <form method="post">
 <?php if(isset($error_mysql)){echo "<br>".$error_mysql;} ?>
+<input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="infra_timings|uid"/>
 <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="infra_details|randomid"/>
 <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="user_profilepic|uid"/>
 
@@ -28,7 +29,12 @@
 </div>
 <input type="text" class="form-control mb-4" name="infra_details|address" placeholder="Enter your infrastructures address" value="">
 <textarea class="form-control mb-4" rows="5" name="infra_details|about_us" placeholder="Enter information about your company"></textarea>
-
+<label for="name " class="control-label">City</label>
+<input type="text" id="search" class="form-control py-2" name="infra_details|city">
+<br>
+<div id="cities">
+	
+</div>
 	
 
 	
@@ -57,4 +63,26 @@
 
     </div>
 </section>
+    <script>
+$(document).ready(function(){
+	$("#search").keyup(function(){
+		var search = $("#search").val();
+		if(search.length > 2)
+	{
+		$.ajax({
+			url:"getcities_infra.php",
+			method:"POST",
+			data:{search:search},
+			success:function(data){
+				$('#cities').html(data);
+			}
+		})
+		$(document).on('click','li',function(){
+			$('#search').val($(this).text());
+		});
+	}	
+	});
+	
+});
+</script>
 <?php include_once("footer.php"); ?>

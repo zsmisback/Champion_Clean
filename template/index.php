@@ -61,6 +61,52 @@
 				</form>
             </div>
         </div>
+		        <div class="row">
+            <div class="col-md-12">
+			<form action="index.php?page=infra" method="get">
+			<input type="hidden" name="page" value="infra"/>
+                <div class="card acik-renk-form  bg-white">
+                    <div class="card-body">
+					<div class="row p-2">
+            <div class="col-md-12">
+                <h2 class="">Search for the sport you plan to play </h2>
+            </div>
+        </div>
+                        <div class="row">	
+                           <div class="col-md-3">
+                               <div class="form-group">									
+                                 <select class="border w-100 form-control" placeholder="" name="sport">
+									<option value="cricket">Cricket</option>
+									<option value="football">Football</option>
+									<option value="basketball">BasketBall</option>
+									<option value="mma">MMA</option>
+								</select>
+                                </div>
+                            </div> 						
+                            <div class="col-md-3">
+                                <div class="form-group">									
+                                    <select class="border w-100 form-control" placeholder="" name="city">
+									<?php
+									
+									foreach($response2 as $city2)
+									{
+										echo'<option value='.$city2['city'].'>'.$city2['city'].'</option>';
+									}
+									?>
+									</select>
+                                </div>
+                            </div>  
+ 
+								
+                            <div class="col-md-2">
+                             <button type="submit" class="btn btn-warning  pl-5 pr-5">Go !</button>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+				</form>
+            </div>
+        </div>
 		<br><br><br><br>
     </div>
 </section>

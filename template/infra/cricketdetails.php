@@ -5,6 +5,7 @@
     <div class="container">
                         <form method="post" enctype="multipart/form-data">						
 <?php if(isset($error_mysql)){echo "<br>".$error_mysql;} ?>
+<input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="infra_images|uid"/>
 <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="cricketform_info|uid"/>
 <input type="hidden" class="form-control" id="" name="infra_timings|ground_uid" value="<?php echo $random_ground; ?>"/>
 <input type="hidden" class="form-control" id="" name="cricketform_info|ground_uid" value="<?php echo $random_ground; ?>"/>

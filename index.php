@@ -12,7 +12,7 @@ $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 }*/
 
 
-if ( $page != "login" && $page != "logout" && !$username && $page != "signup" && $page != "home" && $page != "contactus" && $page != "aboutus" && $page != "abouttheteam" && $page != "listofsport" && $page != "faq" && $page != "search" && $page != "trainerdetails" && $page != "concept" && $page != 'launch') {
+if ( $page != "login" && $page != "logout" && !$username && $page != "signup" && $page != "home" && $page != "contactus" && $page != "aboutus" && $page != "abouttheteam" && $page != "listofsport" && $page != "faq" && $page != "search" && $page != "infra" && $page != "trainerdetails" && $page != "concept" && $page != 'launch') {
   login();
   exit;
 }
@@ -58,6 +58,9 @@ switch ( $page ) {
 	case 'search':
 	  search();
 	  break; 
+	case 'infra':
+	  infra();
+	  break;
 	case 'trainerdetails':
 	  trainerdetails();
 	  break;
@@ -180,10 +183,54 @@ function home(){
 			include("getarraydata.php");
 	$sql = "SELECT DISTINCT city FROM trainer_details";
 	$response = getallarray($sql);
+	$sql2 = "SELECT DISTINCT city FROM infra_details";
+	$response2 = getallarray($sql2);
 	include(TEMPLATE_PATH."index.php");			
     }
 	
 
+}
+
+function infra(){
+	
+	$limit = 12;
+$count = isset($_GET['count']) ? $_GET['count'] : 1;
+$start = ($count - 1) * $limit;
+	$results = array();
+	if(isset($_GET['sport']) || isset($_GET['city']))
+	{
+			include("getarraydata.php");
+			include("getpagination.php");
+		//	$table = "cricketform_info JOIN users ON users.randomid = cricketform_info.uid";
+		//	$response =  singletable_all( $table, $where = "", $param = "*" );	
+			$sql = "SELECT * FROM users LEFT JOIN user_profilepic ON user_profilepic.uid = users.randomid LEFT JOIN infra_details ON infra_details.randomid = users.randomid LEFT JOIN trainer_charges ON trainer_charges.uid = users.randomid WHERE users.type = 'Trainer' AND trainer_details.sports LIKE'%".$_GET['sport']."%' AND trainer_details.type = '".$_GET['type']."' AND trainer_details.city = '".$_GET['city']."' LIMIT $start,$limit";
+			$response = getallarray($sql);
+	
+			$sql2 = "SELECT * FROM users LEFT JOIN user_profilepic ON user_profilepic.uid = users.randomid LEFT JOIN infra_details ON infra_details.randomid = users.randomid LEFT JOIN trainer_charges ON trainer_charges.uid = users.randomid WHERE users.type = 'Trainer' AND trainer_details.sports LIKE'%".$_GET['sport']."%' AND trainer_details.type = '".$_GET['type']."' AND trainer_details.city = '".$_GET['city']."'";
+			$data = getpagination($sql2);
+			$results['totalRows'] = $data['total_pages']; 
+			$results['next'] = $data['next'];
+			$results['prev'] = $data['prev'];
+			$results['total_pages'] = $data['total_pages'];
+			$results['count'] = $count;
+	}
+	else
+	{
+	include("getarraydata.php");
+	include("getpagination.php");
+//	$table = "cricketform_info JOIN users ON users.randomid = cricketform_info.uid";
+//	$response =  singletable_all( $table, $where = "", $param = "*" );	
+	$sql = "SELECT * FROM users LEFT JOIN user_profilepic ON user_profilepic.uid = users.randomid LEFT JOIN trainer_details ON trainer_details.uid = users.randomid LEFT JOIN trainer_charges ON trainer_charges.uid = users.randomid WHERE users.type = 'Trainer' LIMIT $start,$limit";
+	$response = getallarray($sql);
+	$sql2 = "SELECT * FROM users LEFT JOIN user_profilepic ON user_profilepic.uid = users.randomid LEFT JOIN trainer_details ON trainer_details.uid = users.randomid LEFT JOIN trainer_charges ON trainer_charges.uid = users.randomid WHERE users.type = 'Trainer'";
+	$data = getpagination($sql2);
+	$results['totalRows'] = $data['total_pages']; 
+	$results['next'] = $data['next'];
+	$results['prev'] = $data['prev'];
+	$results['total_pages'] = $data['total_pages'];
+	$results['count'] = $count;
+	}
+	include(TEMPLATE_PATH."infra_search.php");
 }
 
 function logout()
