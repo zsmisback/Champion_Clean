@@ -5,7 +5,7 @@
 body {
   font-family: 'Lato', sans-serif;
   text-align: center;
-  
+
 }
 h2 {
   font-size: 50px;
@@ -344,18 +344,16 @@ to {
   bottom: -100px;
   color: #28A745;
   text-transform: uppercase;
-  border-radius: 50px;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border: 2px solid #28A745;
+  background-size: cover;
   padding: 10px 30px;
   font-style: normal;
-  font-size:20px;
+  font-size:22px;
   display: inline-block;
-  left: 175px;
+  left: 155px;
 }
 .three > li span .mamber-img {
-  width: 300px;
+  width: auto;
+  height: 300px;
   margin-top: 150px;
   
 }
@@ -374,7 +372,7 @@ to {
   font-style: normal;
   text-transform: uppercase;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 15px;
   margin-top: 5px;
 }
 .three .social {
@@ -387,7 +385,7 @@ to {
   opacity: 0;
   display: inline-block;
   padding: 5px;
-  font-size: 20px;
+  font-size: 22px;
 }
 .three > li:hover .social li {
   opacity: 0.8;

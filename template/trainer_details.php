@@ -73,7 +73,7 @@
 				   {					   
 					 echo"<button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;' data-toggle='modal' data-target='#exampleModal' data-whatever='@mdo'>Contact Trainer</button>";
 				   }
-					 echo $results['booked'];
+		
                      
 					 ?>
                     
