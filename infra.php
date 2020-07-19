@@ -13,7 +13,7 @@ if(isset($_SESSION["type"]) && $_SESSION["type"] != "Infra"){
 	header("location: /sport/trainer/?page=home");exit();
 }
 
-if ( $page != "login" && $page != "logout" && !$username && $page != "signup" && $page != "home" && $page != "contactus" && $page != "aboutus" && $page != "abouttheteam" && $page != "listofsport" && $page != "faq" && $page != "concept") {
+if ( $page != "login" && $page != "logout" && !$username && $page != "signup" && $page != "home" && $page != "contactus" && $page != "queries" && $page != "aboutus" && $page != "abouttheteam" && $page != "listofsport" && $page != "faq" && $page != "concept") {
   login();
   exit;
 }
@@ -48,6 +48,9 @@ switch ( $page ) {
 	case 'signup':   
       signup();	 
       break;
+	case 'queries':
+	  queries();
+	  break;
 	case 'dashboard':	
 	  dashboard();
 	  break;
@@ -141,6 +144,21 @@ function signup()
 		include("savedata.php");
 	}	
 	include(TEMPLATE_PATH."signup.php");
+}
+
+function queries(){
+	
+	if(!isset($_SESSION["uid"]))
+	{
+		header("Location:trainer.php?page=home");
+		exit;
+	}
+	$results = array();
+	include 'getpagination.php';
+	$sql = "SELECT * FROM infra_enquiries WHERE enquiry_for = '".$_SESSION['uid']."'";
+	$response = getpagination($sql);
+	$results['post'] = $response['post'];
+	include(TEMPLATE_PATH_INFRA."query.php");
 }
 
 function dashboard()

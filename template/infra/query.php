@@ -10,6 +10,7 @@
             
             <th>Email</th>
             <th>Contact</th>
+			<th>Sports</th>
             <th>Alternate Contact</th>
             <th>Enquiry</th>
           </tr>
@@ -26,6 +27,7 @@
 	    <td>$queries[name]</td>
         <td>$queries[email]</td>
         <td>$queries[contact_number]</td>
+		<td>$queries[sports]</td>
 		<td>$queries[alt_contact_number]</td>
         <td>$queries[query]</td>
       </tr>";

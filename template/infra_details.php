@@ -53,7 +53,7 @@
 								  <p><?php echo $response['monday_from']; ?></p>
 								  <p><?php echo $response['summary']; ?></p>
 								  <p><?php var_dump($response2); ?></p>
-								  <p><?php foreach($response2 as $test){echo $test["COLUMN_NAME"];} ?></p>
+								  <p><?php foreach($response2 as $test){echo $test["COLUMN_NAME"]; echo"<br>"; echo $response[$test["COLUMN_NAME"]]; echo"<br>";} ?></p>
                                 </div>
                               </div> <br>
 							  <table class="table table-bordered">
@@ -69,12 +69,20 @@
                     
 				   if(!isset($_SESSION['uid']) || !$_SESSION['uid'])
                     {
-	                 echo"<a href='index.php?page=login'><button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;'>Book Now</button></a>";
+	                 echo"<a href='index.php?page=login'><button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;'>Contact Now</button></a>";
 	
                    }
+				   elseif($_SESSION['type'] !== "User")
+				   {
+					   echo"";
+				   }
+				   elseif($results['booked'] > 0)
+				   {
+					   echo"<button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;'>Contacted</button>";
+				   }
                    else
 				   {					   
-					 echo"<button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;' data-toggle='modal' data-target='#exampleModal' data-whatever='@mdo'>Book Now</button>";
+					 echo"<button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;' data-toggle='modal' data-target='#exampleModal' data-whatever='@mdo'>Contact Now</button>";
 				   }
 					 
                      

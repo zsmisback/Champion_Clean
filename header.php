@@ -128,6 +128,15 @@ $base = basename($path);
 								</li>';
 								
 							}
+							elseif($_SESSION['type'] == 'Infra')
+							{
+								
+								
+								echo'<li class="nav-item">
+								<a class="nav-link" href="infra.php?page=queries">List Queries</a>
+								</li>';
+								
+							}
 							
 							?>
 							<li class="nav-item dropdown dropdown-slide">
