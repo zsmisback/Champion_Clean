@@ -50,7 +50,7 @@
 			 </div><div class='form-check'>
 		     <input type='checkbox' class='form-check-input mb-4' name='footballform_info|locker_room' value='locker_room'>Do you provide locker rooms?
 			 </div><div class='form-check'>
-		     <input type='checkbox' class='form-check-input mb-4' name='footballform_info|shower' value='showers'>Do you provide showers?
+		     <input type='checkbox' class='form-check-input mb-4' name='footballform_info|showers' value='showers'>Do you provide showers?
 			 </div>
 <br>
 <textarea class="form-control mb-4" rows="5" name="footballform_info|summary" id="footsummary" placeholder="Add a summary about your football field"></textarea>
@@ -62,10 +62,10 @@
 <hr>
 <p class="mb-3">Features that you provide for your customers (For example:Bats,Balls,Clothes)(Optional):</p> 
 
-<textarea class="form-control mb-4 ckeditor" rows="5" name="footballform_info|football_features" id="cricfeatures"></textarea>
+<textarea class="form-control mb-4 ckeditor" rows="5" name="footballform_info|features" id="cricfeatures"></textarea>
 <br>
 <p class="mb-3">Rules(If any):</p>	
-<textarea class="form-control mb-4 ckeditor" rows="5" name="footballform_info|football_rules" id="cricrules"></textarea>
+<textarea class="form-control mb-4 ckeditor" rows="5" name="footballform_info|rules" id="cricrules"></textarea>
 </fieldset>
 <fieldset class="border bg-white p-4 my-5 ad-feature bg-gray">
 <h3 class=" mb-3">Timings</h3>

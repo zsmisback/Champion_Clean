@@ -134,7 +134,7 @@ echo '
 		echo'<div class="row p-lg-3 p-sm-5 p-4">
 				<div class="col-lg-4 align-self-center">
 					
-			 <a href="index.php?page=infradetails&id='.$infra['uid'].'&sport='.$_GET['sport'].'"><img src="'.$infra['profilepic'].'" class="img-fluid" alt=""></a>
+			 <a href="index.php?page=infradetails&id='.$infra['ground_uid'].'&sport='.$_GET['sport'].'"><img src="'.$infra['profilepic'].'" class="img-fluid" alt=""></a>
 					
 				</div>
 				<div class="col-lg-8">
@@ -142,7 +142,7 @@ echo '
 						<div class="col-lg-9 col-md-10">
 							<div class="ad-listing-content">
 								<div>
-								<a href="index.php?page=infradetails&id='.$infra['uid'].'&sport='.$_GET['sport'].'"><h2 class="font-weight-bold">'.$infra['name'].'</h2></a>
+								<a href="index.php?page=infradetails&id='.$infra['ground_uid'].'&sport='.$_GET['sport'].'"><h2 class="font-weight-bold">'.$infra['name'].'</h2></a>
 									<p class="font-weight-bold">Located at '.$infra['address'].'</p>
 								</div>
 								<ul class="list-inline mt-2 mb-3">';
@@ -202,7 +202,7 @@ echo '
 		echo'<div class="row p-lg-3 p-sm-5 p-4">
 				<div class="col-lg-4 align-self-center">
 					
-					<a href="index.php?page=infradetails&id='.$infra['randomid'].'"><img src="'.$infra['profilepic'].'" class="img-fluid" alt=""></a>
+					<a href="index.php?page=infradetails&id='.$infra['ground_uid'].'"><img src="'.$infra['profilepic'].'" class="img-fluid" alt=""></a>
 					
 				</div>
 				<div class="col-lg-8">
@@ -210,7 +210,7 @@ echo '
 						<div class="col-lg-9 col-md-10">
 							<div class="ad-listing-content">
 								<div>
-								<a href="index.php?page=infradetails&id='.$infra['uid'].'">	<h2 class="font-weight-bold">'.$infra['name'].'</h2></a>
+								<a href="index.php?page=infradetails&id='.$infra['ground_uid'].'">	<h2 class="font-weight-bold">'.$infra['name'].'</h2></a>
 									<p class="font-weight-bold">Located at '.$infra['address'].'</p>
 								</div>
 								<ul class="list-inline mt-2 mb-3">';

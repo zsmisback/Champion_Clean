@@ -30,7 +30,7 @@
                 <div class="container">
                   <div class="row py-5 px-5">
                     <div class="col-lg-5">
-                      <img src="<?php echo $response['profilepic']; ?>" alt="image" width="" alt="" width="" height="350px">
+                      <img src="<?php echo $response['image1']; ?>" alt="image" width="" alt="" width="" height="350px">
                   </div>
                       <div class="col-lg-7 ">
                           <div class="details">
@@ -43,28 +43,35 @@
                               </div>
                             </div>
                              
-                              <h5> <b>Location :</b>&nbsp;<?php echo $response['city']; ?> &nbsp; <b>Working Hours :</b>&nbsp;<?php echo $response['training_hours']; ?></h5>
+                              <h5> <b>Location :</b>&nbsp;<?php echo $response['address']; ?> &nbsp; </h5>
 
-                              <h5> <b>Height :</b> &nbsp;<?php echo $response['height']; ?> cm &nbsp; <b>Weight :</b>&nbsp;<?php echo $response['weight']; ?> kg</h5>
-                              <h5> <b>Charges :</b>&nbsp;<?php echo $response['hourly_charges']; ?></h5>
+
                               <div class="row">
                                 <div class="col-lg-12">
-                                  <h5 class=''><?php if($response['question_1'] == 1){echo" <img src='img-test/online-learning.png' alt='' width='25px'>&nbsp; Online Services &nbsp;";} ?> <?php if($response['question_2'] == 1){echo"<img src='img-test/premium.png' alt='' width='25px'>&nbsp;Verified Member.";} ?> </h5> 
-                                  <h5 class=''><?php if($response['question_3'] == 1){echo"<img src='img-test/clock.png' alt='' width='25px'>&nbsp; Flexible timings. &nbsp;";} ?>  <?php if($response['question_4'] == 1){echo" <img src='img-test/nutrition.png' alt='' width='25px'>&nbsp; Diet Plans.";}?></h5>
-                                  <h5 class=''> <?php if($response['question_5'] == 1){echo"<img src='img-test/song.png' alt='' width='25px'>&nbsp; Workout Music";} ?></h5>
+                                  <h5 class=''><?php if($response['seats'] == 'seats'){echo" <img src='img-test/online-learning.png' alt='' width='25px'>&nbsp; Online Services &nbsp;";} ?> <?php if($response['locker_room'] == 'locker_room'){echo"<img src='img-test/premium.png' alt='' width='25px'>&nbsp;Verified Member.";} ?> </h5> 
+                                  <h5 class=''><?php if($response['showers'] == 'showers'){echo"<img src='img-test/clock.png' alt='' width='25px'>&nbsp; Flexible timings. &nbsp;";} ?> </h4>
+								  <p><?php echo $response['monday_from']; ?></p>
+								  <p><?php echo $response['summary']; ?></p>
+								  <p><?php var_dump($response2); ?></p>
+								  <p><?php foreach($response2 as $test){echo $test["COLUMN_NAME"];} ?></p>
                                 </div>
                               </div> <br>
+							  <table class="table table-bordered">
+							      <thead>
+									<tr>
+									<th>Ground Size</th>
+									<th>Pitch Size</th>
+									<th>Rules</th>
+									</tr>
+									</thead>
+							  </table>
                     <?php
                     
-				   if(!isset($_SESSION['user_id']) || !$_SESSION['user_id'])
+				   if(!isset($_SESSION['uid']) || !$_SESSION['uid'])
                     {
-	                 echo"<a href='index.php?action=login'><button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;'>Book Now</button></a>";
+	                 echo"<a href='index.php?page=login'><button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;'>Book Now</button></a>";
 	
                    }
-                   elseif($results['booked'] > 0)
-				   {
-					   echo"<button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;'>Booked!</button>";
-				   }
                    else
 				   {					   
 					 echo"<button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;' data-toggle='modal' data-target='#exampleModal' data-whatever='@mdo'>Book Now</button>";
@@ -84,18 +91,19 @@
                            </div>
                            <div class="modal-body">
                              <form method="post">
-                              <input type = "hidden" name="enquiry_for" value="<?php echo $_GET['id']; ?>"/>
-		                      <input type = "hidden" name="enquiry_by" value="<?php echo $_SESSION['user_id']; ?>"/>
-		                      <input type = "hidden" name="name" value="<?php echo $results['users']->name; ?>"/>
-		                      <input type = "hidden" name="email" value="<?php echo $results['users']->email; ?>"/>
-		                      <input type = "hidden" name="contact_number" value="<?php echo $results['users']->contact_number; ?>"/>
+                              <input type = "hidden" name="infra_enquiries|enquiry_for" value="<?php echo $response['randomid']; ?>"/>
+		                      <input type = "hidden" name="infra_enquiries|enquiry_by" value="<?php echo $_SESSION['uid']; ?>"/>
+		                      <input type = "hidden" name="infra_enquiries|name" value="<?php echo $_SESSION["name"]; ?>"/>
+		                      <input type = "hidden" name="infra_enquiries|email" value="<?php echo $_SESSION["username"]; ?>"/>
+		                      <input type = "hidden" name="infra_enquiries|contact_number" value="<?php echo $_SESSION["contact_no"]; ?>"/>
+							  <input type = "hidden" name="infra_enquiries|sports" value="<?php echo $_GET['sport']; ?>"/>
                               <div class="col-md-12 form-group">
                                 <label for="name">Alternate Contact Number</label>
-                                <input type="number" id="name" class="form-control py-2" name="alt_contact_number">
+                                <input type="number" id="name" class="form-control py-2" name="infra_enquiries|alt_contact_number">
                               </div>
                               <div class="col-md-12 form-group required">
                                 <label for="name" class="control-label">Enquiry</label> <br>
-                                <textarea rows="1" cols="50" class="form-control" name="query"></textarea>
+                                <textarea rows="1" cols="50" class="form-control" name="infra_enquiries|query"></textarea>
                               </div>
 							  <input type="submit" class="btn btn-primary" style="background-color: #146935 !important;" value="Confirm Booking"/> 
                              </form>
@@ -120,13 +128,19 @@
           <div class="row">
               <div class="col-lg-6">
                   
-                          <img src="<?php echo $response['certificate']; ?>" class="img-fluid" alt="">
+                          <img src="<?php echo $response['image1']; ?>" class="img-fluid" alt="">
                   
               </div>
               <div class="col-lg-6">
                 <div class="award-text">
                   
-                      <img src="<?php echo $response['degree']; ?>" class="img-fluid" alt="">
+                      <img src="<?php echo $response['image2']; ?>" class="img-fluid" alt="">
+              </div>
+              </div>
+			                <div class="col-lg-6">
+                <div class="award-text">
+                  
+                      <img src="<?php echo $response['image3']; ?>" class="img-fluid" alt="">
               </div>
               </div>
           </div>

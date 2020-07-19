@@ -45,6 +45,9 @@ switch ( $page ) {
 	case 'faq':
 	   faq();
 	  break;   
+	case 'queries':
+	   queries();
+	   break;
     case 'login':	
 	  login();	 
       break;
@@ -114,6 +117,21 @@ function logout()
 {
 	session_destroy();
 	login();
+}
+
+function queries(){
+	
+	if(!isset($_SESSION["uid"]))
+	{
+		header("Location:trainer.php?page=home");
+		exit;
+	}
+	$results = array();
+	include 'getpagination.php';
+	$sql = "SELECT * FROM trainer_enquiries WHERE enquiry_for = '".$_SESSION['uid']."'";
+	$response = getpagination($sql);
+	$results['post'] = $response['post'];
+	include(TEMPLATE_PATH_TRAINER."query.php");
 }
 
 function login()

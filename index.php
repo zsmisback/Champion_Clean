@@ -126,9 +126,19 @@ function trainerdetails(){
 		header("index.php?page=home");
 		exit;
 	}
+	$results = array();	
 	include("getdata.php");
+	include("savedata.php");
+	include("getpagination.php");
 	$sql = "SELECT * FROM users LEFT JOIN user_profilepic ON user_profilepic.uid = users.randomid LEFT JOIN trainer_details ON trainer_details.uid = users.randomid LEFT JOIN trainer_charges ON trainer_charges.uid = users.randomid LEFT JOIN trainer_images ON trainer_images.uid = users.randomid WHERE users.randomid = '".$_GET['id']."'";
 	$response = getall($sql);
+	if(isset($_SESSION['uid']))
+	{
+	$sql2 = "SELECT * FROM trainer_enquiries WHERE enquiry_for = '".$_GET['id']."' AND enquiry_by = '".$_SESSION['uid']."'";
+	$results['total_records'] = getpagination($sql2);
+	$results['booked'] = $results['total_records'];
+	}
+	
 	include(TEMPLATE_PATH."trainer_details.php");
 }
 
@@ -241,11 +251,14 @@ function infradetails(){
 	if(isset($_GET['sport']))
 	{
 		include("getdata.php");
-		if($_GET['sport'] == 'cricket')
-		{
-		$sql = "SELECT * FROM users LEFT JOIN user_profilepic ON user_profilepic.uid = users.randomid LEFT JOIN infra_details ON infra_details.randomid = users.randomid LEFT JOIN cricketform_info ON cricketform_info.uid = users.randomid  WHERE users.randomid = '".$_GET['id']."'";
-		}
+	    include("getarraydata.php");
+		include("savedata.php");
+		//Get a single row data related to the infrastructure
+		$sql = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = cricketform_info.ground_uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra'";
 		$response = getall($sql);
+		//Get all the column names from the table
+		$sql2 = "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'".$_GET['sport']."form_info'";
+		$response2 = getallarray($sql2);
 	}
 	include(TEMPLATE_PATH."infra_details.php");
 }
@@ -269,6 +282,7 @@ function login()
 			$_SESSION["username"] = $response['users|username'];
 			$_SESSION["type"] = $response['users|type'];
 			$_SESSION["name"] = $response['users|name'];
+			$_SESSION["contact_no"] = $response['users|contact_no'];
 			$_SESSION["uid"] = $response['users|randomid'];
 			
 			header("Location:?page=".$result["redirect_to"]);}

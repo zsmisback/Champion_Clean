@@ -56,18 +56,22 @@
                               </div> <br>
                     <?php
                     
-				   if(!isset($_SESSION['user_id']) || !$_SESSION['user_id'])
+				   if(!isset($_SESSION['uid']) || !$_SESSION['uid'])
                     {
-	                 echo"<a href='index.php?action=login'><button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;'>Book Now</button></a>";
+	                 echo"<a href='index.php?page=login'><button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;'>Contact Trainer</button></a>";
 	
                    }
-                   elseif($results['booked'] > 0)
+				   elseif($_SESSION['type'] !== "User")
 				   {
-					   echo"<button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;'>Booked!</button>";
+					   echo"";
+				   }
+				   elseif($results['booked'] > 0)
+				   {
+					   echo"<button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;'>Contacted</button>";
 				   }
                    else
 				   {					   
-					 echo"<button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;' data-toggle='modal' data-target='#exampleModal' data-whatever='@mdo'>Book Now</button>";
+					 echo"<button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;' data-toggle='modal' data-target='#exampleModal' data-whatever='@mdo'>Contact Trainer</button>";
 				   }
 					 
                      
@@ -84,18 +88,18 @@
                            </div>
                            <div class="modal-body">
                              <form method="post">
-                              <input type = "hidden" name="enquiry_for" value="<?php echo $_GET['id']; ?>"/>
-		                      <input type = "hidden" name="enquiry_by" value="<?php echo $_SESSION['user_id']; ?>"/>
-		                      <input type = "hidden" name="name" value="<?php echo $results['users']->name; ?>"/>
-		                      <input type = "hidden" name="email" value="<?php echo $results['users']->email; ?>"/>
-		                      <input type = "hidden" name="contact_number" value="<?php echo $results['users']->contact_number; ?>"/>
+                              <input type = "hidden" name="trainer_enquiries|enquiry_for" value="<?php echo $_GET['id']; ?>"/>
+		                      <input type = "hidden" name="trainer_enquiries|enquiry_by" value="<?php echo $_SESSION["uid"]; ?>"/>
+		                      <input type = "hidden" name="trainer_enquiries|name" value="<?php echo $_SESSION["name"]; ?>"/>
+		                      <input type = "hidden" name="trainer_enquiries|email" value="<?php echo $_SESSION["username"]; ?>"/>
+		                      <input type = "hidden" name="trainer_enquiries|contact_number" value="<?php echo $_SESSION["contact_no"]; ?>"/>
                               <div class="col-md-12 form-group">
                                 <label for="name">Alternate Contact Number</label>
-                                <input type="number" id="name" class="form-control py-2" name="alt_contact_number">
+                                <input type="number" id="name" class="form-control py-2" name="trainer_enquiries|alt_contact_number">
                               </div>
                               <div class="col-md-12 form-group required">
                                 <label for="name" class="control-label">Enquiry</label> <br>
-                                <textarea rows="1" cols="50" class="form-control" name="query"></textarea>
+                                <textarea rows="1" cols="50" class="form-control" name="trainer_enquiries|query"></textarea>
                               </div>
 							  <input type="submit" class="btn btn-primary" style="background-color: #146935 !important;" value="Confirm Booking"/> 
                              </form>

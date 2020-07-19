@@ -32,7 +32,7 @@
 		     <input type='checkbox' class='form-check-input mb-4' name='cricketform_info|showers' value='showers'>Do you provide shower rooms?
 			 </div>
 <br>
-<textarea class="form-control mb-4" rows="5" name="cricketform_info|cricket_summary" id="cricsummary" placeholder="Add a summary about your cricket field"></textarea>
+<textarea class="form-control mb-4" rows="5" name="cricketform_info|summary" id="cricsummary" placeholder="Add a summary about your cricket field"></textarea>
 </fieldset>
 <fieldset class="border border-gary p-4 mb-5">
 <h3 class=" mb-3">Features and Rules</h3>
@@ -40,10 +40,10 @@
 <hr>
 <p class="mb-3">Features that you provide for your customers (For example:Bats,Balls,Clothes)(Optional):</p> 
 
-<textarea class="form-control mb-4 ckeditor" rows="5" name="cricketform_info|cricket_features" id="cricfeatures"></textarea>
+<textarea class="form-control mb-4 ckeditor" rows="5" name="cricketform_info|features" id="cricfeatures"></textarea>
 <br>
 <p class="mb-3">Rules(If any):</p>	
-<textarea class="form-control mb-4 ckeditor" rows="5" name="cricketform_info|cricket_rules" id="cricrules"></textarea>
+<textarea class="form-control mb-4 ckeditor" rows="5" name="cricketform_info|rules" id="cricrules"></textarea>
 </fieldset>
 <fieldset class="border bg-white p-4 my-5 ad-feature bg-gray">
 <h3 class=" mb-3">Timings</h3>

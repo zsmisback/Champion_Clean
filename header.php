@@ -113,6 +113,23 @@ $base = basename($path);
 							<li class="nav-item active">
 								<a class="nav-link" href="?page=home">Home</a>
 							</li>
+							<?php
+							
+							if(!isset($_SESSION['uid']))
+							{
+								
+							}
+							elseif($_SESSION['type'] == 'Trainer')
+							{
+								
+								
+								echo'<li class="nav-item">
+								<a class="nav-link" href="trainer.php?page=queries">List Queries</a>
+								</li>';
+								
+							}
+							
+							?>
 							<li class="nav-item dropdown dropdown-slide">
 								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									About <span><i class="fa fa-angle-down"></i></span>
