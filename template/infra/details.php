@@ -2,7 +2,7 @@
 
 <section class="ad-post bg-gray py-5">
     <div class="container">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
 <?php if(isset($error_mysql)){echo "<br>".$error_mysql;} ?>
 <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="infra_timings|uid"/>
 <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="infra_details|randomid"/>
@@ -17,7 +17,7 @@
 
 <div class="row">
 <div class="col-md-6">
-<input type="file" class="form-control mb-4" name="user_profilepic|profilepic" placeholder="Enter your profile picture">
+<input type="file" class="form-control mb-4" name="user_profilepic|profilepic|0|<?php echo $_SESSION['uid']; ?>" placeholder="Enter your profile picture">
 </div>
 
 <div class="col-md-6">

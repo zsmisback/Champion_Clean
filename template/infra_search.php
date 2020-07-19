@@ -117,7 +117,7 @@ echo '
 
 		<div class="ad-listing-list mt-20">
 		<?php
-		if(isset($_GET['sport']) || isset($_GET['type']) || isset($_GET['city']))
+		if(isset($_GET['sport']) || isset($_GET['city']))
 		{
 				
 		if(empty($response))
@@ -128,13 +128,13 @@ echo '
 		{
 		
 		
-		foreach($response as $trainers)
+		foreach($response as $infra)
 		{
 		
 		echo'<div class="row p-lg-3 p-sm-5 p-4">
 				<div class="col-lg-4 align-self-center">
 					
-			 <a href="index.php?page=trainerdetails&id='.$trainers['uid'].'"><img src="'.$trainers['profilepic'].'" class="img-fluid" alt=""></a>
+			 <a href="index.php?page=infradetails&id='.$infra['uid'].'&sport='.$_GET['sport'].'"><img src="'.$infra['profilepic'].'" class="img-fluid" alt=""></a>
 					
 				</div>
 				<div class="col-lg-8">
@@ -142,11 +142,11 @@ echo '
 						<div class="col-lg-9 col-md-10">
 							<div class="ad-listing-content">
 								<div>
-								<a href="index.php?page=trainerdetails&id='.$trainers['uid'].'"><h2 class="font-weight-bold">'.$trainers['name'].'</h2></a>
-									<p class="font-weight-bold">'.$trainers['type'].'</p>
+								<a href="index.php?page=infradetails&id='.$infra['uid'].'&sport='.$_GET['sport'].'"><h2 class="font-weight-bold">'.$infra['name'].'</h2></a>
+									<p class="font-weight-bold">Located at '.$infra['address'].'</p>
 								</div>
 								<ul class="list-inline mt-2 mb-3">';
-								 $sports = explode(",",$trainers['sports']);
+								 $sports = explode(",",$infra['sports']);
 								foreach($sports as $sport)
 								{
 									echo'<li class="list-inline-item"><i class="fa fa-flag-checkered" aria-hidden="true"></i> '.$sport.'</li>';
@@ -155,17 +155,18 @@ echo '
 								</ul>								
 								<p class="pr-5"></p>
 							</div>
-						</div>
-						<div class="col-lg-3 align-self-center">
+						</div>';
+						/*<div class="col-lg-3 align-self-center">
 							<div class="row">
-							<div style="background-color:#EAEDED; width:100%;" class="p-4">';
+							<div style="background-color:#EAEDED; width:100%;" class="p-4">
+							
 							if($trainers['question_1'] == 1)echo'<i class="fa fa-globe" aria-hidden="true"></i> Online Services<br>';
 							if($trainers['question_2'] == 1)echo'<i class="fa fa-thumbs-up" aria-hidden="true"></i>Verified Member<br>';
 							if($trainers['question_3'] == 1)echo'<i class="fa fa-clock-o" aria-hidden="true"></i> Flexible timings<br>';	
 							if($trainers['question_4'] == 1)echo'<i class="fa fa-cutlery" aria-hidden="true"></i> Diet Plans<br>';	
 							if($trainers['question_5'] == 1)echo'<i class="fa fa-music" aria-hidden="true"></i> Workout Music<br>';	
 							
-					   echo'</div>							
+					   </div>							
 							<div style="background-color:#EAEDED; width:100%;" class="pl-4 pb-4 pr-4">							
 							<div class="product-ratings float-lg">
 							<h3>Rating</h3>
@@ -181,8 +182,8 @@ echo '
 							<button class="btn-success"></button>
 						</div>						
 						</div>
-					</div>
-				</div>
+					</div>*/
+				echo'</div>
 			</div>
 		</div>';
 		}
@@ -195,13 +196,13 @@ echo '
 		{
 			echo "No results found";
 		}
-		foreach($response as $trainers)
+		foreach($response as $infra)
 		{
 		
 		echo'<div class="row p-lg-3 p-sm-5 p-4">
 				<div class="col-lg-4 align-self-center">
 					
-					<a href="index.php?page=trainerdetails&id='.$trainers['uid'].'"><img src="'.$trainers['profilepic'].'" class="img-fluid" alt=""></a>
+					<a href="index.php?page=infradetails&id='.$infra['randomid'].'"><img src="'.$infra['profilepic'].'" class="img-fluid" alt=""></a>
 					
 				</div>
 				<div class="col-lg-8">
@@ -209,11 +210,11 @@ echo '
 						<div class="col-lg-9 col-md-10">
 							<div class="ad-listing-content">
 								<div>
-								<a href="index.php?page=trainerdetails&id='.$trainers['uid'].'">	<h2 class="font-weight-bold">'.$trainers['name'].'</h2></a>
-									<p class="font-weight-bold">'.$trainers['type'].'</p>
+								<a href="index.php?page=infradetails&id='.$infra['uid'].'">	<h2 class="font-weight-bold">'.$infra['name'].'</h2></a>
+									<p class="font-weight-bold">Located at '.$infra['address'].'</p>
 								</div>
 								<ul class="list-inline mt-2 mb-3">';
-								 $sports = explode(",",$trainers['sports']);
+								 $sports = explode(",",$infra['sports']);
 								foreach($sports as $sport)
 								{
 									echo'<li class="list-inline-item"><i class="fa fa-flag-checkered" aria-hidden="true"></i> '.$sport.'</li>';
@@ -222,17 +223,17 @@ echo '
 								</ul>								
 								<p class="pr-5"></p>
 							</div>
-						</div>
-						<div class="col-lg-3 align-self-center">
+						</div>';
+					/*	<div class="col-lg-3 align-self-center">
 							<div class="row">
-							<div style="background-color:#EAEDED; width:100%;" class="p-4">';
+							<div style="background-color:#EAEDED; width:100%;" class="p-4">
 							if($trainers['question_1'] == 1)echo'<i class="fa fa-globe" aria-hidden="true"></i> Online Services<br>';
 							if($trainers['question_2'] == 1)echo'<i class="fa fa-thumbs-up" aria-hidden="true"></i>Verified Member<br>';
 							if($trainers['question_3'] == 1)echo'<i class="fa fa-clock-o" aria-hidden="true"></i> Flexible timings<br>';	
 							if($trainers['question_4'] == 1)echo'<i class="fa fa-cutlery" aria-hidden="true"></i> Diet Plans<br>';	
 							if($trainers['question_5'] == 1)echo'<i class="fa fa-music" aria-hidden="true"></i> Workout Music<br>';	
 							
-					   echo'</div>							
+					   </div>							
 							<div style="background-color:#EAEDED; width:100%;" class="pl-4 pb-4 pr-4">							
 							<div class="product-ratings float-lg">
 							<h3>Rating</h3>
@@ -248,8 +249,8 @@ echo '
 							<button class="btn-success"></button>
 						</div>						
 						</div>
-					</div>
-				</div>
+					</div> */
+				echo'</div>
 			</div>
 		</div>';
 		}
@@ -280,10 +281,10 @@ echo '
 					}
 					else
 					{
-						if(isset($_GET['sport']) && isset($_GET['type']) && isset($_GET['city']))
+						if(isset($_GET['sport']) && isset($_GET['city']))
 						{
 						echo'<li class="page-item">
-								<a class="page-link" href="index.php?page=search&sport='.$_GET['sport'].'&type='.$_GET['type'].'&city='.$_GET['city'].'&count='.$results['prev'].'" aria-label="Previous">
+								<a class="page-link" href="index.php?page=infra&sport='.$_GET['sport'].'&city='.$_GET['city'].'&count='.$results['prev'].'" aria-label="Previous">
 									<span aria-hidden="true">&laquo;</span>
 									<span class="sr-only">Previous</span>
 								</a>
@@ -292,7 +293,7 @@ echo '
 						else
 						{
 						echo'<li class="page-item">
-								<a class="page-link" href="index.php?page=search&count='.$results['prev'].'" aria-label="Previous">
+								<a class="page-link" href="index.php?page=infra&count='.$results['prev'].'" aria-label="Previous">
 									<span aria-hidden="true">&laquo;</span>
 									<span class="sr-only">Previous</span>
 								</a>
@@ -300,21 +301,21 @@ echo '
 						}
 					}
 							for($pageNumbers=1;$pageNumbers<=$results['total_pages'];$pageNumbers++) :
-						  if(isset($_GET['sport']) && isset($_GET['type']) && isset($_GET['city']))
+						  if(isset($_GET['sport']) && isset($_GET['city']))
 							{
 								echo'
-								<li class="page-item"><a class="page-link" href="index.php?page=search&sport='.$_GET['sport'].'&type='.$_GET['type'].'&city='.$_GET['city'].'&count='.$pageNumbers.'">'.$pageNumbers.'</a></li>';
+								<li class="page-item"><a class="page-link" href="index.php?page=infra&sport='.$_GET['sport'].'&city='.$_GET['city'].'&count='.$pageNumbers.'">'.$pageNumbers.'</a></li>';
 							}
 							else
 							{
 								echo'
-								<li class="page-item"><a class="page-link" href="index.php?page=search&count='.$pageNumbers.'">'.$pageNumbers.'</a></li>';
+								<li class="page-item"><a class="page-link" href="index.php?page=infra&count='.$pageNumbers.'">'.$pageNumbers.'</a></li>';
 							}
 							endfor;
-							if(isset($_GET['sport']) && isset($_GET['type']) && isset($_GET['city']))
+							if(isset($_GET['sport']) && isset($_GET['city']))
 							{
 							echo'<li class="page-item">
-								<a class="page-link" href="index.php?page=search&sport='.$_GET['sport'].'&type='.$_GET['type'].'&city='.$_GET['city'].'&count='.$results['next'].'" aria-label="Next">
+								<a class="page-link" href="index.php?page=infra&sport='.$_GET['sport'].'&city='.$_GET['city'].'&count='.$results['next'].'" aria-label="Next">
 									<span aria-hidden="true">&raquo;</span>
 									<span class="sr-only">Next</span>
 								</a>
@@ -323,7 +324,7 @@ echo '
 							else
 							{
 							echo'<li class="page-item">
-								<a class="page-link" href="index.php?page=search&count='.$results['next'].'" aria-label="Next">
+								<a class="page-link" href="index.php?page=infra&count='.$results['next'].'" aria-label="Next">
 									<span aria-hidden="true">&raquo;</span>
 									<span class="sr-only">Next</span>
 								</a>
