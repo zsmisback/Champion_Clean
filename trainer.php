@@ -146,6 +146,16 @@ function queries(){
 //Edit Trainers Registration Form
 function editprofile(){
 	
+	if(!isset($_SESSION["uid"]))
+	{
+		header("Location:trainer.php?page=home");
+		exit;
+	}
+	elseif($_SESSION["type"] !== "Trainer")
+	{
+		header("Location:trainer.php?page=home");
+		exit;
+	}
 	include(TEMPLATE_PATH_TRAINER."editprofile.php");
 
 }
@@ -153,11 +163,34 @@ function editprofile(){
 //Edit Trainers Details Form
 function editdetails(){
 	
+	if(!isset($_SESSION["uid"]))
+	{
+		header("Location:trainer.php?page=home");
+		exit;
+	}
+	elseif($_SESSION["type"] !== "Trainer")
+	{
+		header("Location:trainer.php?page=home");
+		exit;
+	}
+	include 'getdata.php';
+	//Check if the trainer has filled the Details Registration Form
+	$sql = "SELECT * FROM trainer_details WHERE uid = '".$_SESSION['uid']."'";
+	$check = getall($sql);
+	if(empty($check))
+	{
+		header("Location:trainer.php?page=dashboard");
+		exit;
+	}
+	//Get the trainers current details from trainer_details
+	$sql2 = "SELECT * FROM trainer_details WHERE uid = '".$_SESSION['uid']."'";
+	$response = getall($sql2);
 	include(TEMPLATE_PATH_TRAINER."editdetails.php");
 }
 
 //Edit Trainer Charges
 function editcharges(){
+	
 	
 	include(TEMPLATE_PATH_TRAINER."editcharges.php");
 }
