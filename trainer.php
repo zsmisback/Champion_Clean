@@ -48,6 +48,15 @@ switch ( $page ) {
 	case 'queries':
 	   queries();
 	   break;
+	case 'editprofile':
+	   editprofile();
+	   break;
+	case 'editdetails':
+	   editdetails();
+	   break;
+	case 'editcharges':
+	   editcharges();
+	   break;
     case 'login':	
 	  login();	 
       break;
@@ -133,6 +142,27 @@ function queries(){
 	$results['post'] = $response['post'];
 	include(TEMPLATE_PATH_TRAINER."query.php");
 }
+
+//Edit Trainers Registration Form
+function editprofile(){
+	
+	include(TEMPLATE_PATH_TRAINER."editprofile.php");
+
+}
+
+//Edit Trainers Details Form
+function editdetails(){
+	
+	include(TEMPLATE_PATH_TRAINER."editdetails.php");
+}
+
+//Edit Trainer Charges
+function editcharges(){
+	
+	include(TEMPLATE_PATH_TRAINER."editcharges.php");
+}
+
+//Edit Trainer Details
 
 function login()
 {

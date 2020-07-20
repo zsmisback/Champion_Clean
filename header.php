@@ -124,7 +124,7 @@ $base = basename($path);
 								
 								
 								echo'<li class="nav-item">
-								<a class="nav-link" href="trainer.php?page=queries">List Queries</a>
+								<a class="nav-link" href="trainer.php?page=queries">Queries</a>
 								</li>';
 								
 							}
@@ -133,11 +133,33 @@ $base = basename($path);
 								
 								
 								echo'<li class="nav-item">
-								<a class="nav-link" href="infra.php?page=queries">List Queries</a>
+								<a class="nav-link" href="infra.php?page=queries">Queries</a>
 								</li>';
 								
 							}
 							
+							?>
+							<?php
+							
+							if(!isset($_SESSION['uid']))
+							{
+								
+							}
+							elseif($_SESSION['type'] == 'Trainer')
+							{
+							echo'
+							<li class="nav-item dropdown dropdown-slide">
+								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Profile <span><i class="fa fa-angle-down"></i></span>
+								</a>
+								<!-- Dropdown list -->
+								<div class="dropdown-menu">
+								<a class="dropdown-item" href="trainer.php?page=editprofile">Edit Profile</a>
+								<a class="dropdown-item" href="trainer.php?page=editdetails">Edit Trainer Details</a>
+								<a class="dropdown-item" href="trainer.php?page=editcharges">Edit Trainer Charges</a>
+								</div>
+							</li>';
+							}
 							?>
 							<li class="nav-item dropdown dropdown-slide">
 								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -150,14 +172,14 @@ $base = basename($path);
 								<a class="dropdown-item" href="?page=listofsport">List of Sports</a>
 								</div>
 							</li>
-							<li class="nav-item">
+						<!--	<li class="nav-item">
 								<a class="nav-link" href="?page=concept">How it works?</a>
-							</li>
+							</li> -->
 						<!--	<li class="nav-item">
 								<a class="nav-link" href="?page=faq">FAQ's</a>
 							</li>-->
 							<li class="nav-item">
-								<a class="nav-link" href="?page=contactus">Contact Us</a>
+								<a class="nav-link" href="?page=contactus">Contact</a>
 							</li>
 							
 							
