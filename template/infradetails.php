@@ -41,19 +41,27 @@
           <p><?php echo $response['address']; ?></p>
 		  <h2>About Us</h2>
 		  <p><?php echo $response['about_us']; ?></p>
-          <h2>Specification
-		      <?php var_dump($response2[0]['COLUMN_NAME']); ?></h2>
-          <p><?php 
+          <h2>Specifications</h2>
+		  		 
+		<?php 
 		 
-		  foreach($response2 as $test){
-			  $te[]=$test['COLUMN_NAME'];
+		 //Get all the column names from a sportinfo_form
+		  foreach($response2 as $column_names){
+			  //Filter out/Remove the common parameters/column names
+			  if($column_names['COLUMN_NAME'] == "id" || $column_names['COLUMN_NAME'] == 'uid' || $column_names['COLUMN_NAME'] == 'ground_uid' || $column_names['COLUMN_NAME'] == 'summary' || $column_names['COLUMN_NAME'] == 'features' || $column_names['COLUMN_NAME'] == 'rules'  || $column_names['COLUMN_NAME'] == 'seats' || $column_names['COLUMN_NAME'] == 'locker_room' || $column_names['COLUMN_NAME'] == 'showers')
+			  {
+				  echo "";
+			  }
+			  else
+			  {
+				  //Store the Uncommon parameters in an array
+				  $columns[] = $column_names['COLUMN_NAME'];
+			  }
 		  }
-		  $s = array_slice($te,3,2);
-		  foreach($s as $t)
-		  {
-			  echo $t;echo"<br>";
-		  }
-		  ?> Field Length -1234 &nbsp; Field Width - wwww &nbsp; <br> Goal Width - wwww &nbsp; Penalty Length -wwww     &nbsp;  Penalty Width - wwww</p>
+
+		  ?> 
+		  <!-- Display all the field information with the column name and their values -->
+          <p><?php foreach($columns as $field_info){echo''.$field_info.' - '.$response[$field_info].' &nbsp<br>';} ?></p>
           
      <h3 class="mb-2"><?php if($response['seats'] == 'seats'){echo '<span>Seats</span>';} if($response['locker_room'] == 'locker_room'){echo ' <span>Locker Room</span>';} if($response['showers'] == 'showers'){echo ' <span>Showers</span>';}?> </h3><br>
 
