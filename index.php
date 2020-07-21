@@ -139,7 +139,7 @@ function trainerdetails(){
 	$results['booked'] = $results['total_records'];
 	}
 	
-	include(TEMPLATE_PATH."trainer_details.php");
+	include(TEMPLATE_PATH."trainerdetails.php");
 }
 
 	
@@ -256,7 +256,8 @@ function infradetails(){
 		include("savedata.php");
 		$results = array();
 		//Get a single row data related to the infrastructure
-		$sql = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = cricketform_info.ground_uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra'";
+		$sql = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra'";
+		
 		$response = getall($sql);
 		//Get all the column names from the table
 		$sql2 = "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'".$_GET['sport']."form_info'";
@@ -268,7 +269,7 @@ function infradetails(){
 			$results['booked'] = $results['total_records'];
 		}
 	}
-	include(TEMPLATE_PATH."infra_details.php");
+	include(TEMPLATE_PATH."infradetails.php");
 }
 
 function logout()

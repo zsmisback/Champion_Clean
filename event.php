@@ -10,7 +10,7 @@ $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 	header("location: /sport/trainer/?page=home");exit();
 }*/
 
-if ( $page != "login" && $page != "logout" && !$username && $page != "home" && $page != "contactus" && $page != "aboutus" && $page != "faq" && $page != "concept") {
+if ( $page != "login" && $page != "logout" && !$username && $page != "home" && $page != "contactus" && $page != "aboutus" && $page != "abouttheteam" && $page != "listofsport" && $page != "faq" && $page != "concept") {
   login();
   exit;
 }
@@ -29,6 +29,12 @@ switch ( $page ) {
 	  break;
 	case 'aboutus':	
 	  aboutus();
+	  break; 
+	case 'abouttheteam':	
+	  abouttheteam();
+	  break;
+	case 'listofsport':	
+	  listofsport();
 	  break;  
 	case 'contactus':	
 	  contactus();
@@ -63,6 +69,15 @@ switch ( $page ) {
 function aboutus(){
 	include(TEMPLATE_PATH."aboutus.php");			
 }
+
+function abouttheteam(){
+	include(TEMPLATE_PATH."abouttheteam.php");
+}
+
+function listofsport(){
+	include(TEMPLATE_PATH."listofsport.php");
+}
+
 function contactus(){
 	
 	$result["redirect_to"] = "?page=home";

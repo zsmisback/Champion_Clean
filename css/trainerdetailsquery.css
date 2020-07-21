@@ -1,0 +1,311 @@
+
+/*---------------------
+  Banner Section
+-----------------------*/
+.banner-section {
+	padding-top: 65px;
+}
+.banner-text {
+	padding-top: 145px;
+}
+.banner-text h2 {
+	font-size: 40px;
+	color: #ffffff;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+.banner-text p {
+	font-size: 18px;
+	line-height: 30px;
+	color: #ffffff;
+	margin-bottom: 50px;
+}
+
+  
+  nav > .nav.nav-tabs{
+
+	border: none;
+	  color:#fff;
+	  background:#272e38;
+	  border-radius:0;
+	 width: 100%;
+	
+  
+  }
+  nav > div a.nav-item.nav-link,
+  nav > div a.nav-item.nav-link.active
+  {
+	border: none;
+	  padding: 18px 25px;
+	  color:#fff;
+	  background:#272e38;
+	  border-radius:0;
+  }
+  
+  nav > div a.nav-item.nav-link.active:after
+   {
+	content: "";
+	position: relative;
+	bottom: -60px;
+	left: -10%;
+	border: 15px solid transparent;
+	border-top-color: #146935 ;
+  }
+  .tab-content{
+	background: #fdfdfd;
+	  line-height: 25px;
+	  border: 1px solid #ddd;
+	  border-top:5px solid  #146935;
+	  border-bottom:5px solid #146935;
+	  padding:30px 25px;
+	  width: 100%;
+  }
+  
+  nav > div a.nav-item.nav-link:hover,
+  nav > div a.nav-item.nav-link:focus
+  {
+	border: none;
+	  background: #146935;
+	  color:#fff;
+	  border-radius:0;
+	  transition:background 0.20s linear;
+  }
+ .details{
+	
+ }
+ .details h2{
+	font-size: 45px;
+	padding-bottom: 15px;
+}
+.details h5{
+	font-size: 18px;
+	padding-bottom: 15px;
+}
+
+.details a{
+	font-size: 20px;
+	padding-bottom: 15px;
+}
+.details a:hover{
+	color: #146935;
+}
+
+@media (max-width: 600px) {
+	iframe{
+	 width: 450px;
+	 height: 315px;
+	 padding: 0;
+	}
+  }
+
+  @media (max-width: 329px) {
+	iframe{
+	 width: 280px;
+	 height: 280px;
+	 padding: 0;
+	 margin: 0;
+	}
+  }
+  
+.block-22 {
+	padding: 100px 0px !important;
+	
+  }
+  
+  .block-22 .heading h2{
+	font-size: 25px;
+	font-weight: 500;
+	color: #fff !important;
+	padding-bottom:10px ;
+  }
+  
+  .block-22 p {
+	color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .block-22 p:last-child {
+	margin-bottom: 100px;
+  }
+  
+  .block-22 .subscribe .form-group {
+	position: relative;
+  }
+  
+  .block-22 .subscribe .email {
+	height: 50px;
+	border-radius: 4px;
+	background: #fff;
+	border: none !important;
+  }
+  
+  .block-22 .subscribe .submit {
+	position: absolute;
+	top: 5px;
+	right: 6px;
+  }
+  
+  .block-22 .btn{
+	color: white;
+	background-color: #63d471 !important;
+	background-image: linear-gradient(315deg, #63d471 0%, #233329 74%) !important;
+	font-size: 18px;
+  }
+  .block-22 .btn:hover{
+	color: #fff;
+   border: #000 1px solid;
+   
+  
+  }
+  	  
+  nav > .nav.nav-tabs{
+
+	border: none;
+	  color:#fff;
+	  background:#272e38;
+	  border-radius:0;
+	 width: 100%;
+	
+  
+  }
+  nav > div a.nav-item.nav-link,
+  nav > div a.nav-item.nav-link.active
+  {
+	border: none;
+	  padding: 18px 25px;
+	  color:#fff;
+	  background:#272e38;
+	  border-radius:0;
+  }
+  
+  nav > div a.nav-item.nav-link.active:after
+   {
+	content: "";
+	position: relative;
+	bottom: -60px;
+	left: -10%;
+	border: 15px solid transparent;
+	border-top-color: #146935 ;
+  }
+  .tab-content{
+	background: #fdfdfd;
+	  line-height: 25px;
+	  border: 1px solid #ddd;
+	  border-top:5px solid  #146935;
+	  border-bottom:5px solid #146935;
+	  padding:30px 25px;
+	  width: 100%;
+  }
+  
+  nav > div a.nav-item.nav-link:hover,
+  nav > div a.nav-item.nav-link:focus
+  {
+	border: none;
+	  background: #146935;
+	  color:#fff;
+	  border-radius:0;
+	  transition:background 0.20s linear;
+  }
+ .details{
+	
+ }
+ .details h2{
+	font-size: 45px;
+	padding-bottom: 15px;
+}
+.details h5{
+	font-size: 18px;
+	padding-bottom: 15px;
+}
+
+.details a{
+	font-size: 20px;
+	padding-bottom: 15px;
+}
+.details a:hover{
+	color: #146935;
+}
+
+@media (max-width: 600px) {
+	iframe{
+	 width: 450px;
+	 height: 315px;
+	 padding: 0;
+	}
+  }
+
+  @media (max-width: 329px) {
+	iframe{
+	 width: 280px;
+	 height: 280px;
+	 padding: 0;
+	 margin: 0;
+	}
+  }
+  
+.block-22 {
+	padding: 100px 0px !important;
+	
+  }
+  
+  .block-22 .heading h2{
+	font-size: 25px;
+	font-weight: 500;
+	color: #fff !important;
+	padding-bottom:10px ;
+  }
+  
+  .block-22 p {
+	color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .block-22 p:last-child {
+	margin-bottom: 100px;
+  }
+  
+  .block-22 .subscribe .form-group {
+	position: relative;
+  }
+  
+  .block-22 .subscribe .email {
+	height: 50px;
+	border-radius: 4px;
+	background: #fff;
+	border: none !important;
+  }
+  
+  .block-22 .subscribe .submit {
+	position: absolute;
+	top: 5px;
+	right: 6px;
+  }
+  
+  .block-22 .btn{
+	color: white;
+	background-color: #63d471 !important;
+	background-image: linear-gradient(315deg, #63d471 0%, #233329 74%) !important;
+	font-size: 18px;
+  }
+  .block-22 .btn:hover{
+	color: #fff;
+   border: #000 1px solid;
+   
+  
+  }
+  
+  
+table{
+   
+    padding: 10px;
+    background-color: #D7D4F0;
+    color: #000;
+  }
+  th, td{
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid#D7D4F0;
+  }
+  tr:hover{
+   background-color: #28A745 !important ;
+   color: #fff;
+  }

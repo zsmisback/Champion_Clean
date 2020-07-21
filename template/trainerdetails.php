@@ -1,14 +1,14 @@
 <?php include 'header.php'; ?>
-      <!-- END header -->
+
     <!-- Header End -->
     <div class="container">
       <div class="row">
         <div class="col-md-1 pt-5">
-          <img src="<?php echo $response['profilepic']; ?>" alt="image" width="" height="80px">
+          <img src="<?php echo $response['profilepic']; ?>" alt="" width="100%" height="80px">
         </div>
         <div class="col-md-11 pt-5">
           <h2> <b><?php echo $response['name']; ?></b> </h2>
-    <h5 class="pt-3"> <b><?php echo $response['type']; ?></b></h5> 
+    <h5 class="pt-3"> <b> <?php echo $response['type']; ?></b></h5> 
         </div>
         
       </div>
@@ -30,46 +30,36 @@
                 <div class="container">
                   <div class="row py-5 px-5">
                     <div class="col-lg-5">
-                      <img src="<?php echo $response['image1']; ?>" alt="image" width="" alt="" width="" height="350px">
+                      <img src="<?php echo $response['profilepic']; ?>" alt="" width="100%" height="350px">
                   </div>
                       <div class="col-lg-7 ">
                           <div class="details">
                             <div class="row">
                               <div class="col-lg-12">
-                                <h5> <b>Name :</b>&nbsp;<?php echo $response['name']; ?></h5>
-                                <h5> <b>Type :</b>&nbsp;<?php echo $response['type']; ?></h5>
-                                <h5> <b>About :</b>&nbsp;<?php echo $response['about_us']; ?></h5>
+                                <h5> <b>Name :</b> <?php echo $response['name']; ?></h5>
+                                <h5> <b>Type :</b> <?php echo $response['type']; ?></h5>
+                                <h5> <b>About :</b> <?php echo $response['about_us']; ?></h5>
                                 
                               </div>
                             </div>
                              
-                              <h5> <b>Location :</b>&nbsp;<?php echo $response['address']; ?> &nbsp; </h5>
+                              <h5> <b>Location :</b><?php echo $response['address']; ?> &nbsp; <b>Working Hours :</b> <?php echo $response['training_hours']; ?></h5>
 
-
+                              <h5> <b>Height :</b> <?php echo $response['height']; ?> cm&nbsp; <b>Weight :</b> <?php echo $response['weight']; ?> kg</h5>
+                              <h5> <b>Charges :</b> <?php echo $response['hourly_charges']; ?> Per Hour</h5>
                               <div class="row">
                                 <div class="col-lg-12">
-                                  <h5 class=''><?php if($response['seats'] == 'seats'){echo" <img src='img-test/online-learning.png' alt='' width='25px'>&nbsp; Online Services &nbsp;";} ?> <?php if($response['locker_room'] == 'locker_room'){echo"<img src='img-test/premium.png' alt='' width='25px'>&nbsp;Verified Member.";} ?> </h5> 
-                                  <h5 class=''><?php if($response['showers'] == 'showers'){echo"<img src='img-test/clock.png' alt='' width='25px'>&nbsp; Flexible timings. &nbsp;";} ?> </h4>
-								  <p><?php echo $response['monday_from']; ?></p>
-								  <p><?php echo $response['summary']; ?></p>
-								  <p><?php var_dump($response2); ?></p>
-								  <p><?php foreach($response2 as $test){echo $test["COLUMN_NAME"]->court_length; echo"<br>"; echo $response[$test["COLUMN_NAME"]]; echo"<br>";} ?></p>
+                                  <h5 class=''><?php if($response['question_1'] == 1){echo" <img src='images/widget/online-learning.png' alt='' width='25px'>&nbsp; Online Services &nbsp;";} ?> <?php if($response['question_2'] == 1){echo"<img src='images/widget/premium.png' alt='' width='25px'>&nbsp;Verified Member.";} ?> </h5> 
+                                  <h5 class=''><?php if($response['question_3'] == 1){echo"<img src='images/widget/clock.png' alt='' width='25px'>&nbsp; Flexible timings. &nbsp;";} ?>  <?php if($response['question_4'] == 1){echo" <img src='images/widget/nutrition.png' alt='' width='25px'>&nbsp; Diet Plans.";}?></h5>
+                                  <h5 class=''> <?php if($response['question_5'] == 1){echo"<img src='images/widget/song.png' alt='' width='25px'>&nbsp; Workout Music";} ?></h5>
                                 </div>
                               </div> <br>
-							  <table class="table table-bordered">
-							      <thead>
-									<tr>
-									<th>Ground Size</th>
-									<th>Pitch Size</th>
-									<th>Rules</th>
-									</tr>
-									</thead>
-							  </table>
-                    <?php
+						
+						                    <?php
                     
 				   if(!isset($_SESSION['uid']) || !$_SESSION['uid'])
                     {
-	                 echo"<a href='index.php?page=login'><button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;'>Contact Now</button></a>";
+	                 echo"<a href='index.php?page=login'><button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;'>Contact Trainer</button></a>";
 	
                    }
 				   elseif($_SESSION['type'] !== "User")
@@ -82,11 +72,13 @@
 				   }
                    else
 				   {					   
-					 echo"<button type='button' class='btn py-3 px-5 ' style='background-color: #146935 !important; color: #fff;' data-toggle='modal' data-target='#exampleModal' data-whatever='@mdo'>Contact Now</button>";
+					 echo'<button type="button" class="btn py-3 px-5 " style="background-color: #146935 !important; color: #fff;" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Contact Trainer</button>';
 				   }
-					 
+		
                      
 					 ?>
+
+                     
                     
                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                        <div class="modal-dialog" role="document">
@@ -99,24 +91,23 @@
                            </div>
                            <div class="modal-body">
                              <form method="post">
-                              <input type = "hidden" name="infra_enquiries|enquiry_for" value="<?php echo $response['randomid']; ?>"/>
-		                      <input type = "hidden" name="infra_enquiries|enquiry_by" value="<?php echo $_SESSION['uid']; ?>"/>
-		                      <input type = "hidden" name="infra_enquiries|name" value="<?php echo $_SESSION["name"]; ?>"/>
-		                      <input type = "hidden" name="infra_enquiries|email" value="<?php echo $_SESSION["username"]; ?>"/>
-		                      <input type = "hidden" name="infra_enquiries|contact_number" value="<?php echo $_SESSION["contact_no"]; ?>"/>
-							  <input type = "hidden" name="infra_enquiries|sports" value="<?php echo $_GET['sport']; ?>"/>
+							  <input type = "hidden" name="trainer_enquiries|enquiry_for" value="<?php echo $_GET['id']; ?>"/>
+		                      <input type = "hidden" name="trainer_enquiries|enquiry_by" value="<?php echo $_SESSION["uid"]; ?>"/>
+		                      <input type = "hidden" name="trainer_enquiries|name" value="<?php echo $_SESSION["name"]; ?>"/>
+		                      <input type = "hidden" name="trainer_enquiries|email" value="<?php echo $_SESSION["username"]; ?>"/>
+		                      <input type = "hidden" name="trainer_enquiries|contact_number" value="<?php echo $_SESSION["contact_no"]; ?>"/>
                               <div class="col-md-12 form-group">
                                 <label for="name">Alternate Contact Number</label>
-                                <input type="number" id="name" class="form-control py-2" name="infra_enquiries|alt_contact_number">
+                                <input type="number" id="name" class="form-control py-2" name="trainer_enquiries|alt_contact_number">
                               </div>
                               <div class="col-md-12 form-group required">
                                 <label for="name" class="control-label">Enquiry</label> <br>
-                                <textarea rows="1" cols="50" class="form-control" name="infra_enquiries|query"></textarea>
+                                <textarea rows="1" cols="50" class="form-control" name="trainer_enquiries|query"></textarea>
                               </div>
-							  <input type="submit" class="btn btn-primary" style="background-color: #146935 !important;" value="Confirm Booking"/> 
+							  <input type="submit" class="btn btn-primary" style="background-color: #146935 !important;" value="Confirm Contact"/> 
                              </form>
                            </div>
-                           
+
                          </div>
                        </div>
                      </div>
@@ -135,20 +126,21 @@
       <div class="container">
           <div class="row">
               <div class="col-lg-6">
-                  
-                          <img src="<?php echo $response['image1']; ?>" class="img-fluid" alt="">
-                  
+                  <div class="award-text">
+                      <h3 class="pb-2">Certificates/Degrees</h3>
+                  <!--    <p>Lorem ipsum proin gravida nibh vel velit auctor aliquet. Aenean pretium sollicitudin,
+                          nascetur auci elit consequat ipsutissem niuis sed odio sit amet nibh vulputate cursus a
+                          amet.</p> -->
+                          <img src="<?php echo $response['certificate']; ?>" class="img-fluid" alt="">
+                  </div>
               </div>
               <div class="col-lg-6">
                 <div class="award-text">
-                  
-                      <img src="<?php echo $response['image2']; ?>" class="img-fluid" alt="">
-              </div>
-              </div>
-			                <div class="col-lg-6">
-                <div class="award-text">
-                  
-                      <img src="<?php echo $response['image3']; ?>" class="img-fluid" alt="">
+                  <h3 class="pb-2">Degrees</h3>
+                <!--  <p>Lorem ipsum proin gravida nibh vel velit auctor aliquet. Aenean pretium sollicitudin,
+                      nascetur auci elit consequat ipsutissem niuis sed odio sit amet nibh vulputate cursus a
+                      amet.</p> -->
+                      <img src="<?php echo $response['degree']; ?>" class="img-fluid" alt="">
               </div>
               </div>
           </div>
@@ -164,11 +156,11 @@
       <div class="container">
         <div class="row py-5">
             <div class="col-lg-6">
-              
+              <h3 class="pb-2">Video 1</h3>
               <iframe width="460" height="315" src="<?php echo $response['video_link_1'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </div>
                           <div class="col-lg-6">
-                            
+                            <h3 class="pb-2">Video 2</h3>
                             <iframe width="460" height="315" src="<?php echo $response['video_link_2'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
         </div>
@@ -187,5 +179,8 @@
 
 
      
-       <!-- Footer Section Begin -->
+<!--============================
+=            Footer            =
+=============================-->
 <?php include 'footer.php'; ?>
+

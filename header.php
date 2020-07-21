@@ -35,6 +35,8 @@ $base = basename($path);
   <link href="css/style.css" rel="stylesheet">
   <link href="css/services.css" rel="stylesheet">
   <link href="css/aboutus.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/infrastruture.css">
+  <link rel="stylesheet" href="css/trainerdetailsquery.css">
   <?php
   
   if(isset($_GET['page']))
@@ -157,6 +159,20 @@ $base = basename($path);
 								<a class="dropdown-item" href="trainer.php?page=editprofile">Edit Profile</a>
 								<a class="dropdown-item" href="trainer.php?page=editdetails">Edit Trainer Details</a>
 								<a class="dropdown-item" href="trainer.php?page=editcharges">Edit Trainer Charges</a>
+								</div>
+							</li>';
+							}
+							elseif($_SESSION['type'] == 'Infra')
+							{
+							echo'
+							<li class="nav-item dropdown dropdown-slide">
+								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Profile <span><i class="fa fa-angle-down"></i></span>
+								</a>
+								<!-- Dropdown list -->
+								<div class="dropdown-menu">
+								<a class="dropdown-item" href="infra.php?page=editprofile">Edit Profile</a>
+								<a class="dropdown-item" href="infra.php?page=editdetails">Edit Infrastructure Details</a>
 								</div>
 							</li>';
 							}

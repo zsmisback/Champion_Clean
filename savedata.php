@@ -132,7 +132,7 @@ $keypiece = explode("|", $key);
 						
 			if(is_array($_POST[$joined_string]) == true)
 			{					
-				$_POST[$joined_string] = implode(", ", $_POST[$joined_string]);			
+				$_POST[$joined_string] = implode(",", $_POST[$joined_string]);			
 			}
 			
 			

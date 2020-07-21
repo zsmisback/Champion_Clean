@@ -4,7 +4,7 @@
     <div class="container">
         <form method="post" enctype="multipart/form-data">
 <?php if(isset($error_mysql)){echo "<br>".$error_mysql;} ?>
-<input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="infra_timings|uid"/>
+
 <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="infra_details|randomid"/>
 <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="user_profilepic|uid"/>
 

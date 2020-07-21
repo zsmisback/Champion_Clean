@@ -156,7 +156,10 @@ function editprofile(){
 		header("Location:trainer.php?page=home");
 		exit;
 	}
-	include(TEMPLATE_PATH_TRAINER."editprofile.php");
+	include 'getdata.php';
+	$sql = "SELECT * FROM users WHERE users.randomid = '".$_SESSION['uid']."'";
+	$response = getall($sql);
+	include(TEMPLATE_PATH_TRAINER."editsignup.php");
 
 }
 
@@ -182,8 +185,8 @@ function editdetails(){
 		header("Location:trainer.php?page=dashboard");
 		exit;
 	}
-	//Get the trainers current details from trainer_details
-	$sql2 = "SELECT * FROM trainer_details WHERE uid = '".$_SESSION['uid']."'";
+	//Get the trainers current details from trainer_details and the user_profilepic table
+	$sql2 = "SELECT * FROM trainer_details LEFT JOIN user_profilepic ON user_profilepic.uid = trainer_details.uid WHERE trainer_details.uid = '".$_SESSION['uid']."'";
 	$response = getall($sql2);
 	include(TEMPLATE_PATH_TRAINER."editdetails.php");
 }
@@ -191,8 +194,29 @@ function editdetails(){
 //Edit Trainer Charges
 function editcharges(){
 	
-	
-	include(TEMPLATE_PATH_TRAINER."editcharges.php");
+	if(!isset($_SESSION["uid"]))
+	{
+		header("Location:trainer.php?page=home");
+		exit;
+	}
+	elseif($_SESSION["type"] !== "Trainer")
+	{
+		header("Location:trainer.php?page=home");
+		exit;
+	}
+	include 'getdata.php';
+	//Check if the trainer has filled the Charges Registration Form
+	$sql = "SELECT * FROM trainer_charges WHERE uid = '".$_SESSION['uid']."'";
+	$check = getall($sql);
+	if(empty($check))
+	{
+		header("Location:trainer.php?page=dashboard");
+		exit;
+	}
+	//Get the trainers current details from the trainer_charges table
+	$sql2 = "SELECT * FROM trainer_charges LEFT JOIN trainer_images ON trainer_images.uid = trainer_charges.uid WHERE trainer_charges.uid = '".$_SESSION['uid']."'";
+	$response = getall($sql2);
+	include(TEMPLATE_PATH_TRAINER."edittimedetails.php");
 }
 
 //Edit Trainer Details

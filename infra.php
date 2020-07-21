@@ -51,6 +51,12 @@ switch ( $page ) {
 	case 'queries':
 	  queries();
 	  break;
+	case 'editprofile':
+	   editprofile();
+	   break;
+	case 'editdetails':
+	   editdetails();
+	   break;  
 	case 'dashboard':	
 	  dashboard();
 	  break;
@@ -159,6 +165,54 @@ function queries(){
 	$response = getpagination($sql);
 	$results['post'] = $response['post'];
 	include(TEMPLATE_PATH_INFRA."query.php");
+}
+
+//Edit Infrastructure Registration Form
+function editprofile(){
+	
+	if(!isset($_SESSION["uid"]))
+	{
+		header("Location:infra.php?page=home");
+		exit;
+	}
+	elseif($_SESSION["type"] !== "Infra")
+	{
+		header("Location:infra.php?page=home");
+		exit;
+	}
+	include 'getdata.php';
+	$sql = "SELECT * FROM users WHERE users.randomid = '".$_SESSION['uid']."'";
+	$response = getall($sql);
+	include(TEMPLATE_PATH_INFRA."editsignup.php");
+
+}
+
+//Edit Infrastructure Details Form
+function editdetails(){
+	
+	if(!isset($_SESSION["uid"]))
+	{
+		header("Location:infra.php?page=home");
+		exit;
+	}
+	elseif($_SESSION["type"] !== "Infra")
+	{
+		header("Location:infra.php?page=home");
+		exit;
+	}
+	include 'getdata.php';
+	//Check if the Infrastructure has filled the Details Registration Form
+	$sql = "SELECT * FROM infra_details WHERE randomid = '".$_SESSION['uid']."'";
+	$check = getall($sql);
+	if(empty($check))
+	{
+		header("Location:infra.php?page=dashboard");
+		exit;
+	}
+	//Get the trainers current details from infra_details and the user_profilepic table
+	$sql2 = "SELECT * FROM infra_details LEFT JOIN user_profilepic ON user_profilepic.uid = infra_details.randomid WHERE infra_details.randomid = '".$_SESSION['uid']."'";
+	$response = getall($sql2);
+	include(TEMPLATE_PATH_INFRA."editdetails.php");
 }
 
 function dashboard()

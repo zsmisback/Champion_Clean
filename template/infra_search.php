@@ -151,9 +151,9 @@ echo '
 								{
 									echo'<li class="list-inline-item"><i class="fa fa-flag-checkered" aria-hidden="true"></i> '.$sport.'</li>';
 								}
-								echo'<li class="list-inline-item"><a href=""><i class="fa fa-calendar"></i> 12th July</a></li>									
+								echo'									
 								</ul>								
-								<p class="pr-5"></p>
+								<p class="pr-5">'.$infra['about_us'].'</p>
 							</div>
 						</div>';
 						/*<div class="col-lg-3 align-self-center">
