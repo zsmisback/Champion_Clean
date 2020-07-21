@@ -153,4 +153,54 @@
 </div>
 
 </section>
+
+<!--Table-->
+
+
+<div class="container-fluid" style="">
+  <h2 class=" pb-4" style="font-size: 28px;">Timings</h2>
+             
+  <table class="table table-responsive mb-4">
+    <thead>
+      <tr class="border">
+		<th>Time</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wedndesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+		<th>Sunday</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="border">
+        <td>From</td>
+      <td><?php echo $response['monday_from']; ?></td>
+      <td><?php echo $response['tuesday_from']; ?></td>
+	  <td><?php echo $response['wednesday_from']; ?></td>
+      <td><?php echo $response['thursday_from']; ?></td>
+      <td><?php echo $response['friday_from']; ?></td>
+      <td><?php echo $response['saturday_from']; ?></td>
+	  <td><?php echo $response['sunday_from']; ?></td>
+     
+       
+      </tr>
+      <tr class="border">
+        <td>To</td>
+      <td><?php echo $response['monday_to']; ?></td>
+      <td><?php echo $response['tuesday_to']; ?></td>
+	  <td><?php echo $response['wednesday_to']; ?></td>
+      <td><?php echo $response['thursday_to']; ?></td>
+      <td><?php echo $response['friday_to']; ?></td>
+      <td><?php echo $response['saturday_to']; ?></td>
+	  <td><?php echo $response['sunday_to']; ?></td>
+       
+      </tr>
+      
+     
+     
+    </tbody>
+  </table>
+</div>
 <?php include 'footer.php'; ?>

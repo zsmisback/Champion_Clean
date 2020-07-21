@@ -2,7 +2,16 @@
 
 <section class="search-banner text-white py-3 form-arka-plan" id="search-banner"style="background: url('images/home/sportsbg1.jpg');">
     <div class="container py-5 my-5">
+           <nav>
+          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Infrastruture</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Trainers</a>
         
+            
+          </div>
+        </nav>
+		<div class="tab-content" id="nav-tabContent">
+		<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
         <div class="row">
             <div class="col-md-12">
 			<form action="index.php?page=search" method="get">
@@ -52,7 +61,7 @@
                             </div>  
  
 								
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                              <button type="submit" class="btn btn-warning  pl-5 pr-5">Go !</button>
                             </div>
                         </div>                        
@@ -61,7 +70,9 @@
 				</form>
             </div>
         </div>
-		        <div class="row">
+		</div>
+		<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+		    <div class="row">
             <div class="col-md-12">
 			<form action="index.php?page=infra" method="get">
 			<input type="hidden" name="page" value="infra"/>
@@ -73,7 +84,7 @@
             </div>
         </div>
                         <div class="row">	
-                           <div class="col-md-3">
+                           <div class="col-md-5">
                                <div class="form-group">									
                                  <select class="border w-100 form-control" placeholder="" name="sport">
 									<option value="cricket">Cricket</option>
@@ -83,7 +94,7 @@
 								</select>
                                 </div>
                             </div> 						
-                            <div class="col-md-3">
+                            <div class="col-md-5">
                                 <div class="form-group">									
                                     <select class="border w-100 form-control" placeholder="" name="city">
 									<?php
@@ -107,7 +118,8 @@
 				</form>
             </div>
         </div>
-		<br><br><br><br>
+		</div>
+		</div>
     </div>
 </section>
 

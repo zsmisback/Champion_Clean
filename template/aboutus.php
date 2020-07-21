@@ -49,7 +49,7 @@
 
 
 
-<!--
+
 <section id="services" class="current">
   <div class="services-top">
       <div class="container bootstrap snippet">
@@ -194,7 +194,7 @@
   </div>
 </section>
 
-<section class="section bg-gray">
+<!--<section class="section bg-gray">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
@@ -228,5 +228,5 @@
             </div>
         </div>
     </div>
-</section>-->
+</section> -->
 <?php include("footer.php"); ?>

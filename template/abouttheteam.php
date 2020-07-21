@@ -21,7 +21,7 @@
 <!-- ********* <3 ********* FIVE ********* <3 ********* -->
     <ul class="five">
         <li class="transition">
-          <div class="wrapper"> <img class="more-about" src="images/plus.png">
+          <div class="wrapper"><!-- <img class="more-about" src="images/plus.png"> -->
             <ul class="social">
               <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
               <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
@@ -37,7 +37,7 @@
             </span> </div>
         </li>
         <li class="transition">
-          <div class="wrapper"> <img class="more-about" src="images/plus.png">
+          <div class="wrapper"><!-- <img class="more-about" src="images/plus.png"> -->
             <ul class="social">
               <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
               <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
@@ -53,7 +53,7 @@
             </span> </div>
         </li>
         <li class="transition">
-          <div class="wrapper"> <img class="more-about" src="images/plus.png">
+          <div class="wrapper"><!-- <img class="more-about" src="images/plus.png"> -->
             <ul class="social">
               <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
               <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
@@ -69,7 +69,7 @@
             </span> </div>
         </li>
         <li class="transition">
-          <div class="wrapper"> <img class="more-about" src="images/plus.png">
+          <div class="wrapper"><!-- <img class="more-about" src="images/plus.png"> -->
             <ul class="social">
               <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
               <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
@@ -86,7 +86,7 @@
         </li>
 
         <li class="transition mt-5">
-            <div class="wrapper"> <img class="more-about" src="images/plus.png">
+            <div class="wrapper"><!-- <img class="more-about" src="images/plus.png"> -->
               <ul class="social">
                 <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
                 <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
@@ -102,7 +102,7 @@
               </span> </div>
           </li>
           <li class="transition">
-            <div class="wrapper"> <img class="more-about" src="images/plus.png">
+            <div class="wrapper"><!-- <img class="more-about" src="images/plus.png"> -->
               <ul class="social">
                 <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
                 <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
@@ -118,7 +118,7 @@
               </span> </div>
           </li>
           <li class="transition">
-            <div class="wrapper"> <img class="more-about" src="images/plus.png">
+            <div class="wrapper"><!-- <img class="more-about" src="images/plus.png"> -->
               <ul class="social">
                 <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
                 <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
@@ -134,7 +134,7 @@
               </span> </div>
           </li>
           <li class="transition">
-            <div class="wrapper"> <img class="more-about" src="images/plus.png">
+            <div class="wrapper"><!-- <img class="more-about" src="images/plus.png"> -->
               <ul class="social">
                 <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
                 <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
@@ -152,7 +152,7 @@
 
 
           <li class="transition mt-5">
-            <div class="wrapper"> <img class="more-about" src="images/plus.png">
+            <div class="wrapper"><!-- <img class="more-about" src="images/plus.png"> -->
               <ul class="social">
                 <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
                 <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
@@ -168,7 +168,7 @@
               </span> </div>
           </li>
           <li class="transition">
-            <div class="wrapper"> <img class="more-about" src="images/plus.png">
+            <div class="wrapper"><!-- <img class="more-about" src="images/plus.png"> -->
               <ul class="social">
                 <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
                 <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
@@ -184,7 +184,7 @@
               </span> </div>
           </li>
           <li class="transition">
-            <div class="wrapper"> <img class="more-about" src="images/plus.png">
+            <div class="wrapper"><!-- <img class="more-about" src="images/plus.png"> -->
               <ul class="social">
                 <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
                 <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
@@ -200,7 +200,7 @@
               </span> </div>
           </li>
           <li class="transition">
-            <div class="wrapper"> <img class="more-about" src="images/plus.png">
+            <div class="wrapper"><!-- <img class="more-about" src="images/plus.png"> -->
               <ul class="social">
                 <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
                 <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
