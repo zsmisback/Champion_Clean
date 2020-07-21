@@ -3,7 +3,7 @@
 <section class="login py-5 border-top-1">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-8 align-item-center">
+            <div class="col-lg-12 col-md-10 align-item-center">
                 <div class="border">
                     <h3 class="bg-gray p-4">Edit Additional Details</h3>
 					<?php if(isset($response["error"])){	

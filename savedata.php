@@ -162,7 +162,8 @@ $keypiece = explode("|", $key);
 		    $sql = "INSERT INTO ".$tablename." (".$variable_string.")
 				VALUES (".$value_string.")";
 	
-				if ($conn->query($sql) === TRUE) {								
+				if ($conn->query($sql) === TRUE) {	
+					
 					//header('Location: '.$result['redirect_to']);
 					//echo "New record created successfully";
 				} else {

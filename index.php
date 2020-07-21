@@ -127,6 +127,7 @@ function trainerdetails(){
 		exit;
 	}
 	$results = array();	
+	$result['redirect_to'] = "index.php?page=trainerdetails&id=".$_GET['id'];
 	include("getdata.php");
 	include("savedata.php");
 	include("getpagination.php");
@@ -138,6 +139,7 @@ function trainerdetails(){
 	$results = getpagination($sql2);
 	$results['booked'] = $results['total_records'];
 	}
+	
 	
 	include(TEMPLATE_PATH."trainerdetails.php");
 }
@@ -249,7 +251,7 @@ function infradetails(){
 		exit;
 	}
 	if(isset($_GET['sport']))
-	{
+	{	$result['redirect_to'] = "index.php?page=infradetails&id=".$_GET['id']."&sport=".$_GET['sport'];
 		include("getdata.php");
 	    include("getarraydata.php");
 		include("getpagination.php");

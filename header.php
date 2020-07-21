@@ -36,7 +36,7 @@ $base = basename($path);
   <link href="css/services.css" rel="stylesheet">
   <link href="css/aboutus.css" rel="stylesheet">
   <link rel="stylesheet" href="css/infrastruture.css">
-
+  <link rel="stylesheet" href="css/trainerdetailsquery.css">
   <?php
   
   if(isset($_GET['page']))
@@ -45,14 +45,7 @@ $base = basename($path);
   {
 	echo'<link href="css/team.css" rel="stylesheet">';
   }
-  if($_GET['page'] == 'home')
-  {
-	  echo'<link rel="stylesheet" href="css/search.css">';
-  }
-  if($_GET['page'] == 'trainerdetails')
-  {
-	  echo'<link rel="stylesheet" href="css/trainerdetailsquery.css">';
-  }
+
   }
   ?>
 
