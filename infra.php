@@ -54,6 +54,9 @@ switch ( $page ) {
 	case 'editprofile':
 	   editprofile();
 	   break;
+	case 'editpassword':
+	   editpassword();
+	   break;   
 	case 'editdetails':
 	   editdetails();
 	   break;  
@@ -184,6 +187,24 @@ function editprofile(){
 	$sql = "SELECT * FROM users WHERE users.randomid = '".$_SESSION['uid']."'";
 	$response = getall($sql);
 	include(TEMPLATE_PATH_INFRA."editsignup.php");
+
+}
+
+//Edit Infrastructure Password
+function editpassword(){
+	
+	if(!isset($_SESSION["uid"]))
+	{
+		header("Location:infra.php?page=home");
+		exit;
+	}
+	elseif($_SESSION["type"] !== "Infra")
+	{
+		header("Location:infra.php?page=home");
+		exit;
+	}
+
+	include(TEMPLATE_PATH_INFRA."editpassword.php");
 
 }
 

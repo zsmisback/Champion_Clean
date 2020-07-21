@@ -51,6 +51,9 @@ switch ( $page ) {
 	case 'editprofile':
 	   editprofile();
 	   break;
+	case 'editpassword':
+		editpassword();
+		break;
 	case 'editdetails':
 	   editdetails();
 	   break;
@@ -163,6 +166,23 @@ function editprofile(){
 
 }
 
+//Edit Trainers Password
+function editpassword(){
+	
+	if(!isset($_SESSION["uid"]))
+	{
+		header("Location:trainer.php?page=home");
+		exit;
+	}
+	elseif($_SESSION["type"] !== "Trainer")
+	{
+		header("Location:trainer.php?page=home");
+		exit;
+	}
+
+	include(TEMPLATE_PATH_TRAINER."editpassword.php");
+
+}
 //Edit Trainers Details Form
 function editdetails(){
 	
