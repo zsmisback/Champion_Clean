@@ -135,7 +135,7 @@
 			</p>
 			<p>
 			All those who have the talent but lack some of the necessities such as, the perfect infrastructure, the correct guidance, the equipment required, or even the motivation to leap, we are here to provide you with all that is required to be a successful athlete. It is a platform to make your path to success as easy as possible from our end.</p>
-		    <button type="button" class="btn btn-success">Let's Know More</button>
+		    <a href="?page=aboutus"><button type="button" class="btn btn-success">Let's Know More</button></a>
 
 		</div>
 		<div class="col-md-6 mt-3">
