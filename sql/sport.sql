@@ -1,0 +1,781 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 21, 2020 at 05:58 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `sport`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `basketballform_info`
+--
+
+CREATE TABLE `basketballform_info` (
+  `id` int(255) NOT NULL,
+  `ground_uid` varchar(50) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `court_length` varchar(255) NOT NULL,
+  `court_width` varchar(255) NOT NULL,
+  `court_rim` varchar(255) NOT NULL,
+  `center_circle` varchar(255) NOT NULL,
+  `nocharge_zone` varchar(255) NOT NULL,
+  `3point` varchar(255) NOT NULL,
+  `3pointcor` varchar(255) NOT NULL,
+  `the_key` varchar(255) NOT NULL,
+  `freethrowline` varchar(255) NOT NULL,
+  `summary` blob NOT NULL,
+  `features` varchar(255) NOT NULL,
+  `rules` varchar(255) NOT NULL,
+  `seats` varchar(50) NOT NULL,
+  `locker_room` varchar(50) NOT NULL,
+  `showers` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `basketballform_info`
+--
+
+INSERT INTO `basketballform_info` (`id`, `ground_uid`, `uid`, `court_length`, `court_width`, `court_rim`, `center_circle`, `nocharge_zone`, `3point`, `3pointcor`, `the_key`, `freethrowline`, `summary`, `features`, `rules`, `seats`, `locker_room`, `showers`) VALUES
+(7, 'YuYJz6OfVr_basketball', '0', '23', '32', '32', '32', '32', '424', '424', '25', '455', 0x666a6e6d6577666a722066696e7269666e726569666e72656920666e697265666e666a6e6d6577666a722066696e7269666e726569666e72656920666e697265666e666a6e6d6577666a722066696e7269666e726569666e72656920666e697265666e666a6e6d6577666a722066696e7269666e726569666e72656920666e697265666e666a6e6d6577666a722066696e7269666e726569666e72656920666e697265666e666a6e6d6577666a722066696e7269666e726569666e72656920666e697265666e666a6e6d6577666a722066696e7269666e726569666e72656920666e697265666e666a6e6d6577666a722066696e7269666e726569666e72656920666e697265666e666a6e6d6577666a722066696e7269666e726569666e72656920666e697265666e666a6e6d6577666a722066696e7269666e726569666e72656920666e697265666e666a6e6d6577666a722066696e7269666e726569666e72656920666e697265666e, 'fjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnre', 'fjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnrei fnirefnfjnmewfjr finrifnreifnre', 'seats', 'locker_room', 'showers'),
+(8, '2xHNrX4TFa_basketball', 'raJ2XRcheH', '34', '34', '34', '43', '32', '3432', '321', '32', '41', 0x4261736b657462616c6c, 'Cool', 'Yea', 'seats', '', 'showers');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contactus`
+--
+
+CREATE TABLE `contactus` (
+  `id` int(11) NOT NULL,
+  `randomid` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` varchar(550) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contactus`
+--
+
+INSERT INTO `contactus` (`id`, `randomid`, `name`, `email`, `message`) VALUES
+(1, 'rKHT0z0DgT', 'ds', 'coolzsm36@gmails.com', ''),
+(2, '6Ypu4aOWmk', 'ds', 'coolzsm36@gmails.com', ''),
+(3, 'U05e2hcjHL', 'Zama', 'coolzama36@gmail.com', 'dsd'),
+(4, 'v4yeqHJLAj', 'Zama', 'coolzama36@gmail.com', 'ds');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cricketform_info`
+--
+
+CREATE TABLE `cricketform_info` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(15) NOT NULL,
+  `ground_uid` varchar(100) NOT NULL,
+  `cricket_ground_size` varchar(255) NOT NULL,
+  `cricket_pitch_size` varchar(255) NOT NULL,
+  `seats` varchar(255) NOT NULL,
+  `locker_room` varchar(255) NOT NULL,
+  `showers` varchar(255) NOT NULL,
+  `summary` text NOT NULL,
+  `features` text NOT NULL,
+  `rules` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cricketform_info`
+--
+
+INSERT INTO `cricketform_info` (`id`, `uid`, `ground_uid`, `cricket_ground_size`, `cricket_pitch_size`, `seats`, `locker_room`, `showers`, `summary`, `features`, `rules`) VALUES
+(14, 'gvz2it6mOj', 'oWVMMjkuso_cricket', '23', '3', 'seats', '', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiatLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat', '<p>fke rffmfernmfrjnke nfkree fnrekjfkre nfkrej fejrk fkjre ernf remf efmner fm fmnre&nbsp;</p>', '<p>fmfernmfrjnke nfkree fnrekjfkre nfkrej fejrk fkjre ernf remf efmner fm fmnre&nbsp;fmfernmfrjnke nfkree fnrekjfkre nfkrej fejrk fkjre ernf remf efmner fm fmnre&nbsp;fmfernmfrjnke nfkree fnrekjfkre nfkrej fejrk fkjre ernf remf efmner fm fmnre&nbsp;fmfern'),
+(16, 'firewfmo', 'VzSYGKOBwc_cricket', '', '', '', '', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat', '', ''),
+(17, 'iXpBVCPNW8', '5vtK8Wnl5a_cricket', '65', '52', 'seats', 'locker_room', '', 'Pretty big', '<ul><li>Bats</li><li>Balls</li></ul>', '<ul><li>Nah</li><li>Blah</li></ul>');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `event_id` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `location` varchar(550) NOT NULL,
+  `start_date` date NOT NULL,
+  `start_time` time NOT NULL,
+  `end_date` date NOT NULL,
+  `end_time` time NOT NULL,
+  `description` varchar(550) NOT NULL,
+  `previous_events` varchar(255) NOT NULL,
+  `sponsors` varchar(255) NOT NULL,
+  `co_host` varchar(255) NOT NULL,
+  `footfall` varchar(255) NOT NULL,
+  `sports` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `entry_name` varchar(255) NOT NULL,
+  `entry_start_date` date NOT NULL,
+  `entry_start_time` time NOT NULL,
+  `entry_end_date` date NOT NULL,
+  `entry_end_time` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `uid`, `event_id`, `name`, `location`, `start_date`, `start_time`, `end_date`, `end_time`, `description`, `previous_events`, `sponsors`, `co_host`, `footfall`, `sports`, `image`, `entry_name`, `entry_start_date`, `entry_start_time`, `entry_end_date`, `entry_end_time`) VALUES
+(1, '0', '', 'asd', 'dsad', '2020-07-11', '13:21:00', '2020-07-11', '15:21:00', 'dsad', 'dsad', '', 'dsad', 'dsad', 'dsad', 'wp3205211.png', 'dsad', '2020-07-17', '15:13:00', '2020-07-08', '16:15:00'),
+(2, 'RWsnYpPELz', '1GxvXJHsIw', 'Cricket', 'dsad', '2020-07-11', '15:24:00', '2020-07-17', '02:24:00', 'dsd', 'dsad', 'dsa,dsad,dsa,d,dsa', 'he', 'dsadw', 'dsadsa', '', 'Hey', '2020-07-11', '15:23:00', '2020-07-18', '04:22:00'),
+(3, 'RWsnYpPELz', 'dhXESX8AUY', 'sad', 'dsadsa', '2020-07-11', '15:01:00', '2020-07-18', '02:04:00', 'dsad', 'sd', 'sda', 'dsad', 'dsad', 'dsad,dasd,dasd,dsad', '', 'dsad', '2020-07-11', '15:02:00', '2020-08-01', '03:24:00'),
+(4, 'RWsnYpPELz', 'GecB13KOej', 'dsds', 'dsds', '2020-07-17', '15:23:00', '1221-03-25', '02:32:00', 'dsds', 'ds', 'ds', 'ds', 'dsad', 'dsad', 'uploads/GecB13KOej/256b768a2445ae48cdbc76883e6058ab.png', 'dsds', '2020-07-18', '03:02:00', '2020-08-01', '14:33:00'),
+(5, 'RWsnYpPELz', '1rtllJYTjE', 'HGey', 'dsad', '2020-03-14', '15:02:00', '1962-03-04', '04:24:00', 'dsd', 'dsds', 'dsa,dsad,dsa,d,dsa', 'ds', 'dsd', 'dsds', 'uploads/1rtllJYTjE/9a6d767d8cec55d4bc4340a47319eab3.png', 'dsa', '2421-03-22', '03:23:00', '2020-03-14', '03:24:00'),
+(6, 'RWsnYpPELz', '7LO7b5vkM0', 'dsds', 'dsds', '3322-03-22', '03:23:00', '2020-03-13', '03:23:00', 'ds', 'dsa', 'ds', 'ds', 'dsadw', 'dsad,dasd,dasd,dsad', 'uploads/7LO7b5vkM0/fca6e38c07b927bd4ee7a0ece7fe03f2.jpg', 'dsd', '2020-02-15', '03:23:00', '2020-03-06', '04:22:00'),
+(7, 'RWsnYpPELz', 'gNUo3aTLhx', 'dsd', 'dsd', '2111-01-18', '03:22:00', '2112-03-16', '03:23:00', 'ds', 'ds', 'ds', 'ds', 'ds', 'ds', 'uploads/gNUo3aTLhx/46530630057f7ed98fca39732eb217c0.jpg', 'ds', '1212-03-23', '03:23:00', '1212-03-23', '03:23:00'),
+(8, 'RWsnYpPELz', 'e6FS2E14N8', 'ds', 'ds', '2133-03-23', '03:23:00', '1322-03-23', '03:23:00', 'dsa', 'dsa', 'dsa', 'dsa', 'dsa', 'dsa', 'uploads/e6FS2E14N8/188a24138ce9e95cc601c54207f8a0e1.jpg', 'dsa', '2321-03-23', '03:23:00', '1312-02-01', '03:23:00'),
+(9, 'SHdnzJjlNO', 'CdpVPU2w0K', 'Hey', 'here', '1211-02-21', '14:21:00', '2312-02-21', '03:22:00', 'yea', 'yest', 'test', 'test', '21', 'football,basketball', 'uploads/CdpVPU2w0K/064e536f7bcc8decbc48c2a3573be058.png', 'ye', '2020-07-16', '14:12:00', '2020-07-17', '02:01:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `footballform_info`
+--
+
+CREATE TABLE `footballform_info` (
+  `id` int(255) NOT NULL,
+  `uid` varchar(150) NOT NULL,
+  `ground_uid` varchar(50) NOT NULL,
+  `field_length` varchar(255) NOT NULL,
+  `field_width` varchar(255) NOT NULL,
+  `goal_length` varchar(255) NOT NULL,
+  `goal_width` varchar(255) NOT NULL,
+  `penalty_length` varchar(255) NOT NULL,
+  `penalty_width` varchar(255) NOT NULL,
+  `summary` blob NOT NULL,
+  `features` varchar(255) NOT NULL,
+  `rules` varchar(255) NOT NULL,
+  `seats` varchar(50) NOT NULL,
+  `locker_room` varchar(50) NOT NULL,
+  `showers` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `footballform_info`
+--
+
+INSERT INTO `footballform_info` (`id`, `uid`, `ground_uid`, `field_length`, `field_width`, `goal_length`, `goal_width`, `penalty_length`, `penalty_width`, `summary`, `features`, `rules`, `seats`, `locker_room`, `showers`) VALUES
+(2, 'kf2swvghiL', 'SjdT5dTlaN_football', '42', '52', '42', '32', '232', '32', 0x647361, 'dsa', 'dsa', 'seats', 'locker_room', 'showers'),
+(3, 'iXpBVCPNW8', 'qsoeVwgLKt_football', '755', '223', '321', '321', '321', '321', 0x796561, 'Hell no', 'Nope,go all out', 'seats', 'locker_room', 'showers');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `infra_details`
+--
+
+CREATE TABLE `infra_details` (
+  `id` int(11) NOT NULL,
+  `randomid` varchar(15) NOT NULL,
+  `pincode` int(11) NOT NULL,
+  `add_contact_no` varchar(11) NOT NULL,
+  `address` varchar(500) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `about_us` text NOT NULL,
+  `sports` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `infra_details`
+--
+
+INSERT INTO `infra_details` (`id`, `randomid`, `pincode`, `add_contact_no`, `address`, `city`, `about_us`, `sports`) VALUES
+(16, 'kf2swvghiL', 422212, '9521235212', 'Test', 'MUMBAI', 'Yep', 'football'),
+(18, 'iXpBVCPNW8', 422212, '9521235212', 'Test', 'THANE', 'Were just a big team', 'cricket, football'),
+(19, 'raJ2XRcheH', 400012, '9521235212', 'Test', 'MUMBAI', 'Heyh', 'basketball');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `infra_enquiries`
+--
+
+CREATE TABLE `infra_enquiries` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `contact_number` bigint(20) NOT NULL,
+  `alt_contact_number` bigint(20) NOT NULL,
+  `query` varchar(255) NOT NULL,
+  `sports` varchar(255) NOT NULL,
+  `enquiry_for` varchar(255) NOT NULL,
+  `enquiry_by` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `infra_enquiries`
+--
+
+INSERT INTO `infra_enquiries` (`id`, `name`, `email`, `contact_number`, `alt_contact_number`, `query`, `sports`, `enquiry_for`, `enquiry_by`) VALUES
+(39, 'Zama', 'coolzama36@gmail.com12', 9527349671, 2321212121, 'Test', 'cricket', 'iXpBVCPNW8', '0McAWBfUU9');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `infra_images`
+--
+
+CREATE TABLE `infra_images` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `ground_uid` varchar(50) NOT NULL,
+  `image1` varchar(500) NOT NULL,
+  `image2` varchar(500) NOT NULL,
+  `image3` varchar(500) NOT NULL,
+  `image4` varchar(500) NOT NULL,
+  `image5` varchar(500) NOT NULL,
+  `image6` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `infra_images`
+--
+
+INSERT INTO `infra_images` (`id`, `uid`, `ground_uid`, `image1`, `image2`, `image3`, `image4`, `image5`, `image6`) VALUES
+(26, '', 'p3eKtQsNFS_cricket', 'iVBORw0KGgoAAAANSUhEUgAABDwAAAGFCAIAAACe9XSuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAFGeSURBVHhe7d07etW62sDxlW8sgWI/jCBnBAkNFS1dKElDR0lHk5Sko6WigYyAjGA/FJvMJZ8v6yLJul9syf6nOmdjW9JPspdf63b2/Py84w8BBBBAAAEEEEAAAQQQqFXg/2rNGPlCAAEEEEAAAQQQQAABBHoBghbaAQIIIIAAAggggAACCFQtQNBSdfWQOQQQQAABBBBAAAEEECBooQ0ggAACCCCAAAIIIIBA1QIELVVXD5lDAAEEEEAAAQQQQAABghbaAAIIIIAAAggggAACCFQtQNBSdfWQOQQQQAABBBBAAAEEECBooQ0ggAACCCCAAAIIIIBA1QIELVVXD5lDAAEEEEAAAQQQQAABghbaAAIIIIAAAggggAACCFQtQNBS', 'uploads/p3eKtQsNFS_cricket/f5207fd3670e30f569143a6a9ad73766.jpg', '', '', '', ''),
+(27, '', 'FRrELMS1KL_football', 'uploads/FRrELMS1KL_football/e56d6870d088b6067155539fe3c3c94a.jpg', 'uploads/FRrELMS1KL_football/f43500ee9d4cffb97f80dd65866441cb.jpg', '', '', '', ''),
+(29, '', 'YuYJz6OfVr_basketball', 'uploads/YuYJz6OfVr_basketball/20b4af8517a52a9888003083ff996862.jpg', 'uploads/YuYJz6OfVr_basketball/8e7ffc8194d0805c9a2cd18e7f3ea9ce.jpg', '', 'uploads/YuYJz6OfVr_basketball/618ca44f5905f355f552f8ac87b47d3d.jpg', '', 'uploads/YuYJz6OfVr_basketball/7f2198ec23c40f350fb9f52bfda28c8e.jpg'),
+(30, '', 'SjdT5dTlaN_football', 'uploads/SjdT5dTlaN_football/e8021d42588c3c3b681f6377797b0fb8.jpg', 'uploads/SjdT5dTlaN_football/e1e6ac757bf9eb997d41a11cb37c6e8b.jpg', 'uploads/SjdT5dTlaN_football/7a6a9eab151ead97310555e79c67d74f.jpg', '', '', ''),
+(31, 'iXpBVCPNW8', '5vtK8Wnl5a_cricket', 'uploads/5vtK8Wnl5a_cricket/7cf4457b648b4d473d791685b0f86dee.jpg', 'uploads/5vtK8Wnl5a_cricket/442bff076ace45420dd2cf1dbe198bc3.jpg', 'uploads/5vtK8Wnl5a_cricket/5f93ebdcbd323dd998110c261dd60c47.jpg', '', '', ''),
+(32, 'iXpBVCPNW8', 'qsoeVwgLKt_football', 'uploads/qsoeVwgLKt_football/1a3731ae77689e692c31b47e77d50c97.jpg', 'uploads/qsoeVwgLKt_football/5423d1489d0436f390445b28c87ab525.png', 'uploads/qsoeVwgLKt_football/a7389f27e47356b505059c2d5fe05639.jpg', '', '', ''),
+(33, 'raJ2XRcheH', '2xHNrX4TFa_basketball', 'uploads/2xHNrX4TFa_basketball/5ab81663b8f568f4c37f5d948ab982f7.png', 'uploads/2xHNrX4TFa_basketball/e0922433374daa66edb694f094f19c6f.jpg', 'uploads/2xHNrX4TFa_basketball/2c1680b8f0489ecf80428c875fce3b16.jpg', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `infra_timings`
+--
+
+CREATE TABLE `infra_timings` (
+  `id` int(11) NOT NULL,
+  `ground_uid` varchar(100) NOT NULL,
+  `monday_from` varchar(255) NOT NULL,
+  `monday_to` varchar(255) NOT NULL,
+  `tuesday_from` varchar(255) NOT NULL,
+  `tuesday_to` varchar(255) NOT NULL,
+  `wednesday_from` varchar(255) NOT NULL,
+  `wednesday_to` varchar(255) NOT NULL,
+  `thursday_from` varchar(255) NOT NULL,
+  `thursday_to` varchar(255) NOT NULL,
+  `friday_from` varchar(255) NOT NULL,
+  `friday_to` varchar(255) NOT NULL,
+  `saturday_from` varchar(255) NOT NULL,
+  `saturday_to` varchar(255) NOT NULL,
+  `sunday_from` varchar(255) NOT NULL,
+  `sunday_to` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `infra_timings`
+--
+
+INSERT INTO `infra_timings` (`id`, `ground_uid`, `monday_from`, `monday_to`, `tuesday_from`, `tuesday_to`, `wednesday_from`, `wednesday_to`, `thursday_from`, `thursday_to`, `friday_from`, `friday_to`, `saturday_from`, `saturday_to`, `sunday_from`, `sunday_to`) VALUES
+(71, 'FRrELMS1KL_football', '13:18', '14:21', '', '', '14:22', '', '', '15:17', '', '', '', '', '', ''),
+(77, 'YuYJz6OfVr_basketball', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(78, 'SjdT5dTlaN_football', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(82, '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(83, '5vtK8Wnl5a_cricket', '14:04', '02:01', '15:02', '04:02', '04:02', '14:03', '02:01', '14:04', '04:02', '17:02', '04:02', '16:02', '06:02', '17:02'),
+(84, 'qsoeVwgLKt_football', '04:02', '16:02', '04:02', '17:02', '04:02', '17:02', '02:04', '16:02', '04:02', '13:02', '04:05', '15:02', '03:02', '17:02'),
+(91, '2xHNrX4TFa_basketball', '04:02', '16:02', '02:02', '14:04', '02:01', '17:01', '05:02', '16:02', '05:02', '13:04', '05:07', '14:09', '14:09', '14:21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trainer_charges`
+--
+
+CREATE TABLE `trainer_charges` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(15) NOT NULL,
+  `hourly_charges` decimal(10,0) NOT NULL,
+  `height` int(11) NOT NULL,
+  `weight` int(11) NOT NULL,
+  `training_hours` varchar(255) NOT NULL,
+  `question_1` int(11) NOT NULL,
+  `question_2` int(11) NOT NULL,
+  `question_3` int(11) NOT NULL,
+  `question_4` int(11) NOT NULL,
+  `question_5` int(11) NOT NULL,
+  `video_link_1` varchar(255) NOT NULL,
+  `video_link_2` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `trainer_charges`
+--
+
+INSERT INTO `trainer_charges` (`id`, `uid`, `hourly_charges`, `height`, `weight`, `training_hours`, `question_1`, `question_2`, `question_3`, `question_4`, `question_5`, `video_link_1`, `video_link_2`) VALUES
+(9, 'Im8P8f55Qw', '12', 165, 67, '3-4hrs', 1, 1, 1, 1, 1, 'https://www.youtube.com/embed/ZvIeDLSmt5I', 'https://www.youtube.com/embed/WwX5fuKvHH8'),
+(10, '1X2UbGjB4o', '500', 165, 65, '4+hrs', 1, 1, 1, 1, 1, 'https://www.youtube.com/embed/EXGZaNU8Uy8', 'https://www.youtube.com/embed/EXGZaNU8Uy8'),
+(11, '8CgCGMS3bh', '521', 165, 65, '4+hrs', 1, 0, 0, 1, 1, 'https://www.youtube.com/embed/daqdbn2ok5E', 'https://www.youtube.com/embed/daqdbn2ok5E'),
+(12, 'kZ66yrR8HI', '600', 169, 65, '3-4hrs', 1, 0, 1, 1, 0, 'https://www.youtube.com/embed/1QCAHHFxMU4', 'https://www.youtube.com/embed/MmjdPOZ6YyU');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trainer_details`
+--
+
+CREATE TABLE `trainer_details` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(15) NOT NULL,
+  `pincode` int(11) NOT NULL,
+  `add_contact_no` varchar(11) NOT NULL,
+  `address` varchar(500) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `about_us` text NOT NULL,
+  `sports` text NOT NULL,
+  `type` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `trainer_details`
+--
+
+INSERT INTO `trainer_details` (`id`, `uid`, `pincode`, `add_contact_no`, `address`, `city`, `about_us`, `sports`, `type`) VALUES
+(33, 'Im8P8f55Qw', 400012, '9527349678', 'Test address', 'THANE', 'Hey', 'cricket, football', 'Blogger'),
+(34, '1X2UbGjB4o', 442212, '9527349678', 'Test', 'MUMBAI', 'hey', 'cricket,football', 'Fitness'),
+(35, '8CgCGMS3bh', 442212, '9527349678', 'Test', 'MUMBAI', 'Hey', 'cricket, football', 'Referee'),
+(36, 'kZ66yrR8HI', 442212, '9527349678', 'Test address', 'MUMBAI', 'Test', 'football,basketball', 'Commentator');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trainer_enquiries`
+--
+
+CREATE TABLE `trainer_enquiries` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `contact_number` bigint(20) NOT NULL,
+  `alt_contact_number` bigint(20) NOT NULL,
+  `query` varchar(255) NOT NULL,
+  `enquiry_for` varchar(255) NOT NULL,
+  `enquiry_by` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `trainer_enquiries`
+--
+
+INSERT INTO `trainer_enquiries` (`id`, `name`, `email`, `contact_number`, `alt_contact_number`, `query`, `enquiry_for`, `enquiry_by`) VALUES
+(32, 'Zama', 'coolzama36@gmail.com12', 9527349671, 9242122123, 'Test', '1X2UbGjB4o', '0McAWBfUU9');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trainer_images`
+--
+
+CREATE TABLE `trainer_images` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `randomid` varchar(255) NOT NULL,
+  `certificate` varchar(255) NOT NULL,
+  `degree` varchar(255) NOT NULL,
+  `aadhar` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `trainer_images`
+--
+
+INSERT INTO `trainer_images` (`id`, `uid`, `randomid`, `certificate`, `degree`, `aadhar`) VALUES
+(5, 'Im8P8f55Qw', 'oXVZEjC13v', 'uploads/Z9wUWW30lB_certificate/0cb9799118a7e55d14d85cedb22a9155.jpg', 'uploads/5Sq7ZYoCbg_degree/f8c95c40e8a005cfc6c65f38524d7e02.jpg', 'uploads/Wtv90LOSHy_aadhar/30f8e36409b2cde4ad1e1daf50b272e1.png'),
+(6, '1X2UbGjB4o', '4xbyEIgCje', 'uploads/X5FV3WpYrt_certificate/29a3daa5e29755f85c4e83f3b67a22b7.jpg', 'uploads/gmKI11aU0h_degree/54f2dbd93f01cc975681b55efe71ffd3.png', 'uploads/xvaXryzIQ6_aadhar/ae2715f24968ff56c36bb84d7d617769.jpg'),
+(7, '8CgCGMS3bh', 'tyj7Rvz98Y', 'uploads/0pe67vZbZh_certificate/40269d8f8d12a829d8ad349fedb132a8.png', 'uploads/xT86YMUSx3_degree/e8676939603481397cbdc8e20f65b186.jpg', 'uploads/S9S2O27zfY_aadhar/093fe7f5053e8a7596c3f1c1261a040a.jpg'),
+(8, 'kZ66yrR8HI', 'amgAaZ5vTI', 'uploads/eVbAIb9Ky7_certificate/8422d099a668907dfdea58c101cb3dea.jpg', 'uploads/ro5sWT6IeE_degree/721206bfc5a7e07dc81fecafe7779bb1.png', 'uploads/3XWROdbXMi_aadhar/e80becd8cf5ec512eebf9e41f0b3822c.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(500) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `contact_no` varchar(11) NOT NULL,
+  `type` varchar(10) NOT NULL,
+  `randomid` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `name`, `contact_no`, `type`, `randomid`) VALUES
+(1, 'resheil@resheil.oco', 'ojwoijo', 'noew', '', '', '0'),
+(2, 'ra@ra.om', '1234567', 'roy', '9820105763', '', '0'),
+(3, 'resheil@resheil.com', '12345', 'Raj', '98210', 'Infra', '0'),
+(4, 'rs@res.com', '12345', 'Raj', '9820105763', '', '0'),
+(5, 'rs@res.coms', '12345', 'Raj', '9820105763', '', '0'),
+(6, 'resheil@resheilc.com', '123456', 'Raja', '9820105763', 'Infra', 'firewfmo'),
+(7, 'resheil@resheil.coms', '12345', 'resj', '1234567890', 'Infra', '0\\'),
+(8, 'resheil@resheil.comss', '12345', 'UPACA', '1234567890', 'Infra', 'gvz2it6mOj'),
+(10, 'rehe@fm.com', '12345', 'resheil1', '9820105763', 'Infra', '4wN6CmBo13'),
+(11, 'resheil@resheil.com1', '123456', 'Resheil', '9820105672', 'Infra', 'HdhJm98ukh'),
+(12, 'resheil@resheil.com', '12345', 'raj', '9820105763', 'Infra', 'RWsnYpPELz'),
+(16, 'coolzama36@gmail.com', 'eggs12', 'Zama', '9527349678', 'Trainer', 'Im8P8f55Qw'),
+(17, 'resheil@resheil.comtest', 'eggs12', 'Resheil', '9527349671', 'Vendor', '7hcPIIhY0q'),
+(18, 'coolzama36@gmail.com12', 'eggs12', 'Zama', '9527349671', 'User', '0McAWBfUU9'),
+(19, 'coolzama36@gmail.coms', 'eggs12', 'Zama', '9527349678', 'Trainer', '1X2UbGjB4o'),
+(20, 'coolzama36@gmail.com34', 'eggs12', 'Zama', '9527349678', 'Trainer', '8CgCGMS3bh'),
+(21, 'coolzama36@gmail.com35', 'eggs12', 'Zama', '9527349678', 'Infra', 'kf2swvghiL'),
+(22, 'coolzama36@gmail.com36', 'eggs12', 'Zama', '9527349678', 'Infra', 'iXpBVCPNW8'),
+(23, 'coolzama36@gmail.com38', 'eggs12', 'Zama', '9527349678', 'Trainer', 'kZ66yrR8HI'),
+(24, 'coolzama36@gmail.com39', 'eggs12', 'Zama', '9527349678', 'Infra', 'tCntMqjeVh'),
+(25, 'coolzama36@gmail.com40', 'eggs12', 'Zama', '9527349678', 'Infra', 'raJ2XRcheH');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_profilepic`
+--
+
+CREATE TABLE `user_profilepic` (
+  `id` int(255) NOT NULL,
+  `uid` varchar(15) NOT NULL,
+  `profilepic` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_profilepic`
+--
+
+INSERT INTO `user_profilepic` (`id`, `uid`, `profilepic`) VALUES
+(36, 'IMLsdHxvYP', 0x6956424f5277304b47676f414141414e535568455567414141517741414142534341594141414368662b7167414141414358424957584d41414173534141414c45674853335837384141416741456c45515652346e4f7939435a426c7833556465444c7a62582b74766170584e426f37434241414359434153416f45416134695a5a4d534b566d5546475345776f73306b6b7a506a4b32775a6a6767682f4a34724c47314f47524c49396f30355a466b6d37496f534149706b71437745435141417352473747696730656a75367570612f2f372f327a4a7a347435383151745156643331717a777a4d616f6b4f31445658665866652f6b796239353737726e6e436d73746473624f32426c2f63345951346a6f4176375847417a395a2f506b5567453962612b6c722b766b4c4158794a2f7369646462497a64736266754845457747654c50364d413769792b4a714e417875466468644659485a38712f75374348594f784d3362473337426872573161612b2b6a5077436135465555337a395a7a4d5272414435797871795177576a52467a7347593266736a4a33782b6b4765786969464c6b583467694a556762637a5654746a5a2b794d4e6361645a34516c394455626a68324473544e32787335596139785a414b4f6a6862456772324d6e4a4e6b5a4f324e6e76484659612b38732f764b497466624936672b73706c56764c6635733637436d4366335358384c4d766f4c673976384a674c2f566a7a2b7961756c32787337594756736642555a425271474a30796c554d686848696e39726e766e31717347676c4d6f64323349486551665a4b2f644168516e69502f745853462f75777a513036702f394c58695876572b726e33372f6d5962747972732b2f4b6e6e50337758475a443769725450526a6347514e4755625055657a6e657364614837415030756d6e4f4248426161336777454a43774d36502b77475a6c78324b51486665786869503438374b434e644f3456444f5a4f6f6e4c78786644714a656844543049332b7367516f6e7a397a5a436a4677496d68566b2b4164317051756335704172705249444a65784344464e5944736c3158594f53575834494936717633644f5a39337063336e6e67586c6c3969317a4f5a50594a386352485341386f3333514b3763427a7073646567595246646652765568653874356e533459664e4632435033776a534f516952747043666e595853413442302f43582f664f396536507871664e627037522f37677279463535696d594e45462b59675744497a6e435338705145684172412b692b6876456c526e373052716970677a424244624b36473143682b78516c4962534252565a3848304b71434e594b494f2f436d426a32784a4e49767639746d4e634745496d474c467430756b4435397664693543642f38387862752f38634279373932373272332b6a32495754487667652f4e674c393670506f76336f553173616f33586744784b4346374e42544d4b304f624730453062742b43714a794157423958686643704941567343616d62336e64324c514e6d3651776d59436b4e64425a524c5a77464e4c6d55424e5473454c41644a6377364139517565594443432f35573351626e7976322f6162476c6a414d632f79627350306363762f31674441777a33775a3357393846656c544a31432b4955443666494a73446a434251507a64763042313677626a314c6a7972672b5046716d664c39464f73336e50336350533438674f50514864584544303568746765387651722f774176654e7a4b4c333151796a6439484e62766a61394c4c7634434d7a79717844704d737a7955656832436c78794b364b7266787751613238696665547269422f2f612b534450674954492b76485341595a704a5351536b4149445a476d6b47554230787067634867526f556b676a5958755761414b3946383641706b44736d7568633741523644782f4a2f4b65674649574d425a354778432b6866414564412f514676414d454e506e76724f442b6a7347454b697665592f32706276512f4f702f685451477957454e76774f49514d412b2b51326b63776270457042584253624b5a5a514f334c72757336343941523259453938487a41433264785436794f4e49376e30552b65455561747a43646f47304c344464493263616a44634d6751546f4c794f2b377969455a79466941586b453643333159524d42515850684b58676c6732376a45534238424c6d57554b4d656a4a4a73444756673262675959614837674f446758454b512f5241356a424c6f7067625142734672466846747a5a71414b514e657677567263776778704d63382b7a32302f2f7a6677433572784b2f476b46724478414c5a33552b7944524b5a49557341575475427757502f484d4c3645424251416230677a532f55474d4f4841663867445051415341454530734c32637152647746646b45415730416b5145644a53415677705844635a515933694459586f5933506c2f4948367069656971555754484f3069757677332b30546d6f774b443731776e4b42793136486356495366376b513742704579495948667153727874664b6b4955324d377a36487a31642b446e4c53524858384867325235304174537675687532725446344c554f75424d4a642b3461366b44555a624f6446514b515176586d595934386976762b625346397451556e4c6c70383264502f714539687a32653051346353616e354d382b6b64592b672b50513661416e316f6b71554c635673674e55436c72684755447238544842757841494d346c6d716c455061445862684263594346704f756c6f4562545942546c3030497357556875494546434b7a6e7a42426b4c334c595232506f4342514751733670667468597847316e31574b545843726f62704745514b30426b67725957654e786963454267635636692b31554257786d437467746945773661625436443768352b426e5731426c49447375495a4b42504c63416a456745396f504e4a665a7868386b5176594f4273636c776a484c47774f2b414d7141466f4274434c5436416b46626f4e796e39776651655a494b412b455a6c4d63306172734d784151673656493941614d7473695967426f43744378675055446673517a356478714235435035784945344551464e4831397143703272625232426649553943514851464d4136494259482b5563464f5a6c6434694b314159494753546548374366775267394b4568636b73764a714156336672785054592f694a664245514662427a6f66537466774a496837466e33645768526e3745494a796148766d39737857445978704f49583170413477466744504e6f2f50444863447836453637592f3133596835625947704a336a52497736416d553577644948763154524f2f592b676c2f355630664a6d507874774838492f7265784176414478354865725144575164434357685049447330344255557a306b454577613233787a71656a703547656d646e30627934674a387a794a377a554448674b637338675351744968696f46496874334839685752584675485435677346387235453170567533516d4c6c6235434c5a48772b35594e4c486b465a4f51534333517a67657062417552583745583374574f6f6e6b67686d6d446a457054705a4b4846555678586b4647787341727751676472382b6d5a573567417942636173476b66496f7a5776456654616946627343426e7852714274416555367062643330356251695467553167494153453375576d6b6852786b5341397271416e77477146374e62524c796935717a46494a4663666e2b4341446e576d6b5273436e33316343366d6f5036665733596a7a51574c373345597a4d4478416f4333494376424c4e7030437959704633326239417677476f766f556e41656d44517845624156344e2f447471524343392b466f6b31544755727a344a4c32776a3746674d4f684a473533426265376868656c326b787955716f77614476734367343645377268434f414771674d57473038776f566b44556b7442527338476e35556e675253597555504a4a4d49496f736837576f43575142344e47335653432f7441592f555042666177454441786e526e6742364c7a364e3847335a30486a693041624448506f474d4a6644447957536c7932434477573438756844574271374648367067776d56494638427a495467535a4661595044747232335a59425447347050467434365a526b634975653174774b73416e566d46307269424b67467856364c64565a67673639772f31304a636577685668756c6e7747774f4864494a377a787873757a30496d6a7a30436e70637743396763466f646847574254426d6f5573414a7078334570447236416d59784c4952556a586e53596979514e613379444d422f2b3358347458715778443337734e55367a436d7977626f41566b69344a4762584c475146634230425a4b7563315470524c4b30435873637372507856684e6c77412f577655637a36434872756a424552686153547963426b3170306d684c6a64514d744653784e37695a505765474e516454704a6a71776d59437157396742344876752f724b42514739426f6462766f58437731356e4933495766577141305957426959464257364a5950596d4c4b6f487a524d776a53486b494b7936536243393848536d53554b4f774c334b335437314549513743416c42616c6d6e7566655176494f6f4333654169696651484d794151476b313251395734765358687a66645434487461667834304742784c30506a7942594e5241486251594844674973657367367631583454333245685235646d4d435775663875476f41396e716b4268414352674c395a79526944676b7442576c4968634375697a547979514339793237442b503444454a55376b6278774642363955316834765361735353486b2f364d47777942353644757741347467334b4c78716f6636662f77767949356d36466343394d644431466f7076365352636f376c314864372b756b5859655965673978392f5642582f6455482f2b63727a6751336e2f2f77585152325169514449456c35455a416278736479376859446253694b35447836545872495538466d454e4b446f646959506b637837675246473551386d415767332f4177516247465858385469583447303744494b65593267496f4e78394b57546b4a614941524f30554a65467579617378487767536930794761506f4c3576483170486c746e6c7871526c4631546b514e34484d76724d4a6a684543696f436b747a635541426443306e724f68474d503854507659626f6c6c6d6f73637658766b63794a725171744f58776868616d5469303863735070524e7474675642423046473879617938384d6368564d436543594f78626566394b4139496c775237616f4e586765377a723647614c304e36753964374956424b6f424a6f64776352554f716d6d466c354150484c38306750745641666365455932527a364c323236764373676367744c6a786a784d6f596756306f4b786b35734136426f6b6f78486d674e4c663359594c6630613947556852715845744d71525a45422f4b594f6c45484259556f4b6e6f4a57456d736a5a574d56744370656e3066564465476d4f556b75675a4769653354716d5130434546696f436534343246756965564f67334a627a51386a327278504c36374436756f4139714a466632345138367150546243486f5770677632564c4a58353142642b6748453941384e642b76442f4a4c74504933737851552b5447564a49435a552f7765575939703949796d69536f4c424975646d2b45564667655659324f59572f58762f424e5650624d35677a48614f345663662f547765365a2b594f654f766e7a703150777a3643445a4b424f3751417368356b5a4d4c624647536770462b6f6651776a38732b4b6a75466b6d4a49414f542b65786153776f456c643242335679546b6b5235714f6c33333344584b774e736c454644386d5a48373734346277694c59454a45664768626656397a3572564d42303754774469316a63506466595938797149395a3949394a35454967317049394167714e75726c4552526c55416f44436568555a3141396f396c37534a70445443657058494d4b3141552f3372454241486b3773374945584f4c77456d555641475a33457745674a42454678566d37437936415978436654376349755467775a42396253615739796758347545432f33595857362f756f55457271624949674d5835374351777773314830765145714253746d7741553762416d6e4c65524c65694944797765736b587847556e3049614b38355030546f655a45417945456a6d67636e414757725641365a714f66796d79317a522b364a6347774c46337738376c504a526e386f6851344667786d4b63504f476e76342b364a78486f464e3475792b463866454b3472412b46626d55774d456f476a67365a2b6f45636f35634b336c4f437a716b45474b4d444b3761775571447a33572b6a6c306d6f685154427148427a6e6c6d4945786c7365786d594875376d687a4d5972333054647355776d7238384b31474b775048693148734673683959426c716953514862415777714d444a6d304938464b714d576733762f477057504e53434373664f3631684d6e483855765076472f593456517a4c5048615436473730505750466843452b6c6b4a7375637572694f346c786556416c672b7350476e515932737735524d79356b464b6d4170704f2f373037797467464b725a7a42754856486f766c4530665043755a6d454e395441495156766d4134514c77706f4830684f2b50777a464d66794a353441716c4c44354543374965424867752f44447732485246474a77445158766e52542b6c6e44346446675669487744575469776774704d30376872666c6554514c62617a6b376b417659784d4b6e6b45734a42776861353758466959476c6541796233445457705935706f7767556f42304b597846544b435a4174696a304d7a666634586f663545476e45706b55434d6b6462776745354857514d5138734d6975515a7934556f394f5963476b4350576d7a30337754774b6e37416b5a61654a46685436716d6747685a6f444751365061424d7430486e2b6f47586d78352f56686834557355786d4a3444415043773643702b4e3346545948384a483165776a615950416b434c704d753455664663315774417a44706b5049634e6b68474d6f31644f457944624156355771496a59464f6766797833552b344c74444f4a684c4a48476f69735164355947546f5a506f5442794a463839362f594b6f76494d7642574c527430546e6a5132734c6635647766525967316861455a4549315a4c42785771493570594c3650354f6e374556332f6b513276516c37465175386b667575354c36786c4c46425156336d495942797946734349486d656479705030676758666f2b47556d6556735174784f7358352b594b4f684943694e4a647943424b5777636f464141394c6a56592b4b705453643348416830515963764377516c413338455841714c4b4f4633525241337747416565343255376d5338307631787979384b68683870486c6c4e3167553262564d384173556458657131475930624d39436c6f6f44584e50765357526b417a53425a3444667a3445304179707676442b4b61773339557645497450416f50384e3454536f6f35475a6367377743345931736e6f4d68704d4e47516c75384e7a43495371454f6f617a6b7a5652384379504f785a66526b4c3542317049773078716c4f6a6a4d593544584d5672675351742f7a4b56504766424c346344564741696e415a6b4c474b735a324858687645556d6757705573474b3051483952516363433655444372326b4546557056306d654c4c526b4d5561337a753663546e363544774b736f57636245306748424d2b35416961724f45784d2b385367734731713230373546316858495569417357515a3179624d69723566575a612f6a49556b462f4a7046334c4d597442514970715844724a743469453663514d6a33762f6d5961764d47513864512b3934456d382f7a346978564c6366527056474e3976654279567338324f6479743145443465367062564565742b69526c2b46624e4c2f774c7a467a7a5873672f4f6f6250763656786b76346778662b47412b315838412f7550444863436865526b5634534d67796e6e354a762f3338682b38365256666c4e7934397438417a747a68387373726b566441744d4f4241477943423054314974635a7532576a59464659614269503565587767583347757568634a6a69516f464e612b5951686a7661587576326b5076454e484750456d414d745369455068423233496944616c68436a5471534135524f47544d5250496d774c5a69674d3147577454702f6c4862557062657862356d474977316c42717a664f514443536e576f4e64506c513551473479614f6c6a377a7665427a5636345a72335a34316d624948337133545a437a7270745247494f364c67646c416d51554657786a6333687a774575512f4f533075646b65447246684e47786967494c42756e6a6463794152382b6f717142546953364a79564d4534694e633730566764426b78333042635a6d506f4f72786f6545706c396c4a2b78522b4f423547486c7332326d464a6f444b547769356e304633426e4244326873684b6b6f31643974444c4e456f304c30744e324e344b784d6a3565636c764750564a52474d4757562b416b6c586b6661664c6b6f6c58784b4f6773456c7164313969483857496876477451567369703352785653437641476f4d364b61436a587079307143555759523066776f4961773549707578507043773733505173706573393143362f647569716b453062444871353251745075464f4f5574674c41704d484c575275474969686449394437697855335a326978684e5162597555486a5131304d3831304c336e393146372f33392f366e4f376151646665506f4c6547446c5359783546647859757754504e562f41706445456c764d655676495944634f65786c4f765a36674a4b534549527a484f53325a67797a696b4738347a64316d436f556d4a43724a65513434564e6b4b4d7641744869714b546e7249523543723664522f435733394b355555336f6e4e446e304d54465a595a30794c3332612b4f49516731306b454b346458686c5571772f515a366a37794d376e506168536230415576756c4b535848336a4f77782f554a665a2f3742305975664839374d3754464b6871336231617179476a4f6c6c505744706168555177636d42646446394942526c4b2f68787965656e394355704874734141322f682b7a64364b3869536b4e3053475143714961676c35366f427038757870306575423565775766652b5477636a642b6c6c2f47476645426442355252425a6751326f37414e393872524b7a71556e6f747056762f784a6c43363978666b6476475a645774586b4b517a353857516b6c625079496c35473730392f4855662f754d4770533836473058596b4479563347546a794b76757442486251774a44754b68744f49746f4f6a744561456869304a46494b3959727a4b4a4c755065734a447864393871504d3471583749412b65466c70514b66503663336448367a7442372b34766f5047564f635a745a4d584373355a42586b3649655a597a6c643459734f38543730647736664256494a733347436676687a6e575972416c6a53584b46514f5a47633564303932334877636d337161515035636a57774c6b614c465a573044557431446a4c765932332f73473850355038387437615059422f4d627a2f35375a624875434d597747493968546d6b593337324d366343645a3332545972367236574e6139733669674f3032716f49566545767848353835514a52334b757773474b634e4a7a61352b4d4b51636f53434b64616e452b414552716d68445551594952547a4c6f426f354f556e6d58494231526e444c50384c46372f7746514e4d6964576b7479793551554841614e495373736f45796739665147666c56364e6d6e32573333436a632b363076344f564364797446744b6d51582b716a666643764b563331347147633736393261464c726c5347397365414d6957376b51684a496b424e624733654c3951513578526c6b677956317354714763646b344838794279635371453753386c6b46682f486832364c546b635a6b4c544c7363534653636c2f4b704562556f6a57424559484a43494c72736563767161383735443865592f77646a4d67677339794c79554257655a79494153687442646b73686a445a5030686a352f684d356755387348446d5731786738614e4a59556f7261414351462f33434274436f5148496c5465396e48493863764f38596b70764f3733594a3838426e4e5341424e414f4158306e7763442f2b54465568614b776855316352454570385348473573324750713576384c67466576536773516571316c4734436d474b75335761422f33495967704a393137705a2f5447676971466d6d484b4c75574e37593966427832345848383976454838493346527a486d6c54446c6a324171484d646b4f4962786142783158574d584f5445706c7649756c6e4d473636682b3547774f764356536c6d464d68654a387867645748416d495169484355506f6e42587966584e504e6e34795777626f637959714c6a546d7570497a44616f78507a79517330715234324857476b434d4f677a686a3174634c58346774476c32344735574a4a786e37494a655a4d6b312b714345446757444549687a527145336e4345764438514865384a7830437163444468636f7930533566774975364c51726a655873465a546f6656665663436c462b7158495a3038764a79506b757977614d3153463557775048554b4b633641627344324668496f437a6f597056314442452b6b5863304c33575a7345536a4d57496e686a324c762b6f44576b6d4c394457525a4b5935712b5a644958707a51705a4b4277304b4f35364138784163576773492f75336263495375535a41705742577a646b70436e3072566345386e3042684c38327765377334514f31475a427a532b6c6759755953523663304451357a794445666d394a59376970587637534673616e58626e554c385a4f50385130523468714f576c6644514d655074614273485a3343725a63465245577756306e5556613578494d39787975575630306d464c392b3642342b3863682b65614436503358344e75344a783749366d734b6338673732565064434c492b6963444b436b44305667475367546b616b317131574a744a5670727146677a433531586b315973557a7373635739656a5870596f684e4469456b544b705041366c5746454364712b57676d44644a70557535626745385033766b5547474763424c4f2b35414f742f424b6772305a716e2b674c4756454b5553315052656c676a675a4763375345425a6b694d4f6933585744794b57556d616667556569316267706a77797649714d516543334564434e576e395a493233436c756c58444a725a4453673076726634796c444a31696e6f705972535772414e473065382b457164486e6577506a2b446e6e5064776b3079464878446c367a30516d6f2b656d7735477a4f6c3267506b70673652624573776d6a476945387077435569587858416b71545144544b4e706f42344944414c58452b5a37706747696674525172464b465a6a3868304b48694778526b4f446954336b49726547762b2f4e655267473975533349526f646a703855706166536774732b4b69417a467765536d356835343668646d4d494f566f437553304f5330664471774465766e635166483568414a776778657552374b4f32657761672f676f6c77444c744b45356771546547564a777a2b367838637857332f51434e4f5674444f6534684e7a6a55534f65776244495956506d546f7379326776637941477131487973706b4469514d365157522b64334931563176554c776c4648744874486e5a454f70545743734d38665642314843787065724e4e77776c345655464d764b67636d4a3057695935305362686e44787a4343686e76356c4e73654744736e48307935614c72465252722b4348544b794557584c6546484d6b374a715a71334e3876412f706c786a596b3855747835515679736b4464664e4a6163757770494665643450506b587849304d38546c43494b4c342f2b67414668345141524f68767977615a7530586f567434594942784d75765378563856725a75794276306a6932334a434436354e4c4c754e4358684a564c3464565a7876494f5048314b41524b45356476503439424944525276396b3762466e475343674451326c6b535a6b7a4d765a3059472f7863446c2f67354633594a362f472f716f635a614c6c7174787272454c654a32684b30316f31442f30555a5233782b69642b424b796e71744c6d4c736b776e2b34666a6365715a56525677467574434536347958324b7368595449546a6d43704e3469752f76347a6e6e6d336a6f352b4e7352437659446c744d75673573426f2f4d58586a386d64752b7379524e397762476241526832505932433263614d72746331505170436d3970676555646b304b6e47427a51386a43454167486d78467a6d626a3874496c74494241473174472b74323149646f457039656156425274694b746869646d544a6e64433062305235597a7236706f624e6f4674646c34465a3353435251425a62396d786b79573343457639336378755268386b682f4e497148594f7a466c7a384a5233506762774569726b356957584f38666e5762544469734968526c774849467346757676536439304b625a6250736252475745493159506f673538546a68316a5637306c53377330637a4877504a386e427a6a494c6172754853715757582f61495167744c317848613152656d427261727a44674b7356344d4d36587955434449444d78444171414e754763516d4343486c744e72773937305a673246627a794e353945452b6f465846555657464f563364544a77414d727131797a7a553376307a454759466176715045486479665057474366796e433865682f5168375649517872346f39714b42526e63542b6342525430515271515132662f365844554357444433366d673250395a5453794e70627944687035676b6b76777165752f4f534a7457384f624368553544595254527966446c6e787453356977307249475a5668426c48446d545244555658756d4b506b6164444a6d4c5742306e694f495439366e516d336645333257594c434f4b775753646f435476654b49724474436f4e5743792f67366b68514d416a52454d7879704d4e4f6a4e504353354139665464732f5258497641656239534570674b625653623941397154586476795674415562787a41644b6e7870496a39796a413036685654455965466f3153394b52785251476448734f656930766346575552434652306e75764b5443756c4d6c366f37745337674c6c367076514e56666330516a384371434b764752707357364b5256726a494272387178704d3673747647794b762f494343304e68484949696c4662464b795950746c7032514d703544504930796650734b3448325352387a46326f4575585a6574784c516953732f794a76744c636c596e5a6642734b5944632b77686d4e6d4232337a5335654f4a6655614767686835444d684e577167623367465a6f767a304741362f37556238316c567a4f46517159565146324f33564d4f72584d426d4f77672f484d635067356967652b55614d722f7a48463348354f774a6338654e4c6d427330735a5331474f6873367851446d2b4e2f752b4b2f772f373642577636336f4a385772684d6a537a516661724730573368614c594a4a79413462426b4772525043673671562b4b536e38494e4f64794c5245412b46506a736b6c35314f4f724967323756375637324741682b6951346d39692b4b4e79617137667261514932677562314d675a4a302f5448546a414d6857324c474579437779426b496c6245644148302b68482f6b7a586a302b6256624b6f4869474d534f6d4c70666366504d4f6f305761436c666c536c6f4e755174643557346732784d686d4b77686658775a2b54774a33376a3071436a776c41306d427a623348474261636a5437654157496973707435724c3033616e747849724f6677676d7856693279594f75516b513065634a5535436c6236445a364d4c7779684f4155444232367870554964496f7a6f46793839385156355757785956374a2b64772f5953715549504172426b7339695a4542554b7136355534654679586c794b6a716a63446b38786a6e3939534c44304f2f2f41506f4273577677726e3350666359354b6132466a333430694173412b56625073352f2f3555587634782f6f5a64524b3163773435557734565577486c446f4d636f68794b705838547433484d504c7a33587877562b4f45463079683550784d70627a4e687235674931467a2b62343066467238633739472b534f43515372536c693670347046336e4433527534655951356378556e33336a4f62707a4f76587349472f4f4c6f354d6f5467664b555a55596562514a6d65784a7450464b777844555936677072444f56654437454e4b56314d54454d3652666845536772646a4a78413361307467744d505356694a7871416c34505864516957576f4e614f56636a303434474162397a7053496433577775455a4e5447444b634a4362516a543476596c6352417a3371756b4934786c315876694a3568524d4665645232577871354673504b66344a6b7567745470595643686e4f37327a726b34796167785759397746734b50776f4a305a6f6f4477397338686473475a63694b594a4354736a6a525346466b566e58454e664b45614f724656734a414b7158506e46486c3147724e5a6431514c76676e55574873347453424775637852446a436d6372786d6f5a65455137724767566e534167635a344765415355724272425554446d6b2b4d39354751787a364b2b5176667738767878364f3151395233344e685357454a464e5a4e6c6c314d317146757669642b4e7a446e384f33476b396a6e4d4d504d685931547057536b534373596977637861745041762f75583732413058306550766d37475a61534265645a3547327335414e305449712b3065795a2f4d72312f336a6a4777362b3646514141434141535552425643537568686442552f31425837414c7a30516336656f4769435848704336575978766952567379436a6c45344d6847575a7334434a7172544f6c6f5a7842795146396d4546744d573530316a4d767773496d7a71377950496d7453554b445a6338714841484c58474377554e4e444d68784346316f533630434b65446c48614e34483030444c38685151527059364a545675787948494a4537723642613750494877694964557677585553306253626679346c702f546b694758583278343343506365525735723050743341664977464d6b484c464a526e6b552b364b3566536b4c506e6d72654442787963715735793631792f4b2b64515350385a574d43324670444d4739424d323362325274364c67354c50466674536f567574747373334b6a4e2b33593253534172456a6e563547517555305272694d4a636343624f4d75394435674d493351437739397a58386152623252534735363732524259454d444957684c555237455247534a7858356d576479357a7a3458514438534d50496e2b313438495236347063794d7567367a59574a4870646762486447763556742b484234772f697675617a6d47424455635759583864454d494c4a6141497a70536d4d424350344e35383968734d763958444c5435557763394d435a7673744e4c4d324674697a534e433347515a476332485350372f3646396b5432586755675a2f6e4a707570467649306834704c677256674c6371685041773654514b6658556157713750756c434261434f584d5265434b7032776e415a49475542354f3265734e637a39496b5063634e6b5050564567664f414a5a3573495466344a53324e764477364158624f4b4d467974725139446654556e6f4b36354376753847374437344f4e4a37483461644251786c6234697847426b47366e697872686f3041766b485947324c56747352356769705a38707931534b714744617772572f4f49786c5a5176664e4e5a513756476b4c44767459614564745a4e694677364b4569382f70354f6443783978354148797755525252525a46794f50386853314f384b3967594b6563684d636b7364315232387072434d63706774496332474853536d6136426d67544d417442724f4c6b44496755715931476167664f4b357a766f6675567a304e4559797a67614743677167522b765135496d695a5951374570345349342b7856534870437a516f36725831454251324c705958444e7a36654663353458584e567751653236444d586350386b4e6442723155316156372b4751726b50526d572b4c416c526c4d4a7648463853564d646f35697969757a567a4557314633326738685930546a36383258386a2f2f6b42597a74382f4370333946595359356a6274444363745a47512f665230676b364a6b64616343582b3130742b65754e515a48582b345534344f68474951303854497949584f726b434b6a65555037786c355a4f413944477067724e736d4b6c4865425472627734634b456c696d7a627662314e49496878394e4847466646776a30792f4b34456e37494850704f49383472396b514b633431786d706f493474614573354578427042306f4d5a744e46392b536a386856554b4e78474f4c504a6c5635564d786b766774414e482f366e74316378544355634665773055466d624c416d59582f5230517477427878474c5857494d33436e6b31686a6731394474793431517856516854366239586468575a5a4669704e496e3944434a6539517432707430635a6d58444d56676a32587632705557386f68447579376e346938386c3462777639415a4632664951452b3135374d5870526365764966597565384164775855306a566d67766b756a46427430762f496941377532414c2b4a72374636674844476c636861394f2b556a6f347339467376774d7a4e492f434f7641437a6e4474615165675978525257716d624b52455378475333574d3239393433383279422f39632b684678384f584a4150577367773030514a6d5330344c576b673863643059376b4958372b34657834772f796945494734746f48425052424f37382f515965764f63596276335a4d6e62647649546a2f535a3746537435463030646f36737a786975596377434c5438323845782b3734752b6333314d49446431504f45667550417642694442357a6c797032484778725652446b336c5a554a64566d596e55525055785242476e6c47727146684b357870513963734870316766466d4c4a5564616e687a4956584c41745963322b4e46672f5874536963726b546238736a5a367372434b364e54726b6f6e31565050592f36525136676b4f517650614e7167564b75773643705961584e7878616432633038676d7964635653706e30796a545142365a636149385a455236632b5151457256624939497558647472436c65687939377252746d426b4859483831446f586644374d455532444558324b4849625a624f3646554a55586630527a62456f776f586f3949484d68446b4b78654d6d737961484f68796b49362b5a334d496273526a3549596b6b477366696655324573635741726a6d76654e337151752b6a6e3767726b597842774a5234693543384f79713236317458322f526d43586e3531524271416e6f77432f334b736775565134476b53614765684f304f707a71334f6a5930474c6237444e4b486e3349587055724a586c48674a5677476a56687746624c7767592b76586234624d3334646e765378757a534653655a5654434662724f4c7a6e7a7643702f4848503665516a733769524c2b4a6931724c655076534d6e53574d484a37365749484b7a652f41362f7476515a5672334c2b78734b3941593768754f77366445704f4b4c67377441646b515a697a596a683851564173556e626978567932333152497568726c7363492b7246594b4730706a4463465057506643767375744c7768346b6474386e455973546e38584d7767756639365779356e4d5a5870386c3636304a59764253344c70384c75696a4f6e76524938335931534d706a6a7a34524f5474696d59514258577253742f703971666874764548726e795062663532426e754357547a6b6e566536642b704a7166354e4e4e4e6543346e36776242515132627444653856394b356f504351616c334979794b4347327471564677637a2b2b627368724b3339536d7470516e313858765a3635613242594769486b536c42476b384850515a3839327142465758565777377a5354374d474c4943373641507a716651674f5034764a746d5a2b46647652636375553733457947764d536e5758464a664145384e4d3955616b2b2f577765574b515574707834426f3056695a456f776944776f4f67416f49706a35624a74757456774a2f312f4339445448506f6d64434e336231733643544175635361554e794865763466616a4965376239364e78636f3464676354715073566841554a36366c7661587a3569362f67366c744c754f346e477069506c39434b32307a45657359666f44766a5932416c4d6873434631547841537a69482b362f44516447446d37714951795a59474c2b3261495172476f35426d57396865494a61593653546f4c4b5543395a755a55744c53504f4a4d6f547242616670653745644a7746757956413666584443732b785351735346626e635643314b39516532594c41795a4a3974452b6a4a3745584c6c624463316d415338436242495165526d5367395370344e6258536970444e707175545364677734787137556e374164546a58545643696e74735a71352b4f43316131394b746632534f545970576e705a796a74522f6163616b776b705252504c474f6a45696c42566257685051554930333178305a78795a44633632485265554849334d35514855564863386f4771505732684538526c3773524e715472426d375452516b676b51472b49517134383566517a415a454a6965556b4b3869505059586534674b536b784a56547a4e586853747761533557334c7754653242304d6d63764931304145386c496459327036774f674d716478394e3435566b7a5033754b6a507533426231455a763045516766552b474f636848474e4947736b477131736a652b7976474848327977554f51497546306d726b676c5938744e7342736d76712b4f722b665a674f4a726a43644b51414f502f775838376a716366612b4f47664354467a3078794f395274595446746f364a354c6c785a59685574305776783449385976506e5155307a64732f6f516d4530437054636b6b4b6f46677a49465466427058584a366542565436466b57365a4650444d74547363786b3035627470662f4c706f6c7a71696a775a4f743253726b456c3335724c642f5a7a615863514745644d496e6b2f6b68784534546e5266366730334d547074764177714370585268497979706e446b6a5764444747764c566e536e314c706e6a4c5155776f345549464d4a44495277434e526e45436536753168685552594962314a4157306b744d6a686c534e45593257454a34346a766d2b524156474b356d6a3956705137674f677755754f4f6d3042395a6459484651337a79426c50384633616c6a4531363752496d64445664324c4c48464e735a6734384836716d59454b4c586c63684e6b375762355662776c677241656978486949447333714e6949306a4b397837417637734368626d486b496c4e526966307177637a3052496d6f63327955424b5250734d613252346459466b31434b65694f44484b5376666b6163784743684d5571754b324b4365535a53364d63623257665349303147494c42503259557446616e764973613742734d306e6b4c307737324c45444b65596855774e38435261765141366a5044596c667378475978684a707241727649305a6b72542b4c56664f6f7a6c2b5151662f3579505a505145356759726e4335647976766f4d42464c6e384971396d71446633706f47572f39667064506a50533758304c34396b39417a3738494d62496661742f627a2f3043614b4758464c754c4d6e584b52613636304472454f334d763253737254683175467538684a53705248574d384a4a6b583642476a7456656f4c756e436348677576576e6937725a566b316843736a4c484e4353464a664a677650495a71744e637a7949675375664b4970336e39624942624f596b363249536d6a3373515a554e6b6f5a4c32586b2b4659554a7a487a344774522f3668394479684247557363777a78476547465751727176594b693156464f586f72424f6959462f3942705a6d3730445341646f4468363257363571567865675570514a466368697a6676384d4e2b72734961517262714833536e4f537851584e326e4e3442764e57534932714c4535542b73393343416c5a3874324770723467797430585a2b527a31773542455a30376c454f52414e337775436d566f4d4b32465976347045453154356d47546b3272694f6654476b686b684a63744b4b363743583244386e363644595073697232493939324f756e3046677a39396b4e5861306b554a584b465272326f574543357067326a5a4658744b6c7167553344797430374459773230536872377a745964352b5a737738775a3573336752786d564a364345486777415a41745175714846446d2b6c6f4172734c592f472f2f4e3144364c52796650514f676637494c4661534668595a334f796a5a644a5436564c36337a383532736237376c74425346574667614e595a2f2f6e5865682f3853352b755035627273502b583733356e4878366276646f4a4763784b467a535851742f7971565656776b7944484d494d797876433562544d4b365769657259794441786e566b344669614276313567494e4c74777a43456b717a4f52635645314d5a41446c772b665a58715152764439357777374c614d704176624e544274702f6a6b51334d6f55716c6f64782f616c615358446879414e335531582f4831622b5a634339464f586f4c4b5a5436776e43412f374c456d5a323258686870314e544b724e52556d5764395449364e5039464c5346795538676675746b45424d34453554476851704f4962764a6b4d5363756c4b486e384f7059784a454a6d394f65454164504a534f5733506e75707772463753513655776a346f33575a4b5261724249346d684263427158654253694b5644665a654166794a79485833417a714d6c53703550443241705561524b704a3548334a4771585a71772f6b79655373305a55353553656c4b786651736150316f6f36434f782b2b3832516d797235503375635a54424d34795859686150496b7736796233324e433237453667344c484e695765683643636f447964413366657573423149494a7a6c325473626a6a44474d526a35374563744c4151745a476b394f6c5a437963794e37507a336277775564574d446162633078496a57686f553742735865354148446b6d4d66325254357866385132584f515a4d5932624f52653761744f51647754715a71786941795961735669314f4e636f61304f46573361395a68384555354a6a56577854654e686143775655796d714b7845627633665a6653497a49614b324154794566556250494b7475467977692b495248435561362f51464355516d544d58327271713069335555646949384148445761656f626a41325a527951534346583052434b44695a505a6b5836623433376c4536316d384a44386952704d784357516d34386259357341473777524f30526d444b397554766b6c4350334d716b366a346658547537774562304d446e4f3356445a455041776c6e505a7459424572696279706f487a4441747155416930527262594e424265354442386666726e5459786c665749624a376b4b6e33324463706b63796663734b71717152536f452b464e4b54796c55616578595659526a72694e353241576f662b6f587a726b395a613578684d445453757a2b50397239396e4855685a5745384b57346c46574d4771556957766559684d79553056413076587241667538737a32464f617775662b336d4730577a6c2b396736462f54674d6333495a783255507a314d7361464c557368772f6636794e647a376577746863786a555375694c512b736a66686e2f44787a48364a2f3844374f4d6e585a455657584274304c3772333248715465656a4a4f566359524c7438556d796664374a3533487354333066656f4a424f4f4b4b324130557354596152426c324b6d394f6b496445543949465634544732614d43654e74737a4c7a7859786d587969334b747050756175325a347832775232794c427233624d584b6e424558414746477473794a395443304d754f7961546a6e666e5862444433564b4c597536646e6d546c6f464b346d6d6736564c46584c3035534e66564c69487455654b70303859696f68354a357a4877567844325342636c3130566961354f4353594941416574434d4870653067716c676a734763484e696f446f647a7178426656793745503451757035357a41354b4f672f304934576c5751394b57305246694d4f4755446a42704c317671734272746f465a375a69674f5644324e4a59666d59552f61706e73466b77434b30636c70692b7a53433471744770536a787479452f6a664f793752475a656f582f4e65654f4e58626d6d686e474577464d66442f6b4767393470724143523045616146726b6c7548675a414a554959565848793072304d626b3546552f6a5076394641637a6e44725a38716f7a4d2b6933755446484e2b6a6c735765766a4d4d77325530685437356850556c6e4a577431626a4475424b724d42432b534b556573515576524269394f51704d492f63762f49464238373751556a566d374e46566374634151492f4b66394d4348354b367449654357564c74794347474749317a792b4c6f737a556158387750794a7a2b70646333354674497a566343396133704533456d364c67424a41616450656f5a48665774417a4b47376a766d786f6d687536365071774d57565574644d667054334a2f6a3152773579327846594d68536c446a5978423244725363324c50506e62493346347970517174304a56325830794a6367316e6b41386633344d775639526164634c6f72524c79694872444264445a454d61446c6b4952784c7772444d67765645737a6f5a614d6b4330563654727531794e33632f427a3446536a506952505650633170596270766f754a5450636e4b73754a55364e6a744e59783838673745662f6d377942646667476b342b796648674a484c6e4d65584841637151714f704a4f6261455336373439636739393553434d4d5556633335717072584a7357763178686e68795470464d645731623247547a46796d3853494238796d7349474550793468783673516f364e343575412b4e68672f2b47766773516458634e3137713569353653546d34695a6a466e76535076613175726a6765313145755561366f6a44482b5470365149764b744f454d574f334c58345133397164496b6d4f6e78452b35676f2f77766963664271373942697058767638636a2b46712b687a37305858475a784662516f5437774b43746f4b78466b477767365832754b7852713453776b342f52305766575a6442383547304e7354795a56626156342b5055584e55355a7531446338676e6c35746f6431782b6c323144414d703132692b733146647a63355a49757030545a38444667364c774a572f52326163313633507934757055304c723267536f6d702b6852616b54485552524d6a6c70596a68613970736945627653746952726f7369536d775a362f6d5a434f4e6461343764564b676c4c33465a7230765a714a7843706b773879687733687742717a515074493649634255776b4e51626167716b44446a3735486d4f794261574e584f497545383546657031424963516e6c615135597352767530324a452b2b7949636665552f637a345a75732b6f6155464d326650494b672b596849486e3457796a2f324b314f4b475231624b4f6d30316b475177556e65454f6b4b774c70704d44737a337747305a354c734f662f2b6d5749457a316f72775152316942484a74436433417578574d4f5876334149452f73435850735444527a764c2b504e792f50343665646e63656e4c545a68656a727a516b4b68666b626d6169364b556c306c5779754b436f416e62634333417371496e427955654a44566b53626f4979756344304c674e7854543532484c4f6e4449754c4c4e4f4f45426f6b4c514661766b574973396533375574674774625150684232725a4d58694f477157654b65704a736d797048555369655339644b6a7977703654514936656a497a4f777255727832794a36786278794f7961707a6c39756e44556e636a3155714132555371614f3750432b64795857476c4c44396a414675376a704f665579354b4e50684d76545265524547627768514739654f51425348544c514c3045757542327851736543614c5a625a337878745873673674505663567a2f7131627650387633314f784b356b526a666f376e5a56486f6951616c39457573303674397755466a73434838756c4357636c5271427363594b72534e68736179427955484f3163506979682b467576727261487a784b4a636c56436e3154476e6f47436a584c4a65352b4a46475a4154366a7a32433450712f686e667868345a754a6244524f4f4d5471663945794b647a734a634559515271706f564b75674c705a6644474a667a4a4b767a4a4d62515037475964697a2f383137504d54666a4a7a7876734f58454d6e37376e4f667a6b50612f6779714d4e65445a6a53786745786b6e48782b414b526b4b42655546512b2f326d514f756f784f79737774774a442f4d4c43696362486b34633839476e764838545342372f792f4e373063614a6a33417845694838644e6f546b6a3677714a597379536643492b614c4751625a3174786d4b6d38365168443342596c637a4a77324a46393373417a30466d6d786230456339765850354b456738466a6d4737413848686d7252434173473237787766526c735432314a4677466d6a6c2f6a564c53736b6a646f7343563661796d354e436d5535566e50704d4d6d4b6642416a664355653435784c4e5533616f59584738646b2b6965454276695153796936376c326d4e5441656858506f65464e4f56714754366c524b6b7a5a5647714d7150484f493130564b5a61524333756f4754557857636d41704c464733687279586375516135314f615a75516f52777464445a3859474a6644684b79347a614a314b496a504944716a2f34396841636c5769636c3271394a7037375773453539625a7a6161517155366871647839744976763537734e326a773933624f635a5a2b74582b31445438335535615872796d4d6662466638315a4b6139456f717368503669524554726c4f6c352b77754b31517a3238372b6671754f485173376a383256646857735179535a413374655042467778556c6d6e50334152356b5375636f703468394e4b314a3743624f6e5a313357624d615445565261567852794b6f58335475707841534e6c4346677254676139705673535869336d75446c41684a42436b662b7a5a4d66572b684c6d56634c706463452b35473545455138426533594e4975724e6251765277323655432f2b42334763536864527963376f666c5555526c576e51476933486e4f414f46326256344b727a77753053613058685564782b6d57475330664652427a72686a4a7277387647332f57734a4b37682b6e4167647a6369456f343553314b352f707731616169557437456837357879456f4a305978464e756530494e697257584764396950794e4c5246534b426d63785a696570306d6f4c35697349392b6a794f5a6c7576385266644f47373279327941674a6663482f674279357473735553634c4b6a304c2f667271564670305659584e4a436c4d763433383042454938724a437832346c476a64356b474d567a54514471755559634c76563463426d49334b49736d4b4c78676b4c577a417738324a48537466526a686f5772595a6c63766537554876506d39412f2f417a614a78567146786f6d6b396d6978615168375263437152634632672b6651506a4f682b4264753362447171324d73336b59516569304b75667039425349744f45612b6f5245633269524c6738672f513657306a612b3865647a6d4c3741787a2b636668486a4c3838694a33486766677a6479746d39704c4963746e79704f355579456d467041355973597458466d7052574971352b7079485a4d4a47474a5966746e6f744e4a7934327146373835764e345042666e457a676e4b6862395251485a496b30416930524b727171736a4f544958775757662f337a304c36454a37566a37516c4864665a576c593551764c6a51566146536c6f6850396f46676569324a387552544374704b6d4f6379586c696336365a2b456954534f797a525934316e457035686e564c682f46534f65326d4e556a7a4e46617853634e724d4b32315438566b32634e4c36424f774737726e4a4532516e77336346524a4a7257725a676f496a7558716b34586556566954727639482b3763784c5661733539553232365154304a6257374363674a486445706d42594c516f743378334c756759725a6a4375312f2f795279385352383337416e51767978594657537742516c514558524b5948586f756338483635474c726e31534b7277586f38327345617635566f626d74516754346345754b336865536256632f5a67536f35595263706d74674336476261693043567551744336396b5a512b71483359654b78357a482f674e7558616c52417a7a6d4453346d456b4c7a506e6b6237423042777a3139672f4a715044533255733934347932416b7a3734436a45676f6d6d33506756464a356f71367543436e4f5941554b33693230384f7254356678327a3835682f545a575a7759554a587043457851517a596c575a2b684d6a59424e5670484d44554e57642b4653726d456f46614652323369616d4e49767663464e482f6e5469374e70644f457536546c726b7739484c666f6e4a436f4277623573772f41762f416372656d466837547638652b4d58474b6754776f75746f6c6a795959726178534650436346306b507348434430505653714274476f5161514d5a31476f4170446354774b314b41596d4e356b57446e5871596a304b416a717249665462626b65764f30443434763249636f736b5659676d436b323662536f6c495a616e6f5a5766474f34525369454343385751664837672b426b524e574b6d5a7354742f705a30476b3964557a715a51793650554b376a4635574a3033795157433835484346586f41345073516f75585855486953693066746b4c44533071457872746563575561664979544e5a5a4636387a5759614d6458674654416b59354170783676486e30616e4c6d6465697449516f44566d7532457572546d71573836503244515355736966616475386368586f58707a5572526656363643514b5752314c75705176313563594d545446576e4b4c554f474b6a4d6e4a435a7948515234336763376b495648505642306e4d4e3135794d4c4a456866664276586d4f7847386568685a496846517462523033713661456369584c61495a6f483063575072613836692b2b7938525876646a51372b7274636170355733545a535176506f744d4235672f706c6b416c5468445a584c4c456c6358554d706a694b37436c352b713466716278334872722f7a4330424273644f756e4d504c5956364750554d64776c345867454762437652424b6a56493850586a346d796a39794b63336c6e2b6d64303071534a51474a47523777714372464f4c39645a683268764a796a49694d55736c5667684d75535345536454516e366679426b69685047746238694f64636c6f6255304c6c584b5831646355704c684e794c6d6738646a534b6f544d4b377367532f30554f39705a4551793435596c39746b4d51676e49447037336e574c6e6b4f52784a3377354f32526d68576877314a70704c31745375583265357935494f74444b55344770306b576b4669443945355530576c39734257514e57445254594b546d446b634f71314a37695158455532613669496b4a4c334c58724b754952532b7a316b4d4d6d366b4a54723567524667346b6f306e3367453556594f4c374e4f37456963466c4f697734694b333867376f3331476a4e61343459777765625630594a486b4a486e58354632796150742b4438462b696243527368487a714b45324d57465a52476f347a3834534d53773772615568784b6c6d62753651376b734f67374b32526835335436306f57646d4c3075302f68736f7276343375677a6e4b30336d5253424338622f784a6765796b36357579544a6a67563334502b79363741624a3877584376616f3178656e55667651665a4561725130356a59512b584a457450556d583361384b4b565847436b38647a424f6c62754c7547662f656174573872587950496c384b393947776250664d633179656d4b55785636564c74666e6a49594c4173454c3834686666346542472f3677506f664a6e776f56554b76373246304b756530733339464663465674324e6d38694477774a6467583170307a573274712f626b5a733270532b66526963543847314a64666c7079687a5a74696238686f495646656471694d75705361307548596951726479454a4a586274717348454d594946772b464e69654a4966337552615a626b4e30356e676d4a30646d474c366c434568695553673231794f793070664b634f51436158567a4a6e786a497844596e6b346955516d467762496a5677616b69492b67697a62396c6f56347454587273654977516745385762456c702b754836475441512b702f315a6e577455774c2f714d6a7a6a58514d737649544a5a42466a6e6d55764c4a687858674468533753356f754c576d56504476566b396c7a6147533856533644564664477971445a6f5355466664424f7936414f62356277452f5748416c376747527a676a44476e62654854335946712b527456574b376e6e554134613548794d6f4e45584f50436756354357336f2f4a446432487036793969355747467361747a4473753456655349674c38504d4d39596a69445452302f4348506f71354c562f663973794a71632b5263382b7849557674563247557a796c55597636744f5a3431694f7162735577632b7a377a54656857764a773430313774336870417a5778367851526a35594e5977726b52355a63577053794b2b536536614e50722f37534f69695451446857345a4f4b5844737172526e45476c6d79675037674f4c7264506e73765a49776f37464156562f374f7153317951616d347177636d5178454971307543773542676c30453459376c2b70445876635665747956416a6644544772684d645a43387673374932367a47534a35614a5959706831786b4b4e717841317030655a6934743872644d7774352b47644c394963652f49514752564243346852446872466d4d2b37797871493643784a4a6f5933416a4b6d7271573348675a336442637470763647755174427a5634635975314b47734a776e6e734e6952563152574270624c41387867625a36444c595278632b724157756a4c706964655248546f626d444f4e64716975686647667969737a4a307946336b5772504f6848575a4150427269484a56334734786572724872426f33786d527839534d51686453634c3066457147455337304f7445376e4170517261533066436f5564637777362f43324a4470384761313433796c61476c4149436835563132426c4b725063485a686f517a326f48547a4a7a48794a6944704153757646673351615363764f35596e39574d68627366676d45547a4f392b42705a68386d775a3747445a66517672592f6134622b59517a497951627a7733414f344361634f416631575638375a6c4c384e5a7239327a44315358456e6f7564686b58526670427143665343613364484d574d3061646c4e544a35374643586e594b78744d4a5345717669517445676755426b78694e492b6d6f392f4835332b497867524d57646e4b474e43345138683331376473517535633173427570476366476e554649556f544d5a6e654141414941424a524546555475615057796d774147794f66455677562b7978365a79396b6a724e5557695239417441304c6662795a486831794d4b416144656d454b50784955757542786c63542b7959383942636947554f452b75796e6b4d6b68644d4339577356526d34766973304a52655a74446e4c45787268784662516438646c4a736a4134316f5a7879446c5676624b3062464a467139326d595a5a5677316473336847534972653832423870663141453336726a5a46416f31497a54716f786454775053743854705a303979314b5239536b35776c3135394c53464a302b443630523841555645725a63546c4f78445346392b43754c514d6d7545454768506e6f69586b444a6961796a43484f754b6b5768767a52325142466f4b70372f4568714d305968444851444471515a56652f323446784a3466787567746534444f556364644b61304b495476696c7a6342654732696d687373666638563144357748384b4c50374974444334586b68792f4234506e596934436f6e644258632f4c6b3235432f596d696f59304744675558345754583474315432374e41785a353377372f794e7a46344c4f5551675971494b4379776264636167444965524966566a7a3248664f55517650464c312f34675334496a6d5773793148436c34466e586f7152364b4a56642b5a774a6e4f51546b613249434256533755496f3241556b6a344e4f63737153784d766351353039473753633973536736645274303735436a37496c30714c6b5753544573694d456e554b70696b4631326a7166657073476154507763685a4f636a446f6b3934426855516446764478396853366a7476555a73437570725238523467694a69474c454663747234316f763848416b3743797569586455686e74597634415539327477306259514274674e4b49736c30534e4f747976713543574d774f5658666e63685579696154424a34685845544f323558736c6b614f4f4f75314d79394b53525172514d3575756b726a694e4348306f576e6d796d484471696859707855736862503951444258466b4d70676f65386a5642624268635978544f506835703230552b6d676c4e70564f7a733946626a7562365055765a30774d7a6f78785a6f6978734b76492f72674a3642652f41316b6a2b5749526a5654392f314b3057534d2b73794f6b6f52666a72546252587a2f66344733367931516c664f674b4a786a634568696f6973675076594c614e78344578724846576447534136654a7a4278735247526c65343237396a79426339363848412f77726664354d526d685574704d634d776443704e4a4237696a524e4d5a744836326874374d4a3865426c61366b75535552463747425a4e657147624c3036376a55394b6a4c764e4554684d494b537770753662477841796b362f51504137305467696338716f456254484e50453270314d6d47355a795770497756544675574b596465764553743066636d3669675249556b6a6979716d334a3756717059616d473467744b6732443846735059764337667754636578794b51447771445a6a686e6f5062633730735a3244586c6831345448316f524e474d694379586f6937345a4e5456466b4f67774d4372755456467251315a497a4e336176544270455869433851706c535a7341434372434c597545634e4453686d446d6a7441795a576e6730345836573775413077627236496770775630494a414b67546954794c546b4770316f743457634b456f6878675673446443374341657a714d77596846536c54634c41306e48527861794149424a66504b53726233506d685751464e796c724f69794e534671636761464376354c416f45304c642b335573727a6b49786a39344c74594970453057675452695270467a357175713073687a3473796159755076347a6b35536548753966584458346a6174633147502f414e52683754772f4c4e2f304a6a6e372b747a485730797742527558697575314f3438666e5233467762786c2f397864753370614c38375866394648344d77396773434359323042614675455541586d47585657367755347359592b2b6a5057674e6745664b63596772356459507147776835713555427a626b627941614173546c795132726d4f3272427132376b5247496e65374e6d493455304c566d546e33756c53494b6f714e5145716c343151524f5a70444858596e55326567754d534445766943532f366c4f7931793759364a4c6369346e7a6d30476f572b2f434443537a536154783548736d4251726843675651696a534749495379525a766932314a4c4761525037446c79507539444134766f5436517579344a2b53364259365034544d465934744154654244454d6863534f6b46427567646c61794e49556542366f526d6b707a7472393170584d67533145556678637976584148646a574661522f4869312b3942637154426d517a30484a59554b2b43433238596839757a697779543358473755554f4f7251755248424551626b437a6e7832387437384b666e635067524d396c4c686163644742536c63422b6939616352436b46497672686852614738625746716b435054674258356d67764a65676373526a314e6166337566316f32336d326e7038686278307275443369645a3952513344544a31443578723349356e494736676b44486c415258757965663141524b46393341575a752b68463465363461386d57645063347934634b72595049396e304b6e32554c2f7457665276656468544f2f56514e63697266766f3542372b3878392b48424f54573250366e58584e506264435833636c776e3176782b784348355779682b4f50505930786c5343626e6f454a527a44355531646734715966582f39445a426e5231542b4353363535462b7a73552b672b396c30636d33304e32634177647148614c734f517a536863392f647668332f52746244654744516f75314b47436b71633172576358676c5931304a3671785138347a70567a54384b2b32392f48623632364d39627a753148585945524b69644f44444d4f3078455075542b4b594a75516a504467427a4439532b3968636c6d6c2f53714f2f2b5566344d6a3939324d733771477144667a456f694e446a4a653241314d4361752f36703668526f575053526e7a3448717a382b522b683332354339524d4777684e7934566c32625774454d5647394375725353794432356f6758466f467967747a7a344631526775304f45486b356736786958634f6b494d66656a4744734e4b6e766b6d732b6a4b58622f674b713332633358466f66746a614a2f582f725a2b46563935312f55324f5477517a6d4d54332f4e42426c534a39396e465849326c6d4779522f364d4a70505077693738687238536833684662634e39667779324975526e2f73396430754e6b2b672f635264652f647258346255367150556f3653424169616c30724978364f4c57754c4a475975673771725a63682b38367a614d353755426459704c5571646c30326738374a5265546a657a44316f5a394836644c68376e504e6131704850766b736744764f2f69654c376b7350592b476550305036776773344d766c326544642b484f39352f3858626476485449334f6c6f4764636535314a75682f41576f314b666776416461652b4d33316b72614f774a444243626d4f61517056486f455a32513431654f7554706e384773504d55496c573263674d3169704a306d6f6b7575677a377847764a65682f503363742f623449316668764f367a303050572b414d485a6a75556265685641513565766e514b7443767538387a376b39444c7a3248764c754d764847435245573473453555363668632b2f477447513254774c53504d502f63646b3543647865527852484b422f6243744f615274324d6f6c55507376513571354d4c587a2b4f6e696a2f2f4c3437566b5050554769562f2f394d62334d3931786479754f327a576873323762497a53786a4b737078464d48594133646e5852456d33746b622f36707a6a3578583842763152472b62302f6a6570622f6734333861617942734875344c70722f5576466e30324e565950782f3447586346376a5843396d5a2b794d6e664866634b77616a4a32784d3362477a6a6a6e325036432b5a32784d3362472f322f486a7348594754746a5a357a33324445594f324e6e37497a7a486a7347593266736a4a3178337350722f64705674384c69566d71666a7a4f5a754b764b496d646b6b4f686e75437758717a573578646446672b5a545032734c775257636b5345315a3665692b48504f2f486c5266474763346842544448587832646156646a50744e3358584661784c5546776a5236475968644e4e696c504848447a564b446b37347a37784f6c50352b6e532f642f7035574561742b466e7555464230396c37392b6f7848656d4e6e503772762b4a5379666e48646f6c424946364c4339506d686d774257554d727371632f6c647849574630694c2b54705436314956696b793566554d6d6d71514a5752424b46633344416964425268584254505576356f49376c4b6d693833706d54776c31432f39304179692b446b3750422f2b4d4f4e3233466d714e4c4c67704d755655386d2b4b652f474b3931423052474d4e434f482b6a6376507534564d58654371554e326343685a434f735559577533435a78324a6a753952464e33614b3637584b3166636573572f7234706955452f6731575a735a54635839705171766a676c76636a74364f46614878447a30713072496e69355068394f4a414f7550534f4b645331645031646538366632416c48557a656d3174376f75697a6d335262764c552b6f39712f744146742b6f6f717565505332543650616575782f3364385738387277344c5a6c543630474b4d35674b68536a556176386335656145356d743158334a446277394879722f793749617056732b7534465a49334547537936746c766d657465446978586c766349452b49506d4f442b717579597639335931384362556456707676745858576d6532386d4d6b43595169414a63795168324330515a5a496f616d74414f344c49384d414274462b2f467358336e466f62665738395a4e6e6159714f696a3468697430494c474d4146436f4a4d446952684341496841514b4535475a4f376e43477174723772582f59752b6f534e446c5a575863365657665833762f342f564e4a4e4c79676a6c356a4541394b43443438734e37624b763058516b68632b564649462f42415042544a6b586b6c746d514d756b65667267486150747157553845694d59517a44677872786a366564362f4c354e59322b7052536241496a6d4d71316753437348715a2f48616536304839424349485469565667686b7257754b3467454b3051476775683848356445376665742f6f2b486f76754931484651542f476149637545616138647670566e346d4d7a666632556c6a472f554568362b4856423057526167314a57746b5850316167636b647871765174684f466b544b51766861724b2b74443032327574424e656e56416e595674616a507a4d42612f384b62734b7177686e5471704a517631663634587355496a435a6c677164744b346a47654a35635974786f556b717143536d347059426d7245623531735a58517531494b384872554672796b7347647058425a38723476476570726c662f486f597765533139384470487934524753303448655a764b486b592b6b53595a5244394d2f326d3165555a5146727033587056504b7967374d3359644e4c7332722f436e6c526e425771676b4762635a4e79522b59452b3547576c36644431322b36474a324d4b63566a59783161394f6d647a4b3031446d4730764a7770564d784e4b4f30744e6f314a34724e386155424d6356645433706142514735314c35764f6d56786b71637470374c7843707168635a45346d51594e506672724547375a307448724c687044544f5761635033546b666f4a5470742f593053434d4d5954796654302f6835696f7232444e7264687546704f6a6b386c39527072344c414277736a53484d39474d6f6b4e557063334c5866716a5a4c52636878445943586c6e4e552b384b5a70313352734879446e6a4a6842726c476e3847467653686b58344a323477707749337649544a4c494f45642b4e5a534a39566d35705543687845597a68744f776e6f6f7771657465687259416d61534c6d2f474768516451576b412b334e73726b36715744624e7574662b63616c68645878413053546b30694b324c774d52645852733178714543713662554f6b554c4d68693856717778506a7531526b78696c4962316a50566371624d5876356f566138334c4f716c70454939326255692f464e4e48764243456969712b73476a6f50594f4162565359336f69515a39726e3531646d44685a36586338343071514b4d696431584b78346e4e4835786b47594b51393131566f4e317267747a34467076436b574c6f396d6153432b78366653645a7a7057632b637243356a4b344c354c776b4d5035534a677337456a4e5531527731674b714d412b5747566161696670476c706c6e736944307754335833446334647853712b574c6b4b71486e32355353786f2b474330756e43587446336e67306e565248615679647a427a4f494251704a764c77656b524775444d5354646f6f4c553530634a726b69674b4664684168335346426b694d457067594a3244773052637131786a56597233684144342b3242527042557a5078426e3157554c7270337a55626f486f6a66426a544d69614c68786a56465859704a7143524b51417a61366937772f526442595a534e5a767179726536506c30317a59564e566930526f324d73314d42556359586b566c3137734a3137724d50695669354774316d727a587a36513547637751715a355064484e397564647150724778304559704d4b463746397939766d445247685659556a564c4170496e7448666b4c4b4d774c4c53316f467146506768347472724b527a4461654965716b336c4e58563172496d646a67675768353863756b6c6542364653512b6f7051554a66514234745472546a694a326243774d673173535238315258706c4f344e5030757736414b7671484b4b676a455932665335596161756c5a3473644239327a61694a5579323457465946413355383134485a5755587936594f5957694a387553654230587465694932726146565478707535774552426971717234424361482f4a436f624d7934696257315039576d797a36676952776173472f476b41796451364b7a5376466e794c4c5a6f4a565536776b4e4a3558616e336351444f5171756b4e4a4e4d586f4e693058426a573646426d5a6c6239624e6f41486b37693566744d2f78363652374f4a366b76544d566874746d5263475833743564376332646d4a47553233626170325a364b776b626e6a6a597a756a6672734a6d4142546a2b7a347137454c755931577771594359676149335479596b736c4c4c697145617961365561456b616c674a563674524b4f6635586a65714a455a4d35506d6f4268634c7674582b424b334d69592b417732463973474338436f6b41774874757744466c68587941356d2b3354424e794d4d4f314b4b374a4d2f6e79375642526a4c5375664449513553346c3663424b4a6d44627a74356a7939645742626d4c63736432356c686368572b78415452486451397a763059356a5a564c65366c6a36654a6b6b7566623953506363306a50376767654f56612f6e3251706b4642526157677a61514e4b767457577039383941664d677475346c74316635705730564c793850306e4163765144724a46395638776b384a5150744778385642683858743548506a4c392b334d48646a645379483469574b3571395256657254637874763671774b43474a614c52536a7176485873536d7064637a322f6f3366783564422b394e5249784d6662414635624262316d486b65732b795a50465a4d384e5775642b46756d4a462f4450753737774e726a746d325842775a394c57326965666a5a71697936443664386e4c734a746568375a677a39482b2f3566774866616b6a706652787a335a734b686b35795a66775961372f6e764d464e6e38625673554c533377363236453932486667692f6256437672594a32515050456935476339706e644e7343742f6933795039794f33725033714b6c592b614d52516d6963664248535256662b315931735833737569746565554159545775713734447377427832483057764f6c4a5a65515968512f35534435364e7834552f34327536507a6b6678367372536b7175436d2b71524d48616746456b453176652f6e743744305a6176376b3876674274634b57355a3361492b37784c59493934484d2f37677549633039732f392b53626b71322b473777334a5a394561637366617034727a7044504f676e33544a5441364a70433953477276523230656e31774b742b74564a6e70324a39576162433636466a687737396f6a464d75765266376e472b43706e69515837647236704852644b2f3730626554502f6b6745516b4e6d6a6952546a3064792b6e5838392b7a3253354276584237506a7764484e32526a75587738393346306775766b6f6a5461486f30542f6875536b2f35707a447134592f6667553868582f78625a366c2f4a6346753962786a37326c6877455a4a54727544764f2f2f7666425472482b6465483062377277515131665350513233754569527a4c77516145386f5036653243662f6c655a4539385239726f4237777264326963386d2f412f744941752f33397564702b33384e4f6e5933472b66386c61397a78497472587633734d324f2f614f644c4446364c2b7a6974684a706531583152626c5439324f306157586933394e397269416c4d7a5a4b7144696a6a6658336d6c314a4759545a644751475139334c5a485a4c4f614531453734784a6b7132364e376b6879774479594b5966782f2f54516665474742714e506e3878376a797a736c655577376331784f43377a594e71482f73752f427a506a2b4e31575936664e52754f637a364f2b59424747762f31786e6a4b474950313661704652512b4b4c7230547472627558764a6a574a43516e6e492f5755576468353166505137486d4653374e4e326d4a6f68644839393677444d664f4f5258314f616369656646503248584e7831454d74526c54435a454e49677837624865507258324c646f4638537757634a424d78707a45426b394436384858593959325049614d784461526c615a364a3755514c7664695349562b763271345a414c706761716f35366b6f455072714f652f6e794851632f537433422b744536353373772b382f622f634c47424e68356c364e32344d6e6f336e455a4e5a61413677716f79734a4b725a6e6d36562b455065627664372b2b5067466d316d4c55446a7756335a737552724870655a714a4b525a694f4d43396665317349332b2b4866454f5536317a472b3269474779726c644b464a356530316132637261727a584843336f7076426443314d30334b5054397449784a4b6850686b444d757a46303969422f74324c36596a2b4d574d6830686b4c6b63772f4737323750794574322b4b6841325a694f584b684e6d4d63544b4d702b39326c2f676c4f5849484a5236442b397139484154313233385944552b6568324c424a724b4f657a6b70685264694c2b73747479495757362f316f66767748387154743757682f2f783951764b4a50545532747565566b433633462f32654d55755a37396b3053544c65513051613171563641557256387a5637555a4b62516e6f496d4146654d424275344a3239473875615077457736464d6c42632b433250693975324a766556543772636539433935456252474d652f67356d5848726c713559686d5771694f55386230547a7a69696773334971666f76753762384b33523244473734766d715a2b434f6572644d444d576f4f2b442f34544f4856395445376e552b493054336f39556859566676774b646e333861667364472b4b51666a622f3541467341744545545076472f4d5872392b535859716b693237532b724f5565754f6b466d654234796a352f42487664654a444e50774d517276342f6866373141646a395671346a637763713132533266522f3771476e624e32437930596b4b61396f7449703151736c4b364a494a49395a41456d584248754c565a54306c38354853386f74614f39377967573439555654497a694b544b624a4c446438502f39674959356853466237372b53503664343654474d336e7731442f7331436c51586d3962774f6251575868794668567635482b672b664433383843424d2f37356f764f56533241586e775579646938624a5838506f545a637278685043487736316f38364b77734b2f396a673674313068317a6636555a2b2f424d6e43547a47544e63372b42747258767763596376434b583358757667616d2f6c30786c5a3142626534376b537a346b4f7a704c3738454e37685750414e796d625a76674239566c79503159786f7a4d706f2f6f75436e416f354672524d6a694d5847446f71584d3947574158524d6e6577623751576a7279715567785648664c312f4f333547397963666874753141636d304f61696439464759366366425444344764764b70794236377556774c64543766647a6761687230314f2b4857747a564346384b76425a716b3656565946492f666876617962384c76324351384e4f394d754230626b613070524b363645464757595534785972395a506d2f67663134582b61797a394e504958333542474c306d413877546139413862516d73436f76756a7a2b4b5973314473464e6d6f5862635763686666416a706b51726f707056516478696d744565426b6169705736682f7953455968327a6c4853777736465762737769646531664474415a676a7a7333586d7a6e6e674d3864414e666c7835655669483348723954414b56455145777a59542f5965584b64662b4542644f372b57686b353254474939724c506f6a5839614a684a4d356d497a4950663467366e3163486279656d666b7664336471427a3838666852346542466a564247555876385238684f66676f6d43506644585067664b5348483439692f596f79374f55304a4b7376307a664b595638332b444136397a794d566a315267585538366965636a507a35422b574e415768716c4d7a74527462425a3675556542583972386d454e65715346462f6b5339624b362b6a652f52643941653166587358676f78306f625a5a6b76345934754c6d43584a6e47317a5536524f364e625a6a796556686f5069325437734e48686d597a497a75514c562f467a574e434e4958483754566247486a725a66494d7a3979486b6156666a57437071513969644e315830546577482b77527038484d5067576d62312f343371424578424a4253744f466c38746e7433656766654e48344b6b484b49306547427043353534666f4e58614635624f6a3835782b6f6e496e6e314941455879544461766c6b6855512f496a6b716c485236736766326b31386865664c483339726a356d56305a50554b75384d48666344665751762b4c68476970586578377051425a3937337837686e785442514174314f65764b5367595157316c614c58616b6f6f466d6739326b623377477644306130696665516b445837784c666a3953512f745a723233314a4e78706a7979745437636a5237485a523765542f6c422f30786b7742346d694c4a62666970487250792f6858675655737966756b664f74565942306f384b2b516b3430714b6a356e7338684f575342334f752b72384d4e506f706b6967675364754e4a75524164486e7855764b37592f67524167486d324674336c33343559432b65696842796e544c435076576c67625530493836696d464653574a696f3944372f7442586e544d597345507a6a6d6e574d75446f5468693337596f3855646361755767646f686d37714a73654e6b57746b43496e74796d5359495352695776394b45736557336c4975614e4a736a4a69472b6276655a42644f614b50642f2f476477513850796345555a6d737565764b506333476c7a4f646d485444514f54667153306143354466536362706548322b6e5275662b6d2b4c6630774e6e696731494c4f57704e32476648434275373379776b2b383948637542382f6d6f6e543565326265707238385a3341336f394e6b78467772623164312b45706673324b77366a30656848513378664d38357935326447764b31614f726b494b484a7a32536f65555341764a482b6c3671665431472f71476a31416e614e7047707a4536704d355a624f5a336d5033384c4f4830434f664132336c302f6556657a686c467664573553452f57346d69442b487a356a4e592b557534545350774f386b614d5042624a487a58666153636732736e7a67534735506373574e73694b486a39375a424849612b383637685a62326348654535495a79637775675559475a4b326d565877336b2f6148336232305567504f51624a6f55636a50664a59314761557656344a70324737786c415864384a43716657654a6e4d5a44566654344f3868616f336e7555456174576845743878616447334834577479546576486e6c7a5352733269506f32384e2b70314339536e5554667955764262416d4d7075745176513632706d58423933686e78373530377667553751664a4e36487a745a42316c734a2f68396f454544795454365766366651556b4a30766b784c396e7431743434442f5158626b3059695632677458763166743764586d387276575275314762645a62777936696d465751792f496a505a7468482f474f764d49786f793458776e535a51735865792f436449332f346c6d48304f526533595535416576316a652b394b4438424d50684a6b34453758357038464f6e525276574c776f326a6b6d4b52487551557756446e54586f414243316178496d6c4c3179684e52556964545a36465974314c69384f79335656717474346647784976356338696362772b5837796c55554268684b4d346b7242426f6b4b77637869544676656e4a4d64654766414f4677736351643233526c386473595048414e656a2b666d6d5a524e514c35683169636f6c6676314c32346f42354c4454716d31614c6d31426454796f437a4767696e4e6b6e596533494457344c5957722b326858677a6f524d53712b5a6b486e5963434d614c4152364b5042534e3267634d69642b584866395775536b6e6a4f3159727236334b75666936332b374f535a38454d506c3648682f636f75613952416941574e51356d525365304e7432346f332b4f6c59794744692b517a42784f64316b7344652b444c524d52437448616930533853674454463357715975357156327a6a6c5976372f6c31357049737a6a412b6974654a4c78416430316e4e42576d3651527055427a3438736d6833304c54306378654443532f65664148762f4238706732504d58446c304a53476c317671774a6a5768312b4a4554434e4e49785467424f7373704d75686b59554c784167324c434235575965776933686c5341514866764b4f6d75742f784f5966684178373653394555704f342f3948486271484b5931557253316433386436556d58492f76646435442f2b5664694d567168495238537751713153506677536e6b43744136346c7042586951443356763657425159762b4d325873432f487631397847354c706335433835574f7971476c48794b5a306469422f38533770774d3268307742415643444475694c494d4448637832683266796b556644374368783754666d73565452315363304f61646b32497343714e4b51474e775a77736d4836763377675643686f754a7443312f4777507431564465475279396774344766394f726b356e4b4a6f737859364e3854377346395955714750415637562b506f7a327256656765644850574d696d5a2f347a7a464d2f4b2b3835576f6841714a654a5a33366e452b43304c656e615048682b6d367a5a7179764371644477593466434f58322f4c616470735174554d62456341625164475974416f794e34306c64714e45516e72364b51595549555a6d544c70374b466562644164396a7a544132366e73787a307569317161565179636d74485a61774a77394a647159454a72306d66756d4c2f4736657574387368546d484d4a306d3656564b46767a6d4e66446258696c2f77576e683432454f566a43394a724e44424769583745656d6e35725341754641485263745537626561704b30474e667a747374324138694c68372b4c6650427873547a4447736c7971513675436f6c5967514772722f613273717769704a38624c52335131486c54447937695748666b39612f47325665682f634d6c4d44535970463443354b69586f64334f6731394462643276555876547863416843396b36724c2f334771517a6a6b66377471746b36797247676d6e386c512b737646492b704b49534b752b6f32554b67374c5a4246435163357238762b6d47457a50622b38414473754f586f6538764835504d5553504f72376f5462715535687343504a6635323444736e666872564e527248566c5969734a6b456c423564756978385a314a4e54633773714d506f6d614977614d526d4c434d4a4f4c454e5633726468787956695a56446568432f5464506b6a787775424970666368505441557676363772436b4b477336656b7772316c6633726d745144443668564b54675a45686a5474515353475832715851516c2f77516e343269382b4e2f5250505347316e714a386375696663302f596d344b45344753456663676a67343857563261744141755359796456567231697472744b5a4d4254637157476a6579396242714e48724d32636a652b465a6c6d665a714d5466716461694e617338672b377178336b436c30306c41616e594e5251623376723641494e7a395042735054526b5370716475472b386e737333616a70764a4266666d69306b64647553697056497a78375477734f586b4c4d51452b3930792f3930437a72332f566a726234546f6b34506d6f586d4a754a584a314c7251634141313834716c6b56667959736f686f574b525667412f2f39704b6f4c4d4c364137426258775776576342714f454b4141415165456c455156547559706f306661463252384f7a6c4a695656525a48676e79307a5077307461685832456f337258353443712f33504d394d3463686a55314e65426b7a357a4a6f784c4e6952726d6e4869334272376b577934464a6d2f74626666526e744f7a346a3953716d7a4734315956347257527062666f2f653874386a4f6541344e4d363569694f62704f4354683235487675484a614957486246472f46314d54556a736c6a656d7a4963754d73517849496f7a662b6763413779735876756258534136697039334772676c4a722f444b5674395446756c6f5a683633667438534a356568396a654c55577a385453786745677469415061494d2b582b6e52317757395a4970716743533858366c574c53745362437a6a6b44754a2f512f5a4859645a704d392f5373736b6c772f73494b4f644455387a41692f7463714978322b6f786d6b394a376d414e4b544c797576586674516d623772734e736d4d755979704a70416e3448776c6c4249787255766d577131634f42654d416f337441616448317941316a2f386375784e51795972564142777872305754495573544461724c524e3330417845624a526b39487030322b763065564f55356d333238684d524747792b2b557a30486c334765416450612b66703148316f4c4379466d4e76304968494e35584b69324c7031384350624f424c56504f3043644f362b6b51626169765976784f5476502f4f436b685a575069543564716b4b4e785671386a765057634a6a587261795871397035565a6d30315174544e4e4b326438506d63694d483155774a6a667175436778434d3353394b385562595769776752525135734b734e32373978736f586c31525a6e565744647951744f68386d61675950317a5871674f5736663735327674524f2b78742f4f66476d3565672b3968534f557572694b734f4f672b43545a4c5142465079765477614770326c2f7769335951316134772f6a5641417a35797a556a31324637752b575368314b58794a54424c5773676433356e6c716b32564d6f48767333704f2f346c70445933353449762f775a535a72722b64493933347655634f7433465044626372684e4766796d6e4e4f3033625963666d634f76393268393967795a74615345503554783245375a4b744b6b49736c344d595641423377424b6b784d424f4e61743942455335303444506669735a706e3463644747436b4f706b3647383050584d656d4f74396e315332634138447864544c2f42677a732b41542b2b64766b2b6e304f5257764a563545654e686e3234427253777735413639777677737735566337733266755172336f4f627232446538576a324f775974484f6a4a65656e68783650644e6278714d392f46316f662f552b2b4a37324b3331324859765047456f5067595437456d4355787054506d494a3039442b6e4d6555674f6e34646b7a6a776b732b63426666315345364831437978457171364d453350566256324433753266336f315a6d4d43616d744f66614f354258594258486c74493479504a372b3654555a4a6b64764d736a77526a387852436d6e466556753953476e2b2b5a544f4b702b2f6c767956486e59364244333857646c77665732727039436d59384d6d725961644a4d6c78327a37564932714d387479577465666b364147532f2b61376375323853786c2f344264536d54575763496431764b76725076784c32534f6c4f5456455976327564414c6639466642577736536b58554f2b6758435335596c6a4e487141356f497745446756504e665630732f544b6d592f6831306441363663794a523456503048537944316747705a4c5a446b505356614768665755667237554973617651726f75544f44327943416645697468795954737174725244433449734a5573692b5568547770675a6d635341354b336142343957465767727a767033346139586b58776e64616342734c2b4f4570714233354962544f573470696f2b506e416748786f797041716c47326758564935745452652f524c6e47544874506a324b39465965444c736a416273464a705a613857745441665150507666555a2f2f6667365a6b344a7a33644a767a5a2f2b492f4f373231794132354f546b4e33706d4f663339457139316749493275555a3265594e345a2f466e5066503341557a2f7a7a3437533867662f6c5a30546a47493376694471536e66343431662f48594c58433743734555677154535a423236782b6776766f54575a62654b6c54443367326a4f2f65427553794e7763505432377747554d445467755a61414e49464c4862715066682f4e2f656244544a734c4d334d52476a4d5837583739356966522f63336e6d474449622b64497961754b4e6c6349744c376b52377464363536374539302f336843525a6c4f7442616b776675316458336e4469654b6447383548735735467a4262317150696858744e2f4d78456332597137574f4457332f384e2b58766d5378433472664e5a796257686a614e302b596255624d516972315142554c556d54466f70516465766244586b7972444539425a6f332f7776364a38356e786d2b64764b462f482b3350567933484e31376c38727a65347a786b58752f2f7756717879336945484779594445474669782b677a4e5967394766666b573172496b75466238737447626f6452643143366e4b4a5375747a386636487861455a506b4f5659514c57534a39706e542f62466b3342453153597947676b397443536a356a515a554b3139675351544f42665357784c4a6c576c366c714a42534750667a325369536849514b633330664139495253576c4d49326d38725970534d3364357472794b372f53756f4c2f6c582f6c3136786d66342f2b74667263586e496c7437733454696e517a314e6f304b70566b3178347368394f373648366776766b4857384e6172306676335252774d674670413962656341335049517154302f387978482b535733345438705257786b444c696c71473666412b7631473274674c474251554b426c52616a74752b354366337a7a30503236782f4362595a796c41694e347047626b4a372b43585166766f4f48396e6f4667324b6c4b6b51362b2f59674f7463755276325553354763384b4778524c6274425251722f677664683238515168327650515061576f374d7075554f6a503777456a52507552523233684c4a776776583733774a62765579354d2f64444e505851584a77546643414566464e6d6544654947546b3139345050375142325a2f76597575497a6566784d6d71664b77617431394c535057386b597955397a634b73616a4167317138774154636c724a732f647a665335542b46506636384d6d345031574a71715841506b47316175304556706e6b46464958384c42584346644e594164637876536f5550505a624e32503036347452502f3369335951464d587232384d2f522f74565035465936717a50367566522f2b79683266664e6a614a7a30506a546565666d5954454a4f4f33376f4a6e54755867703052766c353362435039346b68344c71436d386b62484567756538504374536275487832424833676436433366434441654b6936727a354a4a50684530477563313873554659534d423842344c546c5a64456f35436162695a7232744b2f5171446b596c67557277697369493746576b316c4d50766b436c344c49796149765449565863336e49334779522b426d5430324e5945734d62396d47597058663832466d723564434b6243376b4c706b6c436d5a346a304665762f694754694e57797845422b30336e7331526d2b385444414d32712b6858664262316a4a6d555830566a397949397533665a70646332464d423943416f39694c54303279353649677632377235353167696e6f592b442b5835464a6f59596e5861466d7343572f5a5947464d44455a3951666948394468544571627a485470724349466d7835756e79774f744b554472464f325377616432536d4e63644e537648393350686c4e763250457839564a427844535254316177776f52593845545076367348744573334e655142686e625a4d5970454942306f7478495642676e78534653345255624842535479374a526744763775705552483648516d355469577371346667565750793878486857683352483476556a435a4a6d65685878723131496d773472365254526a3543626b6173317132566f6259517167316c356b62446e797a55516d37482b436d776b2f5a446238315473646c4f525064725568446f746563436f796d5a464e785271346943496e4f74466d725444305078326c723430546150485977675933697538427870475a47497065324268674a695836743848304470756f6c30775659492f4a676d5139413241437738517446692b4877725a38503344654875516f5636714d6257436c5547654e54794963413631414e7837354141646e61317742456c72684b45437039335230426d6e6775386a324172684c6e45516b43317645317a4f6d7a2f2f6967474878504c6867767761464b2b4b774d4352733876754d61705268587a456c766a73322b577a78614b776d4f314c32486d6878774c7433306a6974633277784565434d4738574346717555732b49694d6c4d3238656d485862553238305479652b306e6250777661456935505165536b4172626b414a7a51734e2b30585463644a74706e326a2b6d53483663626c687232642b6d727258517643703262624444394d6e6d67347255744b445a7345616e597078574d585731736b69686a782b354449587847344b57476f345a47554978497756626f3145526a387447304567626c324c526d4b524c686a6176444a4a6d45576f63315955564e583739446f776b61657150776c74486974396a6c694c573852544c44734c3948327450326d5a4c6f51395670794d586f4946596f636c4a4e42645550345455544d6732684258616b5358744b2f4e6f5067643948413657375168684d794b4e4376447a4d47436f6f676b414f48616d537976653568456835727a4f74634b54507937596733376146675656322b556646524b564b55426f50366256626c68434541723068676b4e3030686c46643864546d6b6c72304e73756d703256537842325156675575743563713561746a77493661446e6567784261546556396243304d43506a4e626e4e484d7946445a79305377754d315975515543394c7559634653356a31723666345a79636f4e626848767139574d354847472f58326a594b674a6e6173614b755454676d6b3756724e323954355a525541686849545648617062726974686d6e434f4c526b332f41714b4c6139456f555334495174434d73776d6d706a74476a756c426346452b7a53696c76656f3849797656525344713578355866613757504d555842736339715a453832374838416853736b423748586d4f76444138434433504466623053764d324559766c4343444635586d7964533653314770596b3070674f694e61592b4b674f6678475a6a346d306b43467442424e462b5234756c5843366f474c7252796834395a4c6172396d6c524a524a534638354458444e4b6e346f315a4b31686e74446c5a6f4a6e304e6d4667305854706f627459636f777267454145522b4b556c37327875556b526776485378636630463046664144586e70767553555344496c416a49702b35564266415570393036656a7751414d6579516a395954787a5859485642544f66566a347532435175747a70426f6168656241704a717a456f6c5930356e374e5756663038556c5336396b4c747453416551436b315173703072504477353239487a4d6446515268627854396e6167733661786b69626b6d704e56307050454871394a576c34622b33412f43684e365a36695a6e6763775564624c7a61787951354d6e7978346449533362694e41795265672f59304c484a3631784d477a46555a4d6364697549735074437a67313437786c554c6a54787149754b525243307136685072383853386252636e79307170544c6b7970674970514d316a566f4c4a4454496f7254613355326a6139314b364352594172324139656735315a514f564f69596b4c65414d6e726f68703145334c4941554275344859724c31445670736165755059572f522f526e4c52614e71457465436d65794141764e4e6961426b655547375935467279754b6e48693856684e5876355a3633716257674f4f68352b6d654b697a70555366506348477a49354846474c3573744174684f38335549314f3138474a645550494f666157443772554e65726b63464358714f49374d4b6c4f54475a7362704857504f6b3376626744314a673144646b67706a344c374e6369306450595a5663706d32315268376f4d5966764b37524b7577397447656c2f774d4862454f3348414230796c45512f61525743736b307145676c36306e38424d746b6f6b6b71584e51386870723757446d71525556342b4b4a5670476d4a7071312f50742b4f5354757a56425852744a7556474a4a69534269445267612b744136647756585a69786a6334465a48767051686f7258457150772b6a353244644b5131713372473159426c565a3855635652754161745a6c6770684d35666b6c37697556596a51464b6b4f6132613654597767734559515364436f51726f716a445273365a5561363474616f6e725158544154572f79696c765a565955534b4c3751376d705a304a42797271515a6a585a794d3553304e6b6b4653306346524b3468326c4145714e59466e305569516c764b326455744d6471504a5a5057676248725647697053442b546b4f343330657044364837566c70523945687963637141465736456a6c2f524b4158784472557453484732714873314530476a6d4c37733461646e546c4b363141796f417471757231517a757070634751346d5741345479412b6a3951714d6b4d71493753694139384d542f76477651376c6f556d63684c347257454a7270377a774f31695966724649464532583743374933414d44573842494d486a43314e667747636f4955376d6d525478536e49756b6956496f4e4373714c464350776a77714851575167756b4d54723965534e576463676178766537313542437a5a6f6457553850516b556b6e3573454f6773354c5252616131586b384d674c554c534e706176313142324a79725568422f56346a635371774d57506f544e6e4a686a374e7653755033786466697347303143586d586f44654a397a4b6b774157386a494a5751654b76567143453552355065496e365243704f776d314670774d72434c6253374338515258413969737136507251625a663264747038566f49574d314c5a73634730314b596e4d36557730613771655756796773736b7149655538627950546b75656963714f647332696557686c48386f6752534b333070672b355134386d46427264474b6b6a4a6a5858715974693634525948564c6452432b6e5a46654554665843746c516b6d7547526d696f5562736e72355930503049793364456136755469754a5765797556724a665355674f4f37485751754b62316b317867364b69556d38454f56382b747a3756364f6f7930726b7731734764326454793477517846563442397549576969724d7462306537554d6f36677a674b70652f6b2f496c38624e64512b61636a4b664e634d697434564a3146567145707a575672676c7a497a646342523733696949726a4c3671466467657373676f6d593673787078757078454d4569613552345063724d44505a52496b6a534c39797938412f783930672f6538666d6b786c6741414141424a52553545726b4a6767673d3d);
+INSERT INTO `user_profilepic` (`id`, `uid`, `profilepic`) VALUES
+(37, '0', 0x626d312e706e67),
+(40, 'SHdnzJjlNO', 0x75706c6f6164732f5348646e7a4a6a6c4e4f2f61333861383564366534646361396437613633653632316332616265333963612e6a7067),
+(41, '8gNEbNj0I7', 0x75706c6f6164732f38674e45624e6a3049372f63383336316138323336613933366134653530363035313030666265626531342e6a7067),
+(42, 'Im8P8f55Qw', 0x75706c6f6164732f496d38503866353551772f61393638373765646630373239613062653264663532316361633039396565632e6a7067),
+(43, '1X2UbGjB4o', 0x75706c6f6164732f3158325562476a42346f2f62646661373533383561303935386534343864376438653161643161306239342e6a7067),
+(44, '8CgCGMS3bh', 0x75706c6f6164732f38436743474d533362682f65626630633561646130313062333232383537666535656431396130666264622e6a7067),
+(45, 'kf2swvghiL', 0x616d616e64612d6e756e65732d3037313031362d67657474792d6674725f31776e776c316f726f3331667631686478686830716e6d3379302e6a7067),
+(47, 'iXpBVCPNW8', 0x75706c6f6164732f695870425643504e57382f63303333376132356561373864363066626335333166383738336638353434622e6a7067),
+(48, 'raJ2XRcheH', 0x75706c6f6164732f72614a325852636865482f30623366343661333365386134623535333732346436633236386163363465332e6a7067),
+(49, 'kZ66yrR8HI', 0x75706c6f6164732f6b5a36367972523848492f31333939306335313766343931303564633038353736663631643334643931332e6a7067);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vendor_details`
+--
+
+CREATE TABLE `vendor_details` (
+  `id` int(11) NOT NULL,
+  `sid` varchar(250) NOT NULL,
+  `randomid` varchar(50) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `gstin` varchar(250) NOT NULL,
+  `about_us` text NOT NULL,
+  `address` text NOT NULL,
+  `list_products` text NOT NULL,
+  `contact_email` varchar(250) NOT NULL,
+  `contact_number` varchar(200) NOT NULL,
+  `website` varchar(200) NOT NULL,
+  `brands` text NOT NULL,
+  `online_sale` text NOT NULL,
+  `city` varchar(200) NOT NULL,
+  `partners` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vendor_details`
+--
+
+INSERT INTO `vendor_details` (`id`, `sid`, `randomid`, `name`, `gstin`, `about_us`, `address`, `list_products`, `contact_email`, `contact_number`, `website`, `brands`, `online_sale`, `city`, `partners`) VALUES
+(2, '', '4abg5AH7fA', 'fjnrekfnrefjn', 'hnjnvfekjfnhj', 'knfknk', 'njdkewnfdlkewnf lkwnfrelknj', 'nkvnjkn', 'resheil@reshel.com', 'jhnjk', 'jewnfdkwjwf nweflwnlj', 'knjwkjn', '', 'nlkfnrelkfjwnlkfwnk', 'knflkjn'),
+(3, 'MGyfCrovhf', '7hcPIIhY0q', 'Something', '232', 'Yea', 'Test', 'Ta', 'coolzama36@gmail.comsaw', '9952323142', 'something', 'Da', '1', 'Something', 'Pa');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `website_ui`
+--
+
+CREATE TABLE `website_ui` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `randomid` varchar(255) NOT NULL,
+  `template` int(11) NOT NULL,
+  `font_family` varchar(255) NOT NULL,
+  `background_color` varchar(255) NOT NULL,
+  `text_color` varchar(255) NOT NULL,
+  `logo` varchar(255) NOT NULL,
+  `insta_link` varchar(255) NOT NULL,
+  `fb_link` varchar(255) NOT NULL,
+  `twitt_link` varchar(255) NOT NULL,
+  `header` varchar(255) NOT NULL,
+  `slogan` varchar(255) NOT NULL,
+  `usp_1` varchar(255) NOT NULL,
+  `usp_1_desc` varchar(255) NOT NULL,
+  `usp_2` varchar(255) NOT NULL,
+  `usp_2_desc` varchar(255) NOT NULL,
+  `usp_3` varchar(255) NOT NULL,
+  `usp_3_desc` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `website_ui`
+--
+
+INSERT INTO `website_ui` (`id`, `uid`, `randomid`, `template`, `font_family`, `background_color`, `text_color`, `logo`, `insta_link`, `fb_link`, `twitt_link`, `header`, `slogan`, `usp_1`, `usp_1_desc`, `usp_2`, `usp_2_desc`, `usp_3`, `usp_3_desc`) VALUES
+(9, '8gNEbNj0I7', '2jVMycjLgP', 2, 'serif', 'black', 'white', 'uploads/4LSWIOCaSW_logo/d07d5331b618d6ff5a337a080b5d9820.jpg', 'https://www.instagram.com/nostalgiccricket/', 'https://www.facebook.com/Champions.Gaza', 'https://twitter.com/elonmusk', 'Welcome to Eggs', 'Welcome my guy', 'We have bacon', 'Yes,we do', 'We have Eggs', 'Yes,we do', 'We have Banana sabzi', 'Yes,we do');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `basketballform_info`
+--
+ALTER TABLE `basketballform_info`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contactus`
+--
+ALTER TABLE `contactus`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cricketform_info`
+--
+ALTER TABLE `cricketform_info`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `ground_uid` (`ground_uid`);
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `footballform_info`
+--
+ALTER TABLE `footballform_info`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `infra_details`
+--
+ALTER TABLE `infra_details`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `randomid` (`randomid`);
+
+--
+-- Indexes for table `infra_enquiries`
+--
+ALTER TABLE `infra_enquiries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `infra_images`
+--
+ALTER TABLE `infra_images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `infra_timings`
+--
+ALTER TABLE `infra_timings`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `ground_uid` (`ground_uid`);
+
+--
+-- Indexes for table `trainer_charges`
+--
+ALTER TABLE `trainer_charges`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uid` (`uid`);
+
+--
+-- Indexes for table `trainer_details`
+--
+ALTER TABLE `trainer_details`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `randomid` (`uid`);
+
+--
+-- Indexes for table `trainer_enquiries`
+--
+ALTER TABLE `trainer_enquiries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `trainer_images`
+--
+ALTER TABLE `trainer_images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user_profilepic`
+--
+ALTER TABLE `user_profilepic`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uid` (`uid`);
+
+--
+-- Indexes for table `vendor_details`
+--
+ALTER TABLE `vendor_details`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `vid` (`sid`);
+
+--
+-- Indexes for table `website_ui`
+--
+ALTER TABLE `website_ui`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `basketballform_info`
+--
+ALTER TABLE `basketballform_info`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `contactus`
+--
+ALTER TABLE `contactus`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `cricketform_info`
+--
+ALTER TABLE `cricketform_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `footballform_info`
+--
+ALTER TABLE `footballform_info`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `infra_details`
+--
+ALTER TABLE `infra_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `infra_enquiries`
+--
+ALTER TABLE `infra_enquiries`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT for table `infra_images`
+--
+ALTER TABLE `infra_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `infra_timings`
+--
+ALTER TABLE `infra_timings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+
+--
+-- AUTO_INCREMENT for table `trainer_charges`
+--
+ALTER TABLE `trainer_charges`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `trainer_details`
+--
+ALTER TABLE `trainer_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- AUTO_INCREMENT for table `trainer_enquiries`
+--
+ALTER TABLE `trainer_enquiries`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT for table `trainer_images`
+--
+ALTER TABLE `trainer_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `user_profilepic`
+--
+ALTER TABLE `user_profilepic`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+
+--
+-- AUTO_INCREMENT for table `vendor_details`
+--
+ALTER TABLE `vendor_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `website_ui`
+--
+ALTER TABLE `website_ui`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
