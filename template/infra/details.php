@@ -46,8 +46,10 @@
   <label for="footb">Football</label><br>
   <input type="checkbox" id="basketb" name="infra_details|sports[]" value="basketball">
   <label for="basketb">Basketball</label><br>
-  <input type="checkbox" id="kick" name="trainer_details|sports[]" value="kickboxing">
-  <label for="kick">Kickboxing</label><br><br>
+  <input type="checkbox" id="kick" name="infra_details|sports[]" value="kickboxing">
+  <label for="kick">Kickboxing</label><br>
+  <input type="checkbox" id="rifle" name="infra_details|sports[]" value="rifleshooting">
+  <label for="rifle">Rifle Shooting</label><br><br>
   <!--<input type="checkbox" id="mm" name="trainer_details|sports[]" value="mma">
   <label for="mm">MMA</label><br><br>-->
 

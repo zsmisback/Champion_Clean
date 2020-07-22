@@ -297,6 +297,28 @@ function dashboard()
 			}	
 		
 		include(TEMPLATE_PATH_INFRA."basketballdetails.php");
+	}
+	else if(strcmp($checkflag, "kickboxing") == 0){		
+		$random_ground = generateRandomString()."_kickboxing";
+		$result["redirect_to"] = "?page=login";
+		
+			if($_SERVER["REQUEST_METHOD"] == "POST")
+			{
+				include("savedata.php");
+			}	
+		
+		include(TEMPLATE_PATH_INFRA."kickboxingdetails.php");
+	}
+	else if(strcmp($checkflag, "rifleshooting") == 0){		
+		$random_ground = generateRandomString()."_rifleshooting";
+		$result["redirect_to"] = "?page=login";
+		
+			if($_SERVER["REQUEST_METHOD"] == "POST")
+			{
+				include("savedata.php");
+			}	
+		
+		include(TEMPLATE_PATH_INFRA."rifleshootingdetails.php");
 	}	
 	else{
 		include(TEMPLATE_PATH."thankyou.php");

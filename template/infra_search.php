@@ -15,6 +15,7 @@
 									<option value="football">Football</option>
 									<option value="basketball">BasketBall</option>
 									<option value="kickboxing">Kickboxing</option>
+									<option value="rifleshooting">Rifle Shooting</option>
 									<!--<option value="mma">MMA</option>-->
 								</select>
                                 </div>

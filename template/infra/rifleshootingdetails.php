@@ -6,33 +6,33 @@
 <form method="post" enctype="multipart/form-data">						
 <?php if(isset($error_mysql)){echo "<br>".$error_mysql;} ?>
 <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="infra_images|uid"/>
-<input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="kickboxingform_info|uid"/>
+<input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="rifleshootingform_info|uid"/>
 <input type="hidden" class="form-control" id="" name="infra_timings|ground_uid" value="<?php echo $random_ground; ?>"/>
-<input type="hidden" class="form-control" id="" name="kickboxingform_info|ground_uid" value="<?php echo $random_ground; ?>"/>
+<input type="hidden" class="form-control" id="" name="rifleshootingform_info|ground_uid" value="<?php echo $random_ground; ?>"/>
 
-<h2>Kickboxing registration</h2>
+<h2>Rifle Shooting registration</h2>
 <hr>
-<h5 class="">The Ring</h5>
+<h5 class="">The Field</h5>
 <fieldset class="border border-gary p-4 mb-5">
 <div class="row">
 <div class="col-md-6">
-<input type="text" class="form-control" name="kickboxingform_info|ring_length" id="colength" placeholder="The Ring length (in meters)">
+<input type="text" class="form-control" name="rifleshootingform_info|field_length" id="colength" placeholder="The Field length (in meters)">
 </div>
 <div class="col-md-6">
-<input type="text" class="form-control" name="kickboxingform_info|ring_width" id="cowidth" placeholder="The Ring width (in meters)">
+<input type="text" class="form-control" name="rifleshootingform_info|field_width" id="cowidth" placeholder="The Field width (in meters)">
 </div>
 </div>
 <br>
 
 <div class='form-check'>
-		     <input type='checkbox' class='form-check-input mb-4' name='kickboxingform_info|seats' value='seats'>Do you provide seats?
+		     <input type='checkbox' class='form-check-input mb-4' name='rifleshootingform_info|seats' value='seats'>Do you provide seats?
 			 </div><div class='form-check'>
-		     <input type='checkbox' class='form-check-input mb-4' name='kickboxingform_info|locker_room' value='locker_room'>Do you provide locker rooms?
+		     <input type='checkbox' class='form-check-input mb-4' name='rifleshootingform_info|locker_room' value='locker_room'>Do you provide locker rooms?
 			 </div><div class='form-check'>
-		     <input type='checkbox' class='form-check-input mb-4' name='kickboxingform_info|showers' value='showers'>Do you provide showers?
+		     <input type='checkbox' class='form-check-input mb-4' name='rifleshootingform_info|showers' value='showers'>Do you provide showers?
 			 </div>
 <br>
-<textarea class="form-control mb-4" rows="5" name="kickboxingform_info|summary" id="basketsummary" placeholder="Add a summary about your kickboxing ring"></textarea>
+<textarea class="form-control mb-4" rows="5" name="rifleshootingform_info|summary" id="basketsummary" placeholder="Add a summary about your rifle field"></textarea>
 
 
 <fieldset class="border border-gary p-4 mb-5">
@@ -41,10 +41,10 @@
 <hr>
 <p class="mb-3">Features that you provide for your customers (For example:Bats,Balls,Clothes)(Optional):</p> 
 
-<textarea class="form-control mb-4 ckeditor" rows="5" name="kickboxingform_info|features" id="cricfeatures"></textarea>
+<textarea class="form-control mb-4 ckeditor" rows="5" name="rifleshootingform_info|features" id="cricfeatures"></textarea>
 <br>
 <p class="mb-3">Rules(If any):</p>	
-<textarea class="form-control mb-4 ckeditor" rows="5" name="kickboxingform_info|rules" id="cricrules"></textarea>
+<textarea class="form-control mb-4 ckeditor" rows="5" name="rifleshootingform_info|rules" id="cricrules"></textarea>
 </fieldset>
 <fieldset class="border bg-white p-4 my-5 ad-feature bg-gray">
 <h3 class=" mb-3">Timings</h3>
