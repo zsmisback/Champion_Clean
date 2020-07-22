@@ -56,7 +56,7 @@
                   
 							<div class="col-md-6 form-group required">
 							<label class="radio-inline">
-							<input type="radio" name="trainer_charges|question_1" <?php if (isset($_POST['question_1']) && $_POST['question_1']=="1") echo "checked";?> value="1" >Yes
+							<input type="radio" name="trainer_charges|question_1" <?php if (isset($_POST['question_1']) && $_POST['question_1']=="1") echo "checked";?> value="1" > Yes
 							</label>
                       
 							</div>

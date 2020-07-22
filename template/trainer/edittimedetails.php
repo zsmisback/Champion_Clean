@@ -40,7 +40,7 @@
                   
 							<div class="form-group required">
 							<label for="name " class="control-label">Certificate(Or Degree) - Image</label>
-							<input type="file" id="image" name="trainer_images|certificate|0|<?php echo $random_certificate; ?>" class=" py-2">
+							<input type="file" id="image" name="trainer_images|certificate|0|<?php echo $certificate[1]; ?>" class=" py-2">
 							<br>
 							Current Certificate/Degree:
 							<br>
@@ -51,7 +51,7 @@
 
 							<div class="form-group required">
 							<label for="name " class="control-label">Degree - Image</label> <br>
-							<input type="file" id="image2" name="trainer_images|degree|0|<?php echo $random_degree; ?>" class=" py-2">
+							<input type="file" id="image2" name="trainer_images|degree|0|<?php echo $degree[1]; ?>" class=" py-2">
 							<br>
 							Current Degree:
 							<br>
@@ -60,7 +60,7 @@
 							</div>
 							<div class="form-group required">
 							<label for="name " class="control-label">Aadhar Card - Image</label><br>
-							<input type="file" id="image4" name="trainer_images|aadhar|0|<?php echo $random_aadhar; ?>" class=" py-2">
+							<input type="file" id="image4" name="trainer_images|aadhar|0|<?php echo $aadhar[1]; ?>" class=" py-2">
 							<br>
 							Current Aadhar Card:
 							<br>
@@ -176,7 +176,7 @@
                     </div>
                   </div>
                             <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="trainer_charges|uid"/>
-							<input type="hidden" class="form-control" id="" value="<?php echo $random_id; ?>" name="trainer_images|randomid"/>
+							<!--<input type="hidden" class="form-control" id="" value="<?php echo $random_id; ?>" name="trainer_images|randomid"/>-->
 							<input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="trainer_images|uid"/>
                             <div class="loggedin-forgot">
                                     <input type="checkbox" id="keep-me-logged-in">

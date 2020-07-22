@@ -149,7 +149,13 @@ function queries(){
 
 //Edit Trainers Registration Form
 function editprofile(){
-	
+		if($_SERVER["REQUEST_METHOD"] == "POST")
+		{
+		$result["redirect_to"] = "trainer.php?page=home";
+		
+		include("updatedata.php");
+		
+		}
 	if(!isset($_SESSION["uid"]))
 	{
 		header("Location:trainer.php?page=home");
@@ -161,6 +167,7 @@ function editprofile(){
 		exit;
 	}
 	include 'getdata.php';
+
 	$sql = "SELECT * FROM users WHERE users.randomid = '".$_SESSION['uid']."'";
 	$response = getall($sql);
 	include(TEMPLATE_PATH_TRAINER."editsignup.php");
@@ -187,6 +194,13 @@ function editpassword(){
 //Edit Trainers Details Form
 function editdetails(){
 	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+	$result["redirect_to"] = "trainer.php?page=home";
+		
+	include("updatedata.php");
+		
+	}
 	if(!isset($_SESSION["uid"]))
 	{
 		header("Location:trainer.php?page=home");
@@ -209,12 +223,22 @@ function editdetails(){
 	//Get the trainers current details from trainer_details and the user_profilepic table
 	$sql2 = "SELECT * FROM trainer_details LEFT JOIN user_profilepic ON user_profilepic.uid = trainer_details.uid WHERE trainer_details.uid = '".$_SESSION['uid']."'";
 	$response = getall($sql2);
+	$profilepic = explode("/",$response['profilepic']);
 	include(TEMPLATE_PATH_TRAINER."editdetails.php");
 }
 
 //Edit Trainer Charges
 function editcharges(){
 	
+	$random_id = generateRandomString();
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+	$result["redirect_to"] = "trainer.php?page=home";
+		
+	include("updatedata.php");
+		
+	}
 	if(!isset($_SESSION["uid"]))
 	{
 		header("Location:trainer.php?page=home");
@@ -237,6 +261,10 @@ function editcharges(){
 	//Get the trainers current details from the trainer_charges table
 	$sql2 = "SELECT * FROM trainer_charges LEFT JOIN trainer_images ON trainer_images.uid = trainer_charges.uid WHERE trainer_charges.uid = '".$_SESSION['uid']."'";
 	$response = getall($sql2);
+	$certificate = explode("/",$response['certificate']);
+	$degree = explode("/",$response['degree']);
+	$aadhar = explode("/",$response['aadhar']);
+	
 	include(TEMPLATE_PATH_TRAINER."edittimedetails.php");
 }
 
@@ -247,17 +275,24 @@ function login()
 	$result["redirect_to"] = "dashboard";
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		include("getdata_single.php");
-		$response = singletable( "users", $where = "WHERE type = 'Trainer' AND username='".$_POST['users|username']."' AND password ='".$_POST['users|password']."'", $param = "*" );	
-		
-		if(!isset($response["error"])){
+		include("getdata.php");
+		$sql = "SELECT * FROM users WHERE type = 'Trainer' AND username ='".$_POST['users|username']."'";
+		$response = getall($sql);
+		if(password_verify($_POST['users|password'],$response['password']))
+		{
+			if(!isset($response["error"])){
 			session_start();		
-			$_SESSION["username"] = $response['users|username'];
-			$_SESSION["type"] = $response['users|type'];
-			$_SESSION["name"] = $response['users|name'];
-			$_SESSION["uid"] = $response['users|randomid'];
+			$_SESSION["username"] = $response['username'];
+			$_SESSION["type"] = $response['type'];
+			$_SESSION["name"] = $response['name'];
+			$_SESSION["uid"] = $response['randomid'];
 			
 			header("Location:?page=".$result["redirect_to"]);}
+		}
+		else
+		{
+			$response['error'] = "Please check your credentials";
+		}
 	}
 	include(TEMPLATE_PATH."login.php");
 }

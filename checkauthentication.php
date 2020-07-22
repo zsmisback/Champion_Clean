@@ -34,7 +34,10 @@ function authenticate($joined_string, $post)
 						return "Password don't match";
 					}
 					if(empty($post["vpassword"])){return "Enter the values marked with star.";}
+					
+					 
 				}
+				
 				
 			}
 				

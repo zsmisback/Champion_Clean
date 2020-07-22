@@ -6,10 +6,10 @@
                 <div class="col-lg-5 col-md-8 align-item-center">
                     <div class="border border">
                         <h3 class="bg-gray p-4">Edit Registration Form</h3>							
-                        <form action="" method="post">	
+                        <form method="post">	
                             <fieldset class="p-4">
 							<?php if(isset($error_mysql)){echo $error_mysql;}  ?>
-                                <input type="email" name="users|username" placeholder="Email*" class="border p-3 w-100 my-2" value="<?php echo $response['username']; ?>">
+                              <!--<input type="email" name="users|username" placeholder="Email*" class="border p-3 w-100 my-2" value="<?php echo $response['username']; ?>">-->
 								<input type="name" name="users|name" placeholder="Name*" class="border p-3 w-100 my-2" value="<?php echo $response['name']; ?>">								
 								<input type="name" name="users|contact_no" placeholder="Contact Number*" class="border p-3 w-100 my-2" value="<?php echo $response['contact_no']; ?>">
 							<!--<input type="password" name="users|password" placeholder="Current Password*" class="border p-3 w-100 my-2">

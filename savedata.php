@@ -142,7 +142,10 @@ $keypiece = explode("|", $key);
 			{
 				break;
 			}
-			
+			if(strpos($joined_string, 'password') !== false) 
+			{
+				$_POST[$joined_string] = password_hash($_POST[$joined_string],PASSWORD_DEFAULT);
+			}
 			if($firstcount_value == 0)	
 			{
 				$value_string .= "'".$_POST[$joined_string]."'";		        

@@ -129,17 +129,24 @@ function login()
 	$result["redirect_to"] = "dashboard";
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		include("getdata_single.php");
-		$response = singletable( "users", $where = "WHERE type = 'Infra' AND username='".$_POST['users|username']."' AND password ='".$_POST['users|password']."'", $param = "*" );	
-		
-		if(!isset($response["error"])){
+		include("getdata.php");
+		$sql = "SELECT * FROM users WHERE type = 'Infra' AND username ='".$_POST['users|username']."'";
+		$response = getall($sql);
+		if(password_verify($_POST['users|password'],$response['password']))
+		{
+			if(!isset($response["error"])){
 			session_start();		
-			$_SESSION["username"] = $response['users|username'];
-			$_SESSION["type"] = $response['users|type'];
-			$_SESSION["name"] = $response['users|name'];
-			$_SESSION["uid"] = $response['users|randomid'];
+			$_SESSION["username"] = $response['username'];
+			$_SESSION["type"] = $response['type'];
+			$_SESSION["name"] = $response['name'];
+			$_SESSION["uid"] = $response['randomid'];
 			
 			header("Location:?page=".$result["redirect_to"]);}
+		}
+		else
+		{
+			$response['error'] = "Please check your credentials";
+		}
 	}
 	include(TEMPLATE_PATH."login.php");
 }
@@ -173,6 +180,13 @@ function queries(){
 //Edit Infrastructure Registration Form
 function editprofile(){
 	
+		if($_SERVER["REQUEST_METHOD"] == "POST")
+		{
+		$result["redirect_to"] = "infra.php?page=home";
+		
+		include("updatedata.php");
+		
+		}
 	if(!isset($_SESSION["uid"]))
 	{
 		header("Location:infra.php?page=home");
@@ -211,6 +225,13 @@ function editpassword(){
 //Edit Infrastructure Details Form
 function editdetails(){
 	
+		if($_SERVER["REQUEST_METHOD"] == "POST")
+		{
+		$result["redirect_to"] = "infra.php?page=dashboard";
+		
+		include("updatedata.php");
+		
+		}
 	if(!isset($_SESSION["uid"]))
 	{
 		header("Location:infra.php?page=home");
@@ -230,9 +251,10 @@ function editdetails(){
 		header("Location:infra.php?page=dashboard");
 		exit;
 	}
-	//Get the trainers current details from infra_details and the user_profilepic table
+	//Get the infras current details from infra_details and the user_profilepic table
 	$sql2 = "SELECT * FROM infra_details LEFT JOIN user_profilepic ON user_profilepic.uid = infra_details.randomid WHERE infra_details.randomid = '".$_SESSION['uid']."'";
 	$response = getall($sql2);
+	$profilepic = explode("/",$response['profilepic']);
 	include(TEMPLATE_PATH_INFRA."editdetails.php");
 }
 

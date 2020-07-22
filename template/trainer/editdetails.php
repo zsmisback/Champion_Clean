@@ -17,7 +17,7 @@
 <div class="row">
 
 <div class="col-md-6">
-<input type="file" class="form-control mb-4" name="user_profilepic|profilepic|0|<?php echo $_SESSION['uid']; ?>" placeholder="Enter your profile picture">
+<input type="file" class="form-control mb-4" name="user_profilepic|profilepic|0|<?php echo $profilepic[1]; ?>" placeholder="Enter your profile picture">
 <br>
 Current Profile Picture:
 <br>
@@ -78,7 +78,7 @@ Current Profile Picture:
   <label for="basketb">Basketball</label><br>
   <input type="checkbox" id="kick" name="trainer_details|sports[]" value="kickboxing" <?php foreach($sports as $test){if($test === "kickboxing"){ echo 'checked';}} ?>>
   <label for="kick">Kickboxing</label><br>
-  <input type="checkbox" id="rifle" name="trainer_details|sports[]" value="rifleshooting">
+  <input type="checkbox" id="rifle" name="trainer_details|sports[]" value="rifleshooting" <?php foreach($sports as $test){if($test === "rifleshooting"){ echo 'checked';}} ?>>
   <label for="rifle">Rifle Shooting</label><br><br>
   <!--<input type="checkbox" id="mm" name="trainer_details|sports[]" value="mma">
   <label for="mm">MMA</label><br><br>-->

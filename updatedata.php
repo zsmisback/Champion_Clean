@@ -179,12 +179,13 @@ $variable_name = $keypiece[1];
 		
 		if($flag_auth == "true"){
 		include("connect.php");	
-
+				
 				$sql = "INSERT INTO ".$tablename." (".$variable_string.")
 				VALUES (".$value_string.")  ON DUPLICATE KEY UPDATE " . $update_string;
-	
+				
 				if ($conn->query($sql) === TRUE) {
 					//echo "New record created successfully";
+					
 				} else {
 					echo "Error: " . $sql . "<br>" . $conn->error;die();
 					$error_mysql = '
@@ -208,7 +209,7 @@ $variable_name = $keypiece[1];
 			
 		if(!isset($error_mysql))
 		{
-		//echo '<script type="text/javascript">location.href = "'.$result['redirect_to'].'";</script>';	
+		echo '<script type="text/javascript">location.href = "'.$result['redirect_to'].'";</script>';	
 		}
 				
 			

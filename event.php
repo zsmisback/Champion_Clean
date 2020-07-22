@@ -138,17 +138,24 @@ function login()
 	$result["redirect_to"] = "events";
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		include("getdata_single.php");
-		$response = singletable( "users", $where = "WHERE username='".$_POST['users|username']."' AND password ='".$_POST['users|password']."'", $param = "*" );	
-		
-		if(!isset($response["error"])){
+		include("getdata.php");
+		$sql = "SELECT * FROM users WHERE username ='".$_POST['users|username']."'";
+		$response = getall($sql);
+		if(password_verify($_POST['users|password'],$response['password']))
+		{
+			if(!isset($response["error"])){
 			session_start();		
-			$_SESSION["username"] = $response['users|username'];
-			$_SESSION["type"] = $response['users|type'];
-			$_SESSION["name"] = $response['users|name'];
-			$_SESSION["uid"] = $response['users|randomid'];
+			$_SESSION["username"] = $response['username'];
+			$_SESSION["type"] = $response['type'];
+			$_SESSION["name"] = $response['name'];
+			$_SESSION["uid"] = $response['randomid'];
 			
 			header("Location:?page=".$result["redirect_to"]);}
+		}
+		else
+		{
+			$response['error'] = "Please check your credentials";
+		}
 	}
 	include(TEMPLATE_PATH."login.php");
 }
