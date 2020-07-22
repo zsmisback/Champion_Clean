@@ -44,7 +44,7 @@
 							<br>
 							Current Certificate/Degree:
 							<br>
-							<img src="<?php echo $response['certificate']; ?>" width="90%" height="250px;"/>
+							<img src="<?php echo $response['certificate']; ?>" width="100%" class="img-fluid"/>
 							<br><br>
 							</div>
                
@@ -55,7 +55,7 @@
 							<br>
 							Current Degree:
 							<br>
-							<img src="<?php echo $response['degree']; ?>" width="90%" height="250px;"/>
+							<img src="<?php echo $response['degree']; ?>" width="100%" class="img-fluid"/>
 							<br><br>
 							</div>
 							<div class="form-group required">
@@ -64,7 +64,7 @@
 							<br>
 							Current Aadhar Card:
 							<br>
-							<img src="<?php echo $response['aadhar']; ?>" width="90%" height="250px;"/>
+							<img src="<?php echo $response['aadhar']; ?>" width="100%" class="img-fluid"/>
 							<br><br>
 							</div>
 							 <h5>Do you provide Online Classes? :</h5>
@@ -72,14 +72,14 @@
                   
 							<div class="col-md-6 form-group required">
 							<label class="radio-inline">
-							<input type="radio" name="trainer_charges|question_1" <?php if ($response['question_1'] == 1){ echo "checked";}?> value="1" >Yes
+							<input type="radio" name="trainer_charges|question_1" <?php if ($response['question_1'] == 1){ echo "checked";}?> value="1" > Yes
 							</label>
                       
 							</div>
                   
                         <div class="col-md-6 form-group required">
                           <label class="radio-inline">
-                            <input type="radio" name="trainer_charges|question_1" <?php if ($response['question_2'] == 0){ echo "checked";}?> value="0">No
+                            <input type="radio" name="trainer_charges|question_1" <?php if ($response['question_2'] == 0){ echo "checked";}?> value="0"> No
                           </label>
   
 						</div>
@@ -90,14 +90,14 @@
                   
 						<div class="col-md-6 form-group required">
 						<label class="radio-inline">
-                        <input type="radio" name="trainer_charges|question_2" <?php if ($response['question_2'] == 1){ echo "checked";}?> value="1" >Yes
+                        <input type="radio" name="trainer_charges|question_2" <?php if ($response['question_2'] == 1){ echo "checked";}?> value="1" > Yes
 						</label>
                       
 						</div>
                   
                         <div class="col-md-6 form-group required">
                           <label class="radio-inline">
-                            <input type="radio" name="trainer_charges|question_2" <?php if ($response['question_2'] == 0){ echo "checked";}?> value="0">No
+                            <input type="radio" name="trainer_charges|question_2" <?php if ($response['question_2'] == 0){ echo "checked";}?> value="0"> No
                           </label>
   
 							</div>
@@ -109,14 +109,14 @@
                   
 							<div class="col-md-6 form-group required">
 							<label class="radio-inline">
-							<input type="radio" name="trainer_charges|question_3" <?php if ($response['question_3'] == 1){ echo "checked";}?> value="1" >Yes
+							<input type="radio" name="trainer_charges|question_3" <?php if ($response['question_3'] == 1){ echo "checked";}?> value="1" > Yes
 							</label>
                       
 							</div>
                   
                         <div class="col-md-6 form-group required">
                           <label class="radio-inline">
-                            <input type="radio" name="trainer_charges|question_3" <?php if ($response['question_3'] == 0){ echo "checked";}?> value="0">No
+                            <input type="radio" name="trainer_charges|question_3" <?php if ($response['question_3'] == 0){ echo "checked";}?> value="0"> No
                           </label>
   
 							</div>
@@ -126,14 +126,14 @@
                   
                     <div class="col-md-6 form-group required">
                       <label class="radio-inline">
-                        <input type="radio" name="trainer_charges|question_4" <?php if ($response['question_4'] == 1){ echo "checked";}?> value="1" >Yes
+                        <input type="radio" name="trainer_charges|question_4" <?php if ($response['question_4'] == 1){ echo "checked";}?> value="1" > Yes
                       </label>
                       
                     </div>
                   
                         <div class="col-md-6 form-group required">
                           <label class="radio-inline">
-                            <input type="radio" name="trainer_charges|question_4" <?php if ($response['question_4'] == 0){ echo "checked";}?> value="0">No
+                            <input type="radio" name="trainer_charges|question_4" <?php if ($response['question_4'] == 0){ echo "checked";}?> value="0"> No
                           </label>
   
                   </div>
@@ -144,14 +144,14 @@
                   
                     <div class="col-md-6 form-group required">
                       <label class="radio-inline">
-                        <input type="radio" name="trainer_charges|question_5" <?php if ($response['question_5'] == 1){ echo "checked";}?> value="1" >Yes
+                        <input type="radio" name="trainer_charges|question_5" <?php if ($response['question_5'] == 1){ echo "checked";}?> value="1" > Yes
                       </label>
                       
                     </div>
                   
                         <div class="col-md-6 form-group required">
                           <label class="radio-inline">
-                            <input type="radio" name="trainer_charges|question_5" <?php if ($response['question_1'] == 0){ echo "checked";}?> value="0">No
+                            <input type="radio" name="trainer_charges|question_5" <?php if ($response['question_1'] == 0){ echo "checked";}?> value="0"> No
                           </label>
   
                   </div>

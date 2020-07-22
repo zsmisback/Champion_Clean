@@ -11,13 +11,13 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="<?php echo $response['image1']; ?>" alt="First slide" height="800px">
+            <img class="d-block w-100" src="<?php echo $response['image1']; ?>" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="<?php echo $response['image2']; ?>" alt="Second slide" height="800px">
+            <img class="d-block w-100" src="<?php echo $response['image2']; ?>" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="<?php echo $response['image3']; ?>" alt="Third slide" height="800px">
+            <img class="d-block w-100" src="<?php echo $response['image3']; ?>" alt="Third slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -41,27 +41,8 @@
           <p><?php echo $response['address']; ?></p>
 		  <h2>About Us</h2>
 		  <p><?php echo $response['about_us']; ?></p>
-          <h2>Specifications</h2>
-		  		 
-		<?php 
-		 
-		 //Get all the column names from a sportinfo_form
-		  foreach($response2 as $column_names){
-			  //Filter out/Remove the common parameters/column names
-			  if($column_names['COLUMN_NAME'] == "id" || $column_names['COLUMN_NAME'] == 'uid' || $column_names['COLUMN_NAME'] == 'ground_uid' || $column_names['COLUMN_NAME'] == 'summary' || $column_names['COLUMN_NAME'] == 'features' || $column_names['COLUMN_NAME'] == 'rules'  || $column_names['COLUMN_NAME'] == 'seats' || $column_names['COLUMN_NAME'] == 'locker_room' || $column_names['COLUMN_NAME'] == 'showers')
-			  {
-				  echo "";
-			  }
-			  else
-			  {
-				  //Store the Uncommon parameters in an array
-				  $columns[] = $column_names['COLUMN_NAME'];
-			  }
-		  }
-
-		  ?> 
-		  <!-- Display all the field information with the column name and their values -->
-          <p><?php foreach($columns as $field_info){echo''.$field_info.' - '.$response[$field_info].' &nbsp<br>';} ?></p>
+		  
+         
           
      <h3 class="mb-2"><?php if($response['seats'] == 'seats'){echo '<span>Seats</span>';} if($response['locker_room'] == 'locker_room'){echo ' <span>Locker Room</span>';} if($response['showers'] == 'showers'){echo ' <span>Showers</span>';}?> </h3><br>
 
@@ -139,14 +120,35 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-8">
+		 <h2>Specifications</h2>
+		  		 
+		<?php 
+		 
+		 //Get all the column names from a sportinfo_form
+		  foreach($response2 as $column_names){
+			  //Filter out/Remove the common parameters/column names
+			  if($column_names['COLUMN_NAME'] == "id" || $column_names['COLUMN_NAME'] == 'uid' || $column_names['COLUMN_NAME'] == 'ground_uid' || $column_names['COLUMN_NAME'] == 'summary' || $column_names['COLUMN_NAME'] == 'features' || $column_names['COLUMN_NAME'] == 'rules'  || $column_names['COLUMN_NAME'] == 'seats' || $column_names['COLUMN_NAME'] == 'locker_room' || $column_names['COLUMN_NAME'] == 'showers')
+			  {
+				  echo "";
+			  }
+			  else
+			  {
+				  //Store the Uncommon parameters in an array
+				  $columns[] = $column_names['COLUMN_NAME'];
+			  }
+		  }
+
+		  ?> 
+		  <!-- Display all the field information with the column name and their values -->
+          <p><?php foreach($columns as $field_info){$fields = str_replace("_"," ",$field_info); echo''.ucwords($fields," ").' - '.$response[$field_info].' &nbspmeters<br>';} ?></p>
+
       <h2>Summary</h2>
-      <p><?php echo $response['summary']; ?></p>
-      
+		  <p><?php echo $response['summary']; ?></p>
       <h2>Features</h2>
       <p><?php echo $response['features']; ?></p>
       
       <h2>Rules</h2>
-      <p><?php echo $response['rules']; ?></p>
+      <p style="color:black;"><?php echo $response['rules']; ?></p>
 
     </div>
   </div>

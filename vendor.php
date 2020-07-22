@@ -6,9 +6,10 @@ session_start();
 $page = isset( $_GET['page'] ) ? $_GET['page'] : "home";
 $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 
-if(isset($_SESSION["type"]) && $_SESSION["type"] != "vendor"){	
-	//header("location: /sport/infra/?page=home");exit();
+if(isset($_SESSION["type"]) && $_SESSION["type"] != "Vendor"){	
+	header("location:index.php?page=home");exit();
 }
+
 
 if ( $page != "login" && $page != "logout" && !$username && $page != "signup" && $page != "home" && $page != "contactus" && $page != "aboutus" && $page != "abouttheteam" && $page != "listofsport" && $page != "faq" && $page != "concept" ) {
   login();

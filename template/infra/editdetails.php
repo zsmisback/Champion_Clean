@@ -58,8 +58,10 @@ Current Profile Picture:
   <label for="footb">Football</label><br>
   <input type="checkbox" id="basketb" name="infra_details|sports[]" value="basketball" <?php foreach($sports as $test){if($test === "basketball"){ echo 'checked';}} ?>>
   <label for="basketb">Basketball</label><br>
-  <input type="checkbox" id="mm" name="infra_details|sports[]" value="mma" <?php foreach($sports as $test){if($test === "mma"){ echo 'checked';}} ?>>
-  <label for="mm">MMA</label><br><br>
+  <input type="checkbox" id="kick" name="trainer_details|sports[]" value="kickboxing" <?php foreach($sports as $test){if($test === "kickboxing"){ echo 'checked';}} ?>>
+  <label for="kick">Kickboxing</label><br><br>
+  <!--<input type="checkbox" id="mm" name="trainer_details|sports[]" value="mma">
+  <label for="mm">MMA</label><br><br>-->
 
 
 <div class="row">

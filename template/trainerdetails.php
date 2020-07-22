@@ -46,7 +46,7 @@
                               <h5> <b>Location :</b><?php echo $response['address']; ?> &nbsp; <b>Working Hours :</b> <?php echo $response['training_hours']; ?></h5>
 
                               <h5> <b>Height :</b> <?php echo $response['height']; ?> cm&nbsp; <b>Weight :</b> <?php echo $response['weight']; ?> kg</h5>
-                              <h5> <b>Charges :</b> <?php echo $response['hourly_charges']; ?> Per Hour</h5>
+                              <h5> <b>Charges :</b> Rs.<?php echo $response['hourly_charges']; ?> Per Hour</h5>
                               <div class="row">
                                 <div class="col-lg-12">
                                   <h5 class=''><?php if($response['question_1'] == 1){echo" <img src='images/widget/online-learning.png' alt='' width='25px'>&nbsp; Online Services &nbsp;";} ?> <?php if($response['question_2'] == 1){echo"<img src='images/widget/premium.png' alt='' width='25px'>&nbsp;Verified Member.";} ?> </h5> 
@@ -154,13 +154,15 @@
            <!-- Gym Award Section Begin -->
   
       <div class="container">
+	  <h2>Videos</h2>
         <div class="row py-5">
+		
             <div class="col-lg-6">
-              <h3 class="pb-2">Video 1</h3>
+             
               <iframe width="460" height="315" src="<?php echo $response['video_link_1'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </div>
                           <div class="col-lg-6">
-                            <h3 class="pb-2">Video 2</h3>
+                          
                             <iframe width="460" height="315" src="<?php echo $response['video_link_2'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
         </div>

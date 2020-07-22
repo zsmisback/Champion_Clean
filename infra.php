@@ -10,7 +10,7 @@ $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 
 
 if(isset($_SESSION["type"]) && $_SESSION["type"] != "Infra"){	
-	header("location: /sport/trainer/?page=home");exit();
+	header("location:index.php?page=home");exit();
 }
 
 if ( $page != "login" && $page != "logout" && !$username && $page != "signup" && $page != "home" && $page != "contactus" && $page != "queries" && $page != "aboutus" && $page != "abouttheteam" && $page != "listofsport" && $page != "faq" && $page != "concept") {
@@ -245,7 +245,7 @@ function dashboard()
 		
 	if(isset($response["error"])){$checkflag = 1;}	
 	else{		
-		$response["infra_details|sports"] = explode(", ",$response["infra_details|sports"]);
+		$response["infra_details|sports"] = explode(",",$response["infra_details|sports"]);
 		
 		foreach($response["infra_details|sports"] as $sportground){		
 		$tablename = $sportground."form_info";

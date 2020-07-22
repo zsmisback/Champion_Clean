@@ -5,22 +5,39 @@
 			<div class="col-md-12">
 				<!-- Advance Search -->
 				<div class="advance-search">
-					<form>
-						<div class="form-row">
-							<div class="form-group col-md-4">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
-							</div>
-							<div class="form-group col-md-3">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputCategory4" placeholder="Category">
-							</div>
-							<div class="form-group col-md-3">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputLocation4" placeholder="Location">
-							</div>
-							<div class="form-group col-md-2">
-
-								<button type="submit" class="btn btn-primary">Search Now</button>
-							</div>
-						</div>
+					<form action="index.php?page=infra" method="get">
+					<input type="hidden" name="page" value="infra"/>
+						<div class="row">	
+                           <div class="col-md-5">
+                               <div class="form-group">									
+                                 <select class="border w-100 form-control" placeholder="" name="sport">
+									<option value="cricket">Cricket</option>
+									<option value="football">Football</option>
+									<option value="basketball">BasketBall</option>
+									<option value="kickboxing">Kickboxing</option>
+									<!--<option value="mma">MMA</option>-->
+								</select>
+                                </div>
+                            </div> 						
+                            <div class="col-md-5">
+                                <div class="form-group">									
+                                    <select class="border w-100 form-control" placeholder="" name="city">
+									<?php
+									
+									foreach($response2 as $city2)
+									{
+										echo'<option value='.$city2['city'].'>'.$city2['city'].'</option>';
+									}
+									?>
+									</select>
+                                </div>
+                            </div>  
+ 
+								
+                            <div class="col-md-2">
+                             <button type="submit" class="btn btn-primary  pl-5 pr-5">Go !</button>
+                            </div>
+                        </div>
 					</form>
 				</div>
 			</div>
@@ -31,7 +48,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
-				<div class="category-search-filter">
+			<!--	<div class="category-search-filter">
 					<div class="row">
 						<div class="col-md-6">
 							<strong>Short</strong>
@@ -56,7 +73,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 <?php 
 /*
@@ -149,24 +166,22 @@ echo '
 								 $sports = explode(",",$infra['sports']);
 								foreach($sports as $sport)
 								{
-									echo'<li class="list-inline-item"><i class="fa fa-flag-checkered" aria-hidden="true"></i> '.$sport.'</li>';
+									echo'<li class="list-inline-item"><i class="fa fa-flag-checkered" aria-hidden="true"></i> '.ucwords($sport).'</li>';
 								}
 								echo'									
 								</ul>								
 								<p class="pr-5">'.$infra['about_us'].'</p>
 							</div>
-						</div>';
-						/*<div class="col-lg-3 align-self-center">
+						</div>
+						<div class="col-lg-3 align-self-center">
 							<div class="row">
-							<div style="background-color:#EAEDED; width:100%;" class="p-4">
+							<div style="background-color:#EAEDED; width:100%;" class="p-4">';
 							
-							if($trainers['question_1'] == 1)echo'<i class="fa fa-globe" aria-hidden="true"></i> Online Services<br>';
-							if($trainers['question_2'] == 1)echo'<i class="fa fa-thumbs-up" aria-hidden="true"></i>Verified Member<br>';
-							if($trainers['question_3'] == 1)echo'<i class="fa fa-clock-o" aria-hidden="true"></i> Flexible timings<br>';	
-							if($trainers['question_4'] == 1)echo'<i class="fa fa-cutlery" aria-hidden="true"></i> Diet Plans<br>';	
-							if($trainers['question_5'] == 1)echo'<i class="fa fa-music" aria-hidden="true"></i> Workout Music<br>';	
+							if($infra['seats'] == "seats")echo'<i class="fa fa-user" aria-hidden="true"></i> Seats<br>';
+							if($infra['locker_room'] == "locker_room")echo'<i class="fa fa-lock" aria-hidden="true"></i> Locker Rooms<br>';
+							if($infra['showers'] == "showers")echo'<i class="fa fa-shower" aria-hidden="true"></i> Showers<br>';	
 							
-					   </div>							
+					  echo' </div>							
 							<div style="background-color:#EAEDED; width:100%;" class="pl-4 pb-4 pr-4">							
 							<div class="product-ratings float-lg">
 							<h3>Rating</h3>
@@ -179,13 +194,14 @@ echo '
 								</ul>
 								<h2 class="pt-2"></h2>
 							</div>											
-							<button class="btn-success"></button>
+							<a href="index.php?page=infradetails&id='.$infra['ground_uid'].'&sport='.$_GET['sport'].'"><button class="btn-success">Know More</button></a>
 						</div>						
 						</div>
-					</div>*/
-				echo'</div>
+					</div>
+				</div>
 			</div>
-		</div>';
+		</div>
+		';
 		}
 		
 	}

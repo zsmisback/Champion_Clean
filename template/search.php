@@ -5,22 +5,51 @@
 			<div class="col-md-12">
 				<!-- Advance Search -->
 				<div class="advance-search">
-					<form>
-						<div class="form-row">
-							<div class="form-group col-md-4">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
-							</div>
-							<div class="form-group col-md-3">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputCategory4" placeholder="Category">
-							</div>
-							<div class="form-group col-md-3">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputLocation4" placeholder="Location">
-							</div>
-							<div class="form-group col-md-2">
-
-								<button type="submit" class="btn btn-primary">Search Now</button>
-							</div>
-						</div>
+					<form action="index.php?page=search" method="get">
+					<input type="hidden" name="page" value="search"/>
+						<div class="row">	
+                           <div class="col-md-3">
+                               <div class="form-group">									
+                                 <select class="border w-100 form-control" placeholder="" name="sport">
+									<option value="cricket">Cricket</option>
+									<option value="football">Football</option>
+									<option value="basketball">BasketBall</option>
+									<option value="kickboxing">Kickboxing</option>
+									<!--<option value="mma">MMA</option>-->
+								</select>
+                                </div>
+                            </div> 						
+                            <div class="col-md-3">
+                                <div class="form-group">									
+                                    <select class="border w-100 form-control" placeholder="" name="type">
+									<option value="Coach">Coach</option>
+									<option value="Fitness">Fitness Trainer</option>
+									<option value="Referee">Referee / Umpire</option>
+									<option value="Commentator">Commentator</option>
+									<option value="Medical">Medical Staff</option>
+									<option value="Blogger">Blogger</option>
+									</select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">									
+                                    <select class="border w-100 form-control" placeholder="" name="city">
+									<?php
+									
+									foreach($response3 as $city)
+									{
+										echo'<option value='.$city['city'].'>'.$city['city'].'</option>';
+									}
+									?>
+									</select>
+                                </div>
+                            </div>  
+ 
+								
+                            <div class="col-md-3">
+                             <button type="submit" class="btn btn-primary  pl-5 pr-5">Go !</button>
+                            </div>
+                        </div> 
 					</form>
 				</div>
 			</div>
@@ -31,7 +60,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
-				<div class="category-search-filter">
+			<!--	<div class="category-search-filter">
 					<div class="row">
 						<div class="col-md-6">
 							<strong>Short</strong>
@@ -56,7 +85,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 <?php 
 /*
@@ -149,7 +178,7 @@ echo '
 								 $sports = explode(",",$trainers['sports']);
 								foreach($sports as $sport)
 								{
-									echo'<li class="list-inline-item"><i class="fa fa-flag-checkered" aria-hidden="true"></i> '.$sport.'</li>';
+									echo'<li class="list-inline-item"><i class="fa fa-flag-checkered" aria-hidden="true"></i> '.ucwords($sport).'</li>';
 								}
 								echo'									
 								</ul>								
@@ -178,7 +207,7 @@ echo '
 								</ul>
 								<h2 class="pt-2"></h2>
 							</div>											
-							<button class="btn-success"></button>
+							<a href="index.php?page=trainerdetails&id='.$trainers['uid'].'"><button class="btn-success">Know More</button></a>
 						</div>						
 						</div>
 					</div>

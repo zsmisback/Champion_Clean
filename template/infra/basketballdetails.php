@@ -233,13 +233,13 @@ Closing times:
 <input type="file" class="form-control mb-4" name="infra_images|image3|0|<?php echo $random_ground; ?>">
 </div>
 
-<div class="col-md-6">
+<!--<div class="col-md-6">
 <input type="file" class="form-control mb-4" name="infra_images|image4|0|<?php echo $random_ground; ?>">
-</div>
+</div>-->
 </div>
 
 
-<div class="row">
+<!--<div class="row">
 <div class="col-md-6">
 <input type="file" class="form-control mb-4" name="infra_images|image5|0|<?php echo $random_ground; ?>">
 </div>
@@ -247,7 +247,7 @@ Closing times:
 <div class="col-md-6">
 <input type="file" class="form-control mb-4" name="infra_images|image6|0|<?php echo $random_ground; ?>">
 </div>
-</div>
+</div>-->
 </fieldset>
 
 <div class="row">

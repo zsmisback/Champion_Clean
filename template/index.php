@@ -12,6 +12,7 @@
         </nav>
 		<div class="tab-content" id="nav-tabContent">
 		<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+		<h1>Search for any sport professional</h1>
         <div class="row">
             <div class="col-md-12">
 			<form action="index.php?page=search" method="get">
@@ -30,7 +31,8 @@
 									<option value="cricket">Cricket</option>
 									<option value="football">Football</option>
 									<option value="basketball">BasketBall</option>
-									<option value="mma">MMA</option>
+									<option value="kickboxing">Kickboxing</option>
+									<!--<option value="mma">MMA</option> -->
 								</select>
                                 </div>
                             </div> 						
@@ -72,6 +74,7 @@
         </div>
 		</div>
 		<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+		<h1>Search for any ground/turf</h1>
 		    <div class="row">
             <div class="col-md-12">
 			<form action="index.php?page=infra" method="get">
@@ -90,7 +93,8 @@
 									<option value="cricket">Cricket</option>
 									<option value="football">Football</option>
 									<option value="basketball">BasketBall</option>
-									<option value="mma">MMA</option>
+									<option value="kickboxing">Kickboxing</option>
+									<!--<option value="mma">MMA</option> -->
 								</select>
                                 </div>
                             </div> 						
@@ -183,7 +187,12 @@
 						<div class="card-block block-2">
 							<h3 class="card-title">List your sports location</h3>
 							<p class="card-text">You can list clubs, sports ground, turf on our website and then they will never be empty. Be found on the India's local sports network!</p>
-							<a href="infra.php?page=home" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<?php
+							if(!isset($_SESSION['uid']))
+							{
+								echo'<a href="infra.php?page=home" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>';
+							}
+							?>
 						</div>
 					</div>
 				</div>
@@ -192,7 +201,12 @@
 						<div class="card-block block-3">
 							<h3 class="card-title">For Sport Professionals</h3>
 							<p class="card-text">Register with us as trainers, commentator, medical staff, coaches and bloggers. We will make sure that your talent doesn't go waste. </p>
-							<a href="trainer.php?page=home" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<?php
+							if(!isset($_SESSION['uid']))
+							{
+								echo'<a href="trainer.php?page=home" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>';
+							}
+							?>
 						</div>
 					</div>
 				</div>
@@ -203,7 +217,7 @@
 						<div class="card-block block-5">
 							<h3 class="card-title">News And Blog</h3>
 							<p class="card-text">Get live and exclusive news coverage daily. Daily digest will keep you updated about your favourite sport.</p>
-							<a href="news" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<!--<a href="news" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>-->
 						</div>
 					</div>
 				</div>
@@ -220,8 +234,13 @@
 					<div class="card">
 						<div class="card-block block-6">
 							<h3 class="card-title">Buy Your Favourite Sports Gear</h3>
-							<p class="card-text">Buy sports gear suggested and used by professional players. We will be bringing exclusive sports gear to you soon. </p>							
-						<a href="vendor.php?page=home" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a></i>
+							<p class="card-text">Buy sports gear suggested and used by professional players. We will be bringing exclusive sports gear to you soon. </p>	
+							<?php
+							if(!isset($_SESSION['uid']))
+							{							
+								echo'<a href="vendor.php?page=home" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a></i>';
+							}
+							?>
 						</div>
 					</div>
 				</div>

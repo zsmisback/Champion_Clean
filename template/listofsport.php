@@ -327,7 +327,7 @@
       </ul>
       <span class="transition">
       <h3>Hockey <em></em></h3>
-      <img class="mamber-img" src="images/listofsports/golf_tournament.jpg">
+      <img class="mamber-img" src="images/listofsports/hockey.jpg">
     
       <i style="left: 165px;"> <b>Hockey</b></i> </span> </div>
   </li>
@@ -342,7 +342,7 @@
       </ul>
       <span class="transition">
       <h3>Javelin throw<em></em></h3>
-      <img class="mamber-img" src="images/listofsports/12.jpeg">
+      <img class="mamber-img" src="images/listofsports/javelin.jpg">
     
       <i style="left: 135px;"> <b>Javelin throw   </b></i> </span> </div>
   </li>
