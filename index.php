@@ -88,10 +88,10 @@ $start = ($count - 1) * $limit;
 			include("getpagination.php");
 		//	$table = "cricketform_info JOIN users ON users.randomid = cricketform_info.uid";
 		//	$response =  singletable_all( $table, $where = "", $param = "*" );	
-			$sql = "SELECT * FROM users LEFT JOIN user_profilepic ON user_profilepic.uid = users.randomid LEFT JOIN trainer_details ON trainer_details.uid = users.randomid LEFT JOIN trainer_charges ON trainer_charges.uid = users.randomid WHERE users.type = 'Trainer' AND trainer_details.sports LIKE'%".$_GET['sport']."%' AND trainer_details.type = '".$_GET['type']."' AND trainer_details.city = '".$_GET['city']."' LIMIT $start,$limit";
+			$sql = "SELECT * FROM trainer_charges LEFT JOIN trainer_details ON trainer_details.uid = trainer_charges.uid LEFT JOIN user_profilepic ON user_profilepic.uid = trainer_charges.uid LEFT JOIN users ON users.randomid = trainer_charges.uid WHERE users.type = 'Trainer' AND trainer_details.sports LIKE'%".$_GET['sport']."%' AND trainer_details.type = '".$_GET['type']."' AND trainer_details.city = '".$_GET['city']."' ORDER BY users.id DESC LIMIT $start,$limit";
 			$response = getallarray($sql);
 	
-			$sql2 = "SELECT * FROM users LEFT JOIN user_profilepic ON user_profilepic.uid = users.randomid LEFT JOIN trainer_details ON trainer_details.uid = users.randomid LEFT JOIN trainer_charges ON trainer_charges.uid = users.randomid WHERE users.type = 'Trainer' AND trainer_details.sports LIKE'%".$_GET['sport']."%' AND trainer_details.type = '".$_GET['type']."' AND trainer_details.city = '".$_GET['city']."'";
+			$sql2 = "SELECT * FROM trainer_charges LEFT JOIN trainer_details ON trainer_details.uid = trainer_charges.uid LEFT JOIN user_profilepic ON user_profilepic.uid = trainer_charges.uid LEFT JOIN users ON users.randomid = trainer_charges.uid WHERE users.type = 'Trainer' AND trainer_details.sports LIKE'%".$_GET['sport']."%' AND trainer_details.type = '".$_GET['type']."' AND trainer_details.city = '".$_GET['city']."' ORDER BY users.id DESC";
 			$data = getpagination($sql2);
 			$results['totalRows'] = $data['total_pages']; 
 			$results['next'] = $data['next'];
@@ -215,10 +215,10 @@ $start = ($count - 1) * $limit;
 			include("getpagination.php");
 		//	$table = "cricketform_info JOIN users ON users.randomid = cricketform_info.uid";
 		//	$response =  singletable_all( $table, $where = "", $param = "*" );	
-			$sql = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra' AND infra_details.city = '".$_GET['city']."' LIMIT $start,$limit";
+			$sql = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra' AND infra_details.city = '".$_GET['city']."' ORDER BY ".$_GET['sport']."form_info.id DESC LIMIT $start,$limit";
 
 			$response = getallarray($sql);
-			$sql2 = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra' AND infra_details.city = '".$_GET['city']."'";
+			$sql2 = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra' AND infra_details.city = '".$_GET['city']."' ORDER BY ".$_GET['sport']."form_info.id DESC";
 			$data = getpagination($sql2);
 			$results['totalRows'] = $data['total_pages']; 
 			$results['next'] = $data['next'];
