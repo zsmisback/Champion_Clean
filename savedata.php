@@ -150,6 +150,30 @@ $keypiece = explode("|", $key);
 			{
 				$_POST[$joined_string] = strtoupper($_POST[$joined_string]);
 			}
+			if(strpos($joined_string, 'about_us') !== false) 
+			{
+				include("connect.php");	
+				$_POST[$joined_string] = $conn->real_escape_string($_POST[$joined_string]);
+				$conn = null;
+			}			
+			if(strpos($joined_string, 'summary') !== false) 
+			{
+				include("connect.php");	
+				$_POST[$joined_string] = $conn->real_escape_string($_POST[$joined_string]);
+				$conn = null;
+			}
+			if(strpos($joined_string, 'features') !== false) 
+			{
+				include("connect.php");	
+				$_POST[$joined_string] = $conn->real_escape_string($_POST[$joined_string]);
+				$conn = null;
+			}		
+			if(strpos($joined_string, 'rules') !== false) 
+			{
+				include("connect.php");	
+				$_POST[$joined_string] = $conn->real_escape_string($_POST[$joined_string]);
+				$conn = null;
+			}
 			if($firstcount_value == 0)	
 			{
 				$value_string .= "'".$_POST[$joined_string]."'";		        

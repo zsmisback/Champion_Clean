@@ -278,6 +278,7 @@ function login()
 	{
 		include("getdata.php");
 		$sql = "SELECT * FROM users WHERE type = 'Trainer' AND username ='".$_POST['users|username']."'";
+		$response = getall($sql);
 		if(empty($response))
 		{
 			$response = 'No';

@@ -18,6 +18,22 @@ function authenticate($joined_string, $post)
 			if(strpos($joined_string, 'name') !== false) 
 			{
 				if(empty($post[$joined_string])){return "Enter the values marked with star.";}
+			}
+			if(strpos($joined_string, 'about_us') !== false) 
+			{
+				if(empty($post[$joined_string])){return "Enter the values marked with star.";}
+			}			
+			if(strpos($joined_string, 'summary') !== false) 
+			{
+				if(empty($post[$joined_string])){return "Enter the values marked with star.";}
+			}
+			if(strpos($joined_string, 'features') !== false) 
+			{
+				if(empty($post[$joined_string])){return "Enter the values marked with star.";}
+			}		
+			if(strpos($joined_string, 'rules') !== false) 
+			{
+				if(empty($post[$joined_string])){return "Enter the values marked with star.";}
 			}			
 			if(strpos($joined_string, 'password') !== false) 
 			{

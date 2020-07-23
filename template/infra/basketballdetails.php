@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>					
 					
-
+<script src="ckeditor/ckeditor.js"></script>
 <section class="ad-post bg-gray py-5">
     <div class="container">
                         <form method="post" enctype="multipart/form-data">						
