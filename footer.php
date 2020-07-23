@@ -31,7 +31,20 @@
             <li><a href="infra.php?page=home">Infrastructure</a></li>
             <li><a href="trainer.php?page=home">Trainers</a></li>
             <li><a href="vendor.php?page=home">Vendors</a></li>';
-			}
+	 }
+	 elseif($_SESSION['type'] == 'Trainer')
+	 {
+		 echo'<li><a href="trainer.php?page=home">Trainers</a></li>';
+	 }
+	 elseif($_SESSION['type'] == 'Infra')
+	 {
+		 echo'<li><a href="infra.php?page=home">Infrastructure</a></li>';
+	 }
+	 elseif($_SESSION['type'] == 'Vendor')
+	 {
+		 echo'<li><a href="vendor.php?page=home">Vendors</a></li>';
+	 }
+	
 			
 		?>	
             <li><a href="event.php?page=home">Events</a></li>

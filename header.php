@@ -214,6 +214,18 @@ $base = basename($path);
 									<a class="dropdown-item" href="trainer.php?page=home">Trainers</a>
 									<a class="dropdown-item" href="vendor.php?page=home">Vendors</a>';
 									}
+									elseif($_SESSION['type'] == 'Trainer')
+									{
+										echo'<a class="dropdown-item" href="trainer.php?page=home">Trainers</a>';
+									}
+									elseif($_SESSION['type'] == 'Infra')
+									{
+										echo'<a class="dropdown-item" href="trainer.php?page=home">Trainers</a>';
+									}
+									elseif($_SESSION['type'] == 'Vendor')
+									{
+										echo'<a class="dropdown-item" href="trainer.php?page=home">Trainers</a>';
+									}
 									?>
 									<a class="dropdown-item" href="event.php?page=home">Events</a>
 								</div>
