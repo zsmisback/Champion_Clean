@@ -207,6 +207,13 @@ function editprofile(){
 //Edit Infrastructure Password
 function editpassword(){
 	
+		if($_SERVER["REQUEST_METHOD"] == "POST")
+		{
+		$result["redirect_to"] = "infra.php?page=home";
+		
+		include("updatedata.php");
+		
+		}
 	if(!isset($_SESSION["uid"]))
 	{
 		header("Location:infra.php?page=home");

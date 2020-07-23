@@ -40,7 +40,7 @@
 
 </div>
 <input type="text" class="form-control mb-4" name="trainer_details|address" placeholder="Enter your address" value="">
-<label for="name " class="control-label">City</label>
+<label for="name " class="control-label">City (All Capital Letters:For Example = MUMBAI)</label>
 <input type="text" id="search" class="form-control py-2" name="trainer_details|city">
 <br>
 <div id="cities">

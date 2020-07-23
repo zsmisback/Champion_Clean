@@ -146,6 +146,10 @@ $keypiece = explode("|", $key);
 			{
 				$_POST[$joined_string] = password_hash($_POST[$joined_string],PASSWORD_DEFAULT);
 			}
+			if(strpos($joined_string, 'city') !== false) 
+			{
+				$_POST[$joined_string] = strtoupper($_POST[$joined_string]);
+			}
 			if($firstcount_value == 0)	
 			{
 				$value_string .= "'".$_POST[$joined_string]."'";		        

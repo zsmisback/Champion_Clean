@@ -164,7 +164,7 @@ echo '
 		echo'<div class="row p-lg-3 p-sm-5 p-4">
 				<div class="col-lg-4 align-self-center">
 					
-			 <a href="index.php?page=trainerdetails&id='.$trainers['uid'].'"><img src="'.$trainers['profilepic'].'" class="img-fluid" alt=""></a>
+			 <a href="index.php?page=trainerdetails&id='.$trainers['uid'].'"><img src="'.$trainers['profilepic'].'" class="img-fluid" alt="" style="width:100%;height:210px;"></a>
 					
 				</div>
 				<div class="col-lg-8">

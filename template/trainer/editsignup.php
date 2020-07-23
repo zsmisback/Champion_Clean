@@ -22,9 +22,9 @@
 								<div class="col-md-6">
                                 <button type="submit" class="d-block py-3 px-4 bg-primary text-white border-0 rounded font-weight-bold">Update Form</button>
 								</div>
-								<div class="col-md-6">
+								<!--<div class="col-md-6">
                                 <a href="trainer.php?page=editpassword"><button type="button" class="d-block py-3 px-4 bg-primary text-white border-0 rounded font-weight-bold">Change Password</button></a>
-								</div>
+								</div>-->
 								</div>
                             </fieldset>
                         </form>

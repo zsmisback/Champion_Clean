@@ -333,6 +333,7 @@ function dashboard()
 		include(TEMPLATE_PATH_TRAINER."details.php");
 	}	
 	elseif($checkflag == 2){
+		 $result["redirect_to"] = "?page=login";
          $random_certificate = generateRandomString()."_certificate";
 		 $random_degree = generateRandomString()."_degree";
 		 $random_aadhar = generateRandomString()."_aadhar";

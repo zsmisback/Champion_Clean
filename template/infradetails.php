@@ -11,13 +11,13 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="<?php echo $response['image1']; ?>" alt="First slide">
+            <img class="d-block w-100" src="<?php echo $response['image1']; ?>" alt="First slide" style="height:800px;">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="<?php echo $response['image2']; ?>" alt="Second slide">
+            <img class="d-block w-100" src="<?php echo $response['image2']; ?>" alt="Second slide" style="height:800px;">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="<?php echo $response['image3']; ?>" alt="Third slide">
+            <img class="d-block w-100" src="<?php echo $response['image3']; ?>" alt="Third slide" style="height:800px;">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

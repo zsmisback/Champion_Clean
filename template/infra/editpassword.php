@@ -9,9 +9,10 @@
                         <form action="" method="post">	
                             <fieldset class="p-4">
 							<?php if(isset($error_mysql)){echo $error_mysql;}  ?>
-								<input type="password" name="users|password" placeholder="Current Password*" class="border p-3 w-100 my-2">
+								<input type="text" name="users|username" placeholder="Email*" class="border p-3 w-100 my-2" value="<?php echo $response['username']; ?>">
+								<input type="password" placeholder="Current Password*" class="border p-3 w-100 my-2">
                                 <input type="password" name="users|password" placeholder="New Password*" class="border p-3 w-100 my-2">
-                                <input type="password" name="vpassword" placeholder="Confirm Password*" class="border p-3 w-100 my-2">
+                                <input type="password" placeholder="Confirm Password*" class="border p-3 w-100 my-2">
                                 <div class="loggedin-forgot d-inline-flex my-3">
                                 <label for="registering" class="px-2">By registering, you accept our <a class="text-primary font-weight-bold" href="terms-condition.html">Terms & Conditions</a></label>
                                 </div>

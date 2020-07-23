@@ -29,7 +29,7 @@
 </div>
 <input type="text" class="form-control mb-4" name="infra_details|address" placeholder="Enter your infrastructures address" value="">
 <textarea class="form-control mb-4" rows="5" name="infra_details|about_us" placeholder="Enter information about your company"></textarea>
-<label for="name " class="control-label">City</label>
+<label for="name " class="control-label">City (All Capital Letters:For Example = MUMBAI)</label>
 <input type="text" id="search" class="form-control py-2" name="infra_details|city">
 <br>
 <div id="cities">

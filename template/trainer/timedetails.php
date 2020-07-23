@@ -160,7 +160,7 @@
                     </div>
                   </div>
                             <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="trainer_charges|uid"/>
-							<input type="hidden" class="form-control" id="" value="<?php echo $random_id; ?>" name="trainer_images|randomid"/>
+						<!--	<input type="hidden" class="form-control" id="" value="<?php echo $random_id; ?>" name="trainer_images|randomid"/>-->
 							<input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="trainer_images|uid"/>
                             <div class="loggedin-forgot">
                                     <input type="checkbox" id="keep-me-logged-in">
