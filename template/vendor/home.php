@@ -14,7 +14,7 @@
 					<h1>Sell your sports gear to crores of customers across India</h1>
 					<p><b>List your products</b> with us and be found by the millions people looking for sports products. <br>Your shop with us is open 24x7 with hassle free technical support. </p>					
 					<div class="content-holder"><br>
-						<a class="nav-link text-white add-button" href="?page=signup"><i class="fa fa-plus-circle"></i> Click here to Join</a>
+						<?php if(!isset($_SESSION['uid'])){echo'<a class="nav-link text-white add-button" href="?page=signup"><i class="fa fa-plus-circle"></i> Click here to Join</a>';} ?>
 					</div>	
 				</div>
 				<!-- Advance Search -->

@@ -50,7 +50,7 @@ Champion.in is a platform to fulfill every necessity required to perform a sport
 
 		</div>
 		<div class="col-md-6">
-		    <img src="images/home/events.jpg" alt="" width="100%">
+		    <img src="images/home/events.png" alt="" width="100%">
 		</div>
 	</div>
 </div>

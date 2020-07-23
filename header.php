@@ -220,11 +220,11 @@ $base = basename($path);
 									}
 									elseif($_SESSION['type'] == 'Infra')
 									{
-										echo'<a class="dropdown-item" href="trainer.php?page=home">Trainers</a>';
+										echo'<a class="dropdown-item" href="infra.php?page=home">Infrastructure</a>';
 									}
 									elseif($_SESSION['type'] == 'Vendor')
 									{
-										echo'<a class="dropdown-item" href="trainer.php?page=home">Trainers</a>';
+										echo'<a class="dropdown-item" href="vendor.php?page=home">Vendors</a>';
 									}
 									?>
 									<a class="dropdown-item" href="event.php?page=home">Events</a>

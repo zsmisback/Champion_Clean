@@ -15,7 +15,7 @@
 					<p><b>Tell us a little about your place</b> and get your property searched  by the millions of users on Internet.</p>
 					
 					<div class="content-holder"><br>
-						<a class="nav-link text-white add-button" href="?page=signup"><i class="fa fa-plus-circle"></i> Click here to Join</a>
+					<?php if(!isset($_SESSION['uid'])){ echo'<a class="nav-link text-white add-button" href="?page=signup"><i class="fa fa-plus-circle"></i> Click here to Join</a>';} ?>
 					</div>	
 				</div>
 				<!-- Advance Search -->
@@ -61,7 +61,7 @@
 					<h2>Start today to get more exposure and
 					grow your business</h2>
 					<ul class="list-inline mt-30">
-						<li class="list-inline-item"><a class="btn btn-main" href="?page=login">Add Listing</a></li>						
+						<?php if(!isset($_SESSION['uid'])){echo'<li class="list-inline-item"><a class="btn btn-main" href="?page=login">Add Listing</a></li>';} ?>						
 					</ul>
 				</div>
 			</div>
