@@ -273,11 +273,17 @@ function editcharges(){
 function login()
 {
 	$result["redirect_to"] = "dashboard";
+	$response = '';
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		include("getdata.php");
 		$sql = "SELECT * FROM users WHERE type = 'Trainer' AND username ='".$_POST['users|username']."'";
-		$response = getall($sql);
+		if(empty($response))
+		{
+			$response = 'No';
+		}
+		else
+		{
 		if(password_verify($_POST['users|password'],$response['password']))
 		{
 			if(!isset($response["error"])){
@@ -287,11 +293,14 @@ function login()
 			$_SESSION["name"] = $response['name'];
 			$_SESSION["uid"] = $response['randomid'];
 			$_SESSION["contact_no"] = $response['contact_no'];
-			header("Location:?page=".$result["redirect_to"]);}
+			header("Location:?page=".$result["redirect_to"]);
+			}
+			
 		}
 		else
 		{
-			$response['error'] = "Please check your credentials";
+			$response = 'No';
+		}
 		}
 	}
 	include(TEMPLATE_PATH."login.php");

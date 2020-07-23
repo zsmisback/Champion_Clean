@@ -6,7 +6,7 @@
             <div class="col-lg-5 col-md-8 align-item-center">
                 <div class="border">
                     <h3 class="bg-gray p-4">Login Now</h3>
-					<?php if(isset($response["error"])){	
+					<?php if($response == 'No'){	
 							echo '<div class="alert alert-danger">
 							<strong>Error!</strong> Username or Password Not Found !
 							</div>';}		

@@ -113,19 +113,38 @@ function logout()
 function login()
 {
 	$result["redirect_to"] = "dashboard";
+	$response = '';
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		include("getdata_single.php");
-		$response = singletable( "users", $where = "WHERE type = 'Vendor' AND username='".$_POST['users|username']."' AND password ='".$_POST['users|password']."'", $param = "*" );	
+		include("getdata.php");
+		$sql = "SELECT * FROM users WHERE type = 'Vendor' AND username ='".$_POST['users|username']."'";
+		$response = getall($sql);
 		
-		if(!isset($response["error"])){
+		if(empty($response))
+		{
+			$response = 'No';
+		}
+		else
+		{
+		if(password_verify($_POST['users|password'],$response['password']))
+		{
+			if(!isset($response["error"])){
 			session_start();		
-			$_SESSION["username"] = $response['users|username'];
-			$_SESSION["type"] = $response['users|type'];
-			$_SESSION["name"] = $response['users|name'];
-			$_SESSION["uid"] = $response['users|randomid'];
+			$_SESSION["username"] = $response['username'];
+			$_SESSION["type"] = $response['type'];
+			$_SESSION["name"] = $response['name'];
+			$_SESSION["uid"] = $response['randomid'];
 			$_SESSION["contact_no"] = $response['contact_no'];
-			header("Location:?page=".$result["redirect_to"]);}
+			header("Location:?page=".$result["redirect_to"]);
+			}
+			
+		}
+		else
+		{
+			$response = 'No';
+		}
+		}
+
 	}
 	include(TEMPLATE_PATH."login.php");
 }
