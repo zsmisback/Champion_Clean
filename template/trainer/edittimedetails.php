@@ -162,7 +162,7 @@
                   <div class="row">
                   
                     <div class="col-md-12 form-group">
-                      <label for="name " class="control-label">Video Link 1 (Embed Links)</label>
+                      <label for="name " class="control-label">Video Link 1 (Embed Links) Example: https://www.youtube.com/embed/tKH01ji8L70</label>
                       <input type="text" id="name" class="form-control py-2" name="trainer_charges|video_link_1" value="<?php echo $response['video_link_1']; ?>">
                     </div>
                   </div>
@@ -171,7 +171,7 @@
                   <div class="row">
                   
                     <div class="col-md-12 form-group mb-3">
-                      <label for="name " class="control-label">Video Link 2 (Embed Links)</label>
+                      <label for="name " class="control-label">Video Link 2 (Embed Links) Example: https://www.youtube.com/embed/tKH01ji8L70</label>
                       <input type="text" id="name" class="form-control py-2" name="trainer_charges|video_link_2" value="<?php echo $response['video_link_1']; ?>">
                     </div>
                   </div>
