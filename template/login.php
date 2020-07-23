@@ -13,7 +13,7 @@
 							?>
                     <form method="post">
                         <fieldset class="p-4">
-                            <input type="text" name="users|username" placeholder="Username" class="border p-3 w-100 my-2">
+                            <input type="text" name="users|username" placeholder="Email Address" class="border p-3 w-100 my-2">
                             <input type="password" name="users|password" placeholder="Password" class="border p-3 w-100 my-2">
                             <div class="loggedin-forgot">
                                     <input type="checkbox" id="keep-me-logged-in">

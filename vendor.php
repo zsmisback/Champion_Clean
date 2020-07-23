@@ -124,7 +124,7 @@ function login()
 			$_SESSION["type"] = $response['users|type'];
 			$_SESSION["name"] = $response['users|name'];
 			$_SESSION["uid"] = $response['users|randomid'];
-			
+			$_SESSION["contact_no"] = $response['contact_no'];
 			header("Location:?page=".$result["redirect_to"]);}
 	}
 	include(TEMPLATE_PATH."login.php");

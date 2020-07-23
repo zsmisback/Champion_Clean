@@ -286,7 +286,7 @@ function login()
 			$_SESSION["type"] = $response['type'];
 			$_SESSION["name"] = $response['name'];
 			$_SESSION["uid"] = $response['randomid'];
-			
+			$_SESSION["contact_no"] = $response['contact_no'];
 			header("Location:?page=".$result["redirect_to"]);}
 		}
 		else
