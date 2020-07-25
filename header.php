@@ -265,7 +265,10 @@ $base = basename($path);
 									</li>';
 								}
 							    else{
-									//echo '<li class="nav-item"><a class="nav-link text-white add-button" href="?page=login"><i class="fa fa-user-circle"></i> View Profile</a></li>';
+									echo'
+									<li class="nav-item">
+									<a class="nav-link text-white add-button" href="infra.php?page=addinfra"><i class="fa fa-plus-circle"></i> Add a ground/turf</a>
+									</li>';
 									}
 							}
 							elseif($base == "trainer.php")

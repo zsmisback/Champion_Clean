@@ -59,7 +59,16 @@ switch ( $page ) {
 	   break;   
 	case 'editdetails':
 	   editdetails();
-	   break;  
+	   break;
+    case 'addinfra':
+	   addinfra();
+	   break;
+	case 'infra':
+	   infra();
+	   break;
+	case 'editinfra':
+	   editinfra();
+	   break;
 	case 'dashboard':	
 	  dashboard();
 	  break;
@@ -275,6 +284,217 @@ function editdetails(){
 	$response = getall($sql2);
 	$profilepic = explode("/",$response['profilepic']);
 	include(TEMPLATE_PATH_INFRA."editdetails.php");
+}
+
+function addinfra(){
+	
+
+	$sql = "SELECT * FROM infra_details WHERE randomid = '".$_SESSION['uid']."'";
+	include 'getdata.php';
+	$check = getall($sql);
+	if(empty($check))
+	{
+		header("Location:infra.php?page=dashboard");
+		exit;
+	}
+	
+	if(isset($_GET['sport']))
+	{
+		
+	
+		if($_GET['sport'] == 'cricket')
+		{
+			$random_ground = generateRandomString()."_cricket";
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				
+				$result["redirect_to"] = "?page=login";
+				include 'savedata.php'; 
+				
+			}
+			include(TEMPLATE_PATH_INFRA."cricketdetails.php");
+		}
+		if($_GET['sport'] == 'football')
+		{
+			$random_ground = generateRandomString()."_football";
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				
+				$result["redirect_to"] = "?page=login";
+				include 'savedata.php'; 
+				
+			}
+			include(TEMPLATE_PATH_INFRA."footballdetails.php");
+		}
+		if($_GET['sport'] == 'basketball')
+		{
+			$random_ground = generateRandomString()."_basketball";
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				
+				$result["redirect_to"] = "?page=login";
+				include 'savedata.php'; 
+				
+			}
+			include(TEMPLATE_PATH_INFRA."basketballdetails.php");
+		}
+		if($_GET['sport'] == 'kickboxing')
+		{
+			$random_ground = generateRandomString()."_kickboxing";
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				
+				$result["redirect_to"] = "?page=login";
+				include 'savedata.php'; 
+				
+			}
+			include(TEMPLATE_PATH_INFRA."kickboxingdetails.php");
+		}
+		if($_GET['sport'] == 'rifleshooting')
+		{
+			$random_ground = generateRandomString()."_rifleshooting";
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				
+				$result["redirect_to"] = "?page=login";
+				include 'savedata.php'; 
+				
+			}
+			include(TEMPLATE_PATH_INFRA."rifleshootingdetails.php");
+		}
+	}
+	else
+	{		
+		include(TEMPLATE_PATH_INFRA."addinfra.php");
+	}
+	
+	
+}
+
+function infra(){
+	
+	if(!isset($_GET['sports']) || !$_GET['sports'])
+	{
+		header("Location:infra.php?page=home");
+		exit;
+	}
+	include 'getarraydata.php';
+	$sql = "SELECT * FROM ".$_GET['sports']."form_info WHERE uid = '".$_SESSION['uid']."'";
+	$response = getallarray($sql);
+	include(TEMPLATE_PATH_INFRA."editinfratest.php");
+}
+
+function editinfra(){
+	
+  	if(!isset($_GET['sports']) || !$_GET['sports'] && !isset($_GET['id']) || !$_GET['id'])
+	{
+		header("Location:infra.php?page=home");
+		exit;
+	}
+	else
+	{
+		$sql = "SELECT * FROM ".$_GET['sports']."form_info LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sports']."form_info.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = ".$_GET['sports']."form_info.ground_uid WHERE ".$_GET['sports']."form_info.ground_uid = '".$_GET['id']."'";
+		include 'getdata.php';
+		$response  = getall($sql);
+		if($response['uid'] !== $_SESSION['uid'])
+		{
+			header("Location:infra.php?page=home");
+			exit;
+		}
+		$image1 = explode("/",$response['image1']);
+		$image2 = explode("/",$response['image2']);
+		$image3 = explode("/",$response['image3']);
+		
+		
+
+		if($_GET['sports'] == 'cricket')
+		{
+			$result["redirect_to"] = "?page=dashboard";
+			
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				include 'updatedata.php';
+			}
+			
+			include(TEMPLATE_PATH_INFRA."cricketdetails.php");
+		}
+		if($_GET['sports'] == 'basketball')
+		{
+			$result["redirect_to"] = "?page=dashboard";
+			
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				include 'updatedata.php';
+			}
+			
+			include(TEMPLATE_PATH_INFRA."basketballdetails.php");
+		}
+		if($_GET['sports'] == 'football')
+		{
+			$result["redirect_to"] = "?page=dashboard";
+			
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				include 'updatedata.php';
+			}
+			
+			include(TEMPLATE_PATH_INFRA."footballdetails.php");
+		}
+		if($_GET['sports'] == 'kickboxing')
+		{
+			$result["redirect_to"] = "?page=dashboard";
+			
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				include 'updatedata.php';
+			}
+			
+			include(TEMPLATE_PATH_INFRA."kickboxingdetails.php");
+		}
+		if($_GET['sports'] == 'rifleshooting')
+		{
+			$result["redirect_to"] = "?page=dashboard";
+			
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				include 'updatedata.php';
+			}
+			
+			include(TEMPLATE_PATH_INFRA."rifleshooting.php");
+		}
+	}
+
+}
+
+function deleteinfra(){
+	
+	if(!isset($_GET['sports']) || !$_GET['sports'] && !isset($_GET['id']) || !$_GET['id'])
+	{
+		header("Location:infra.php?page=home");
+		exit;
+	}
+	else
+	{
+		$sql = "SELECT * FROM ".$_GET['sports']."form_info LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sports']."form_info.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = ".$_GET['sports']."form_info.ground_uid WHERE ".$_GET['sports']."form_info.ground_uid = '".$_GET['id']."'";
+		include 'getdata.php';
+		$response  = getall($sql);
+		if($response['uid'] !== $_SESSION['uid'])
+		{
+			header("Location:infra.php?page=home");
+			exit;
+		}
+		else
+		{
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				
+			}
+			
+			include 'deleteinfra.php';
+		}
+		
+		
+	}
 }
 
 function dashboard()
