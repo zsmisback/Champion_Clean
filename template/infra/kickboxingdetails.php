@@ -9,7 +9,17 @@
 <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="kickboxingform_info|uid"/>
 <input type="hidden" class="form-control" id="" name="infra_timings|ground_uid" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['ground_uid']."'";}else{echo "value='".$random_ground."'";}?>/>
 <input type="hidden" class="form-control" id="" name="kickboxingform_info|ground_uid" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['ground_uid']."'";}else{echo "value='".$random_ground."'";}?>/>
-
+<?php
+//Only add/update infra_details sports column when adding a new ground/turf 
+if($_GET['page'] == 'addinfra')
+{
+	echo'
+	<input type="hidden" class="form-control" id="" name="infra_details|randomid" value="'.$_SESSION['uid'].'"/>
+	<input type="hidden" class="form-control" id="" name="infra_details|sports"'; if(empty($check['sports'])){echo "value='kickboxing'";}else{if(in_array("kickboxing",$sports)){echo "value='".$check['sports']."'";}else{array_push($sports,"kickboxing");echo "value='".implode(",",$sports)."'";}} echo' />';
+																	/*If the sports column is empty,the input value will be kickboxing,if not,then check if the sports column already has the value kickboxing in it 
+																	 using the $sports array created in the addinfra function using explode.If it exist then input value = The same value in the current sports column,if not,then push kickboxing to the existing $sports array and then turn the array into a string and input it in the input value*/
+}																	
+?>
 <h2>Kickboxing registration</h2>
 <hr>
 <h5 class="">The Ring</h5>

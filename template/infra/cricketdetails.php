@@ -5,11 +5,22 @@
     <div class="container">
                         <form method="post" enctype="multipart/form-data">						
 <?php if(isset($error_mysql)){echo "<br>".$error_mysql;} ?>
+
 <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="infra_images|uid"/>
 <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="cricketform_info|uid"/>
 <input type="hidden" class="form-control" id="" name="infra_timings|ground_uid" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['ground_uid']."'";}else{echo "value='".$random_ground."'";}?>/>
 <input type="hidden" class="form-control" id="" name="cricketform_info|ground_uid" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['ground_uid']."'";}else{echo "value='".$random_ground."'";}?>/>
-
+<?php
+//Only add/update infra_details sports column when adding a new ground/turf 
+if($_GET['page'] == 'addinfra')
+{
+	echo'
+	<input type="hidden" class="form-control" id="" name="infra_details|randomid" value="'.$_SESSION['uid'].'"/>
+	<input type="hidden" class="form-control" id="" name="infra_details|sports"'; if(empty($check['sports'])){echo "value='cricket'";}else{if(in_array("cricket",$sports)){echo "value='".$check['sports']."'";}else{array_push($sports,"cricket");echo "value='".implode(",",$sports)."'";}} echo' />';
+																	/*If the sports column is empty,the input value will be cricket,if not,then check if the sports column already has the value cricket in it 
+																	 using the $sports array created in the addinfra function using explode.If it exist then input value = The same value in the current sports column,if not,then push cricket to the existing $sports array and then turn the array into a string and input it in the input value*/
+}																	
+?>
 <h2>Cricket registration</h2>
 <hr>
 <fieldset class="border border-gary p-4 mb-5">

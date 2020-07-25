@@ -288,15 +288,19 @@ function editdetails(){
 
 function addinfra(){
 	
-
+	//Check if the user has filled in the infra_details form
 	$sql = "SELECT * FROM infra_details WHERE randomid = '".$_SESSION['uid']."'";
 	include 'getdata.php';
 	$check = getall($sql);
+	//If not,send the person to the dashboard aka the infra_details form
 	if(empty($check))
 	{
 		header("Location:infra.php?page=dashboard");
 		exit;
 	}
+	//Get the sports column from the infra_details table and turn it into an array
+	$sports = explode(",",$check['sports']);
+
 	
 	if(isset($_GET['sport']))
 	{
@@ -309,7 +313,7 @@ function addinfra(){
 			{
 				
 				$result["redirect_to"] = "?page=login";
-				include 'savedata.php'; 
+				include 'updatedata.php'; 
 				
 			}
 			include(TEMPLATE_PATH_INFRA."cricketdetails.php");
@@ -321,7 +325,7 @@ function addinfra(){
 			{
 				
 				$result["redirect_to"] = "?page=login";
-				include 'savedata.php'; 
+				include 'updatedata.php'; 
 				
 			}
 			include(TEMPLATE_PATH_INFRA."footballdetails.php");
@@ -333,7 +337,7 @@ function addinfra(){
 			{
 				
 				$result["redirect_to"] = "?page=login";
-				include 'savedata.php'; 
+				include 'updatedata.php'; 
 				
 			}
 			include(TEMPLATE_PATH_INFRA."basketballdetails.php");
@@ -345,7 +349,7 @@ function addinfra(){
 			{
 				
 				$result["redirect_to"] = "?page=login";
-				include 'savedata.php'; 
+				include 'updatedata.php'; 
 				
 			}
 			include(TEMPLATE_PATH_INFRA."kickboxingdetails.php");
@@ -357,7 +361,7 @@ function addinfra(){
 			{
 				
 				$result["redirect_to"] = "?page=login";
-				include 'savedata.php'; 
+				include 'updatedata.php'; 
 				
 			}
 			include(TEMPLATE_PATH_INFRA."rifleshootingdetails.php");
@@ -386,6 +390,7 @@ function infra(){
 
 function editinfra(){
 	
+
   	if(!isset($_GET['sports']) || !$_GET['sports'] && !isset($_GET['id']) || !$_GET['id'])
 	{
 		header("Location:infra.php?page=home");
@@ -393,14 +398,17 @@ function editinfra(){
 	}
 	else
 	{
+		//Get all the data related to the ground form the user wants to edit 
 		$sql = "SELECT * FROM ".$_GET['sports']."form_info LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sports']."form_info.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = ".$_GET['sports']."form_info.ground_uid WHERE ".$_GET['sports']."form_info.ground_uid = '".$_GET['id']."'";
 		include 'getdata.php';
 		$response  = getall($sql);
+		//If the retrieved data's uid column does not match the $_SESSION['uid'] value then throw the user to the infra home page
 		if($response['uid'] !== $_SESSION['uid'])
 		{
 			header("Location:infra.php?page=home");
 			exit;
 		}
+		//Explode image1,image2,image3 to retrieve the folder name from the folder path stored in the sql column
 		$image1 = explode("/",$response['image1']);
 		$image2 = explode("/",$response['image2']);
 		$image3 = explode("/",$response['image3']);
@@ -505,7 +513,7 @@ function dashboard()
 	$response = singletable( "infra_details", $where = "WHERE randomid='".$_SESSION['uid']."'", $param = "*" );	
 		
 	if(isset($response["error"])){$checkflag = 1;}	
-	else{		
+	/*else{		
 		$response["infra_details|sports"] = explode(",",$response["infra_details|sports"]);
 		
 		foreach($response["infra_details|sports"] as $sportground){		
@@ -513,7 +521,7 @@ function dashboard()
 		$sporttableresponse = singletable( $tablename, $where = "WHERE uid='".$_SESSION['uid']."'", $param = "*");					
 		if(isset($sporttableresponse["error"])){$checkflag = $sportground;break;}
 		}
-	}
+	}*/
 	
 	
 	if($checkflag == 1){
@@ -526,7 +534,7 @@ function dashboard()
 			
 		include(TEMPLATE_PATH_INFRA."details.php");
 	}	
-	else if(strcmp($checkflag, "cricket") == 0){		
+	/*else if(strcmp($checkflag, "cricket") == 0){		
 		$random_ground = generateRandomString()."_cricket";
 		$result["redirect_to"] = "?page=login";
 		
@@ -580,7 +588,7 @@ function dashboard()
 			}	
 		
 		include(TEMPLATE_PATH_INFRA."rifleshootingdetails.php");
-	}	
+	}*/	
 	else{
 		include(TEMPLATE_PATH."thankyou.php");
 	}

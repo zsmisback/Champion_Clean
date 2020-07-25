@@ -38,7 +38,7 @@
 	
 
 	
-	Select the sport facilities that you provide:
+<!--	Select the sport facilities that you provide:
 	<br><br>
 	<input type="checkbox" id="crick" name="infra_details|sports[]" value="cricket">
   <label for="crick">Cricket</label><br>
@@ -50,13 +50,13 @@
   <label for="kick">Kickboxing</label><br>
   <input type="checkbox" id="rifle" name="infra_details|sports[]" value="rifleshooting">
   <label for="rifle">Rifle Shooting</label><br><br>
-  <!--<input type="checkbox" id="mm" name="trainer_details|sports[]" value="mma">
+  <input type="checkbox" id="mm" name="trainer_details|sports[]" value="mma">
   <label for="mm">MMA</label><br><br>-->
 
 
 <div class="row">
 <div class="col-md-6">
-<button type="submit" id="signup" name="sign" value="signups" class="btn btn-primary">Signup</button>
+<button type="submit" id="signup" value="signups" class="btn btn-primary">Signup</button>
 </div>
                                   
  </div>
