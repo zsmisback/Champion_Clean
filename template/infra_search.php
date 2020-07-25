@@ -152,7 +152,7 @@ echo '
 		echo'<div class="row p-lg-3 p-sm-5 p-4">
 				<div class="col-lg-4 align-self-center">
 					
-			 <a href="index.php?page=infradetails&id='.$infra['ground_uid'].'&sport='.$_GET['sport'].'"><img src="'.$infra['profilepic'].'" class="img-fluid" alt="" style="width:100%;height:210px;"></a>
+			 <a href="index.php?page=infradetails&id='.$infra['ground_uid'].'&sport='.$_GET['sport'].'"><img src="'.$infra['image1'].'" class="img-fluid" alt="" style="width:100%;height:210px;"></a>
 					
 				</div>
 				<div class="col-lg-8">

@@ -11,6 +11,7 @@ echo'
       <h4 class="card-title">John Doe</h4>
       <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
       <a href="infra.php?page=editinfra&sports='.$_GET['sports'].'&id='.$sports['ground_uid'].'" class="btn btn-primary">Edit</a>
+	  <a href="infra.php?page=deleteinfra&sports='.$_GET['sports'].'&id='.$sports['ground_uid'].'" class="btn btn-primary">Edit</a>
     </div>
   </div>';
 }

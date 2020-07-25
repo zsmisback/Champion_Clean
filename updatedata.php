@@ -212,6 +212,7 @@ $variable_name = $keypiece[1];
 				
 				$sql = "INSERT INTO ".$tablename." (".$variable_string.")
 				VALUES (".$value_string.")  ON DUPLICATE KEY UPDATE " . $update_string;
+				
 				if ($conn->query($sql) === TRUE) {
 					//echo "New record created successfully";
 					

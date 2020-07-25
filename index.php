@@ -215,10 +215,10 @@ $start = ($count - 1) * $limit;
 			include("getpagination.php");
 		//	$table = "cricketform_info JOIN users ON users.randomid = cricketform_info.uid";
 		//	$response =  singletable_all( $table, $where = "", $param = "*" );	
-			$sql = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra' AND infra_details.city = '".$_GET['city']."' ORDER BY ".$_GET['sport']."form_info.id DESC LIMIT $start,$limit";
+			$sql = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra' AND infra_details.city = '".$_GET['city']."' ORDER BY ".$_GET['sport']."form_info.id DESC LIMIT $start,$limit";
 
 			$response = getallarray($sql);
-			$sql2 = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra' AND infra_details.city = '".$_GET['city']."' ORDER BY ".$_GET['sport']."form_info.id DESC";
+			$sql2 = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra' AND infra_details.city = '".$_GET['city']."' ORDER BY ".$_GET['sport']."form_info.id DESC";
 			$data = getpagination($sql2);
 			$results['totalRows'] = $data['total_pages']; 
 			$results['next'] = $data['next'];
@@ -262,7 +262,7 @@ function infradetails(){
 		include("savedata.php");
 		$results = array();
 		//Get a single row data related to the infrastructure
-		$sql = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra'";
+		$sql = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra' AND ".$_GET['sport']."form_info.ground_uid = '".$_GET['id']."'";
 		
 		$response = getall($sql);
 		//Get all the column names from the table

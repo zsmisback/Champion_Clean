@@ -69,6 +69,9 @@ switch ( $page ) {
 	case 'editinfra':
 	   editinfra();
 	   break;
+	case 'deleteinfra':
+	   deleteinfra();
+	   break;
 	case 'dashboard':	
 	  dashboard();
 	  break;
@@ -491,15 +494,61 @@ function deleteinfra(){
 			header("Location:infra.php?page=home");
 			exit;
 		}
-		else
-		{
+		
 			if($_SERVER['REQUEST_METHOD'] == 'POST')
 			{
+				$result['redirect_to'] = 'infra.php?page=home';
+				
+					include ('connect.php');
+					
+					$sql = "DELETE FROM ".$_GET['sports']."form_info WHERE ground_uid = '".$_GET['id']."'";
+					$results = $conn->query($sql);
+					$sql2 = "SELECT * FROM ".$_GET['sports']."form_info WHERE uid = '".$_SESSION['uid']."'";
+			
+					$response = getall($sql2);
+					if($response == 0)
+					{
+						$sql3 = "SELECT * FROM infra_details WHERE randomid = '".$_SESSION['uid']."'";
+						$response2 = getall($sql3);
+						$response2['sports'];
+						$sports = explode(",",$response2['sports']);
+						
+						if(empty($response))
+					{
+
+						if(isset($sports))
+						{
+							if(in_array("".$_GET['sports']."",$sports))
+							{
+								for($i=0;$i<sizeof($sports);$i++)
+								{
+		
+									if($sports[$i] == $_GET['sports'])
+									{
+										unset($sports[$i]);
+			
+										$sports = array_values($sports);
+									}
+								}
+	
+	
+							}
+
+						$sa = implode(",",$sports);
+						
+						$_POST['infra_details|sports'] = $sa;
+						//echo'<input type="hidden" name="infra_details|sports" value="'.$sa.'"/>';
+						}
+					}
+						include ('updatedata.php');
+						
+					}
+					
 				
 			}
 			
-			include 'deleteinfra.php';
-		}
+			include (TEMPLATE_PATH_INFRA.'deleteinfra.php');
+		
 		
 		
 	}

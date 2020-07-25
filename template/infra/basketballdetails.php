@@ -70,13 +70,61 @@ if($_GET['page'] == 'addinfra')
 </div>
 </div>
 <br>
-<div class='form-check'>
+<h5>Do you have sitting arrangements? :</h5>
+<div class="row">
+                  
+<div class="col-md-6 form-group required">
+<label class="radio-inline">
+<input type="radio" name="cricketform_info|seats" <?php if($_GET['page'] == 'editinfra'){if($response['seats'] == 'seats'){echo "checked";}}?> value="seats" > Yes
+</label>
+                     
+</div>
+                  
+<div class="col-md-6 form-group required">
+<label class="radio-inline">
+<input type="radio" name="cricketform_info|seats" <?php if($_GET['page'] == 'editinfra'){if(empty($response['seats'])){echo "checked";}}?> value=""> No
+</label>
+</div>
+</div>
+<h5>Do you provide locker rooms? :</h5>
+<div class="row">
+                  
+<div class="col-md-6 form-group required">
+<label class="radio-inline">
+<input type="radio" name="cricketform_info|locker_room" <?php if($_GET['page'] == 'editinfra'){if($response['locker_room'] == 'locker_room'){echo "checked";}}?> value="locker_room" > Yes
+</label>
+                     
+</div>
+                  
+<div class="col-md-6 form-group required">
+<label class="radio-inline">
+<input type="radio" name="cricketform_info|locker_room" <?php if($_GET['page'] == 'editinfra'){if(empty($response['locker_room'])){echo "checked";}}?> value=""> No
+</label>
+</div>
+</div>
+<h5>Do you provide shower rooms? :</h5>
+<div class="row">
+                  
+<div class="col-md-6 form-group required">
+<label class="radio-inline">
+<input type="radio" name="cricketform_info|showers" <?php if($_GET['page'] == 'editinfra'){if($response['showers'] == 'showers'){echo "checked";}}?> value="showers" > Yes
+</label>
+                     
+</div>
+                  
+<div class="col-md-6 form-group required">
+<label class="radio-inline">
+<input type="radio" name="cricketform_info|showers" <?php if($_GET['page'] == 'editinfra'){if(empty($response['showers'])){echo "checked";}}?> value=""> No
+</label>
+</div>
+</div>
+<!--<div class='form-check'>
 		     <input type='checkbox' class='form-check-input mb-4' name='basketballform_info|seats' value='seats' <?php if($_GET['page'] == 'editinfra'){if(!empty($response['seats'])){echo 'checked';}}?>>Do you provide seats?
 			 </div><div class='form-check'>
 		     <input type='checkbox' class='form-check-input mb-4' name='basketballform_info|locker_room' value='locker_room' <?php if($_GET['page'] == 'editinfra'){if(!empty($response['locker_room'])){echo 'checked';}}?>>Do you provide locker rooms?
 			 </div><div class='form-check'>
 		     <input type='checkbox' class='form-check-input mb-4' name='basketballform_info|showers' value='showers' <?php if($_GET['page'] == 'editinfra'){if(!empty($response['showers'])){echo 'checked';}}?>>Do you provide showers?
-			 </div>
+			 </div>-->
 <br>
 <textarea class="form-control mb-4" rows="5" name="basketballform_info|summary" id="basketsummary" placeholder="Add a summary about your basketball field"><?php if($_GET['page'] == 'editinfra'){echo $response['summary'];}?></textarea>
 
