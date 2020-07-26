@@ -24,7 +24,7 @@
 					else
 					{
 						echo '
-						<a class="nav-link text-white add-button" href="?page=events"><i class="fa fa-plus-circle"></i> Add an event</a>';
+						<a class="nav-link text-white add-button" href="?page=addevents"><i class="fa fa-plus-circle"></i> Add an event</a>';
 					}
 						?>
 					</div>	

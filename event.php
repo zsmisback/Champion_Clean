@@ -53,7 +53,13 @@ switch ( $page ) {
       thankyou();
       break;	  
 	 
-	case 'events':	
+	case 'addevents':	
+	  addevents();
+	  break;
+	case 'editevents':
+	  editevents();
+	  break;
+	case 'events':
 	  events();
 	  break;
 	case 'faq':
@@ -109,7 +115,7 @@ function concept(){
 	include(TEMPLATE_PATH."howitworks.php");
 }
 
-function events(){
+function addevents(){
      
 	 $random_event = generateRandomString();
 	 $result["redirect_to"] = "?page=thankyou";
@@ -119,6 +125,42 @@ function events(){
 				include("savedata.php");
 				
 		}
+	include(TEMPLATE_PATH_EVENT."events.php");
+}
+
+function events(){
+
+	include('getarraydata.php');
+	$sql = "SELECT * FROM events WHERE events.uid = '".$_SESSION['uid']."'";
+	$response = getallarray($sql);
+	include(TEMPLATE_PATH_EVENT."listevents.php");
+}
+
+function editevents(){
+	
+	if(!isset($_GET['id']) || !$_GET['id'])
+	{
+		header("Location:event.php?page=home");
+		exit;
+	}
+	
+	include('getdata.php');
+	$sql = "SELECT * FROM events LEFT JOIN events_schedule ON events_schedule.event_id = events.event_id WHERE events.event_id = '".$_GET['id']."'";
+	$response = getall($sql);
+	if($response['uid'] !== $_SESSION['uid'])
+	{
+		header("Location:event.php?page=home");
+		exit;
+	}
+	
+	$image = explode("/",$response['image']);
+	$sports = explode(",",$response['sports']);
+	if($_SERVER['REQUEST_METHOD'] == 'POST')
+	{	
+		$result['redirect_to'] = 'event.php?page=home';
+		include('updatedata.php');
+		
+	}
 	include(TEMPLATE_PATH_EVENT."events.php");
 }
 
@@ -135,7 +177,7 @@ function thankyou(){
 
 function login()
 {
-	$result["redirect_to"] = "events";
+	$result["redirect_to"] = "addevents";
 	$response = '';
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{

@@ -6,7 +6,7 @@
           <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Infrastruture</a>
             <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Trainers</a>
-        
+			<a class="nav-item nav-link" id="nav-events-tab" data-toggle="tab" href="#nav-events" role="tab" aria-controls="nav-events" aria-selected="false">Events</a>
             
           </div>
         </nav>
@@ -116,6 +116,62 @@
  
 								
                             <div class="col-md-2">
+                             <button type="submit" class="btn btn-warning  pl-5 pr-5">Go !</button>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+				</form>
+            </div>
+        </div>
+		</div>
+		<div class="tab-pane fade show" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
+		<h1>Search for any events</h1>
+		    <div class="row">
+            <div class="col-md-12">
+			<form action="index.php?page=events" method="get">
+			<input type="hidden" name="page" value="events"/>
+                <div class="card acik-renk-form  bg-white">
+                    <div class="card-body">
+					<div class="row p-2">
+            <div class="col-md-12">
+                <h2 class="">Search for the sport you plan to play </h2>
+            </div>
+        </div>
+                        <div class="row">	
+                           <div class="col-md-3">
+                               <div class="form-group">									
+                                 <select class="border w-100 form-control" placeholder="" name="sport">
+									<option value="cricket">Cricket</option>
+									<option value="football">Football</option>
+									<option value="basketball">BasketBall</option>
+									<option value="kickboxing">Kickboxing</option>
+									<option value="rifleshooting">Rifle Shooting</option>
+									<!--<option value="mma">MMA</option> -->
+								</select>
+                                </div>
+                            </div> 						
+                            <div class="col-md-3">
+                                <div class="form-group">									
+                                    <select class="border w-100 form-control" placeholder="" name="city">
+									<?php
+									
+									foreach($response2 as $city2)
+									{
+										echo'<option value='.$city2['city'].'>'.$city2['city'].'</option>';
+									}
+									?>
+									</select>
+                                </div>
+                            </div> 
+							<div class="col-md-3">
+                                <div class="form-group">									
+                                   <input type="date" class="form-control" id="email" placeholder="Enter Event Name" name="date"/>
+                                </div>
+                            </div> 
+ 
+								
+                            <div class="col-md-3">
                              <button type="submit" class="btn btn-warning  pl-5 pr-5">Go !</button>
                             </div>
                         </div>                        
