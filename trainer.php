@@ -144,7 +144,7 @@ function queries(){
 	$sql = "SELECT * FROM trainer_enquiries WHERE enquiry_for = '".$_SESSION['uid']."'";
 	$response = getpagination($sql);
 	$results['post'] = $response['post'];
-	include(TEMPLATE_PATH_TRAINER."query.php");
+	include(TEMPLATE_PATH."query.php");
 }
 
 //Edit Trainers Registration Form

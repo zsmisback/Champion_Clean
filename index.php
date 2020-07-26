@@ -12,7 +12,7 @@ $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 }*/
 
 
-if ( $page != "login" && $page != "logout" && !$username && $page != "signup" && $page != "home" && $page != "contactus" && $page != "aboutus" && $page != "abouttheteam" && $page != "listofsport" && $page != "faq" && $page != "search" && $page != "infra" && $page != "infradetails" && $page != "trainerdetails" && $page != "concept" && $page != 'launch') {
+if ( $page != "login" && $page != "logout" && !$username && $page != "signup" && $page != "home" && $page != "contactus" && $page != "aboutus" && $page != "abouttheteam" && $page != "listofsport" && $page != "faq" && $page != "search" && $page != "infra" && $page != "infradetails" && $page != "trainerdetails" && $page != "events" && $page != "eventdetails" && $page != "concept" && $page != 'launch') {
   login();
   exit;
 }
@@ -60,6 +60,12 @@ switch ( $page ) {
 	  break; 
 	case 'infra':
 	  infra();
+	  break;
+	case 'events':
+	  events();
+	  break;
+	case 'eventdetails':
+	  eventdetails();
 	  break;
 	case 'infradetails':
 	  infradetails();
@@ -197,6 +203,8 @@ function home(){
 	$response = getallarray($sql);
 	$sql2 = "SELECT DISTINCT city FROM infra_details";
 	$response2 = getallarray($sql2);
+	$sql3 = "SELECT DISTINCT city FROM events";
+	$response3 = getallarray($sql3);
 	include(TEMPLATE_PATH."index.php");			
     
 	
@@ -276,6 +284,61 @@ function infradetails(){
 		}
 	}
 	include(TEMPLATE_PATH."infradetails.php");
+}
+
+function events(){
+	
+	$limit = 12;
+$count = isset($_GET['count']) ? $_GET['count'] : 1;
+$start = ($count - 1) * $limit;
+	$results = array();
+	if(isset($_GET['sport']) || isset($_GET['city']) || isset($_GET['date']))
+	{
+			include("getarraydata.php");
+			include("getpagination.php");
+		//	$table = "cricketform_info JOIN users ON users.randomid = cricketform_info.uid";
+		//	$response =  singletable_all( $table, $where = "", $param = "*" );	
+			$sql = "SELECT * FROM events LEFT JOIN events_schedule ON events_schedule.event_id = events.event_id WHERE events.sports LIKE'%".$_GET['sport']."%' AND events.city = '".$_GET['city']."' AND events_schedule.registration_start_date = '".$_GET['date']."' ORDER BY events.id DESC LIMIT $start,$limit";
+
+			$response = getallarray($sql);
+			$sql2 = "SELECT * FROM events LEFT JOIN events_schedule ON events_schedule.event_id = events.event_id WHERE events.sports LIKE'%".$_GET['sport']."%' AND events.city = '".$_GET['city']."' AND events_schedule.registration_start_date = '".$_GET['date']."' ORDER BY events.id DESC";
+			$data = getpagination($sql2);
+			$results['totalRows'] = $data['total_pages']; 
+			$results['next'] = $data['next'];
+			$results['prev'] = $data['prev'];
+			$results['total_pages'] = $data['total_pages'];
+			$results['count'] = $count;
+			$sql2 = "SELECT DISTINCT city FROM infra_details";
+			$response2 = getallarray($sql2);
+	}
+	include(TEMPLATE_PATH."events_search.php");
+}
+
+function eventdetails(){
+	
+	if(!isset($_GET['id']) || !$_GET['id'])
+	{
+		header("index.php?page=home");
+		exit;
+	}
+	include('getdata.php');
+	include('getpagination.php');
+	$result['redirect_to'] = "index.php?page=eventdetails&id=".$_GET['id'];
+	$sql = "SELECT * FROM events LEFT JOIN events_schedule ON events_schedule.event_id = events.event_id LEFT JOIN user_profilepic ON user_profilepic.uid = events.uid LEFT JOIN users ON users.randomid = events.uid WHERE events.event_id = '".$_GET['id']."'";
+	$response = getall($sql);
+	$sports = explode(",",$response['sports']);
+	if(isset($_SESSION['uid']))
+	{
+	$sql2 = "SELECT * FROM event_enquiries WHERE enquiry_for = '".$response['uid']."' AND enquiry_by = '".$_SESSION['uid']."'";
+	$results = getpagination($sql2);
+	$results['booked'] = $results['total_records'];
+	}
+	
+	if($_SERVER['REQUEST_METHOD'] == 'POST')
+	{
+		include('savedata.php');
+	}
+	include(TEMPLATE_PATH."eventdetails.php");
 }
 
 function logout()

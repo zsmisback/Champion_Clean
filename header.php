@@ -127,19 +127,59 @@ $base = basename($path);
 							{
 								
 								
-								echo'<li class="nav-item">
-								<a class="nav-link" href="trainer.php?page=queries">Queries</a>
-								</li>';
+								echo'<li class="nav-item dropdown dropdown-slide">
+								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Queries <span><i class="fa fa-angle-down"></i></span>
+								</a>
+								<!-- Dropdown list -->
+								<div class="dropdown-menu">
+								<a class="dropdown-item" href="trainer.php?page=queries">Clients</a>
+								<a class="dropdown-item" href="event.php?page=queries">Events</a>
+								</div>
+								</li>
+								';
 								
 							}
 							elseif($_SESSION['type'] == 'Infra')
 							{
 								
 								
-								echo'<li class="nav-item">
-								<a class="nav-link" href="infra.php?page=queries">Queries</a>
+								echo'<li class="nav-item dropdown dropdown-slide">
+								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Queries <span><i class="fa fa-angle-down"></i></span>
+								</a>
+								<!-- Dropdown list -->
+								<div class="dropdown-menu">
+								<a class="dropdown-item" href="infra.php?page=queries">Clients</a>
+								<a class="dropdown-item" href="event.php?page=queries">Events</a>
+								</div>
 								</li>';
 								
+							}
+							elseif($_SESSION['type'] == 'Vendor')
+							{
+								echo'<li class="nav-item dropdown dropdown-slide">
+								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Queries <span><i class="fa fa-angle-down"></i></span>
+								</a>
+								<!-- Dropdown list -->
+								<div class="dropdown-menu">
+								<a class="dropdown-item" href="infra.php?page=queries">Clients</a>
+								<a class="dropdown-item" href="event.php?page=queries">Events</a>
+								</div>
+								</li>';
+							}
+							elseif($_SESSION['type'] == 'User')
+							{
+								echo'<li class="nav-item dropdown dropdown-slide">
+								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Queries <span><i class="fa fa-angle-down"></i></span>
+								</a>
+								<!-- Dropdown list -->
+								<div class="dropdown-menu">
+								<a class="dropdown-item" href="event.php?page=queries">Events</a>
+								</div>
+								</li>';
 							}
 							
 							?>

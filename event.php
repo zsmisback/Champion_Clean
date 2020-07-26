@@ -62,6 +62,9 @@ switch ( $page ) {
 	case 'events':
 	  events();
 	  break;
+	case 'queries':
+	  queries();
+	  break;
 	case 'faq':
 	   faq();
 	  break; 
@@ -162,6 +165,21 @@ function editevents(){
 		
 	}
 	include(TEMPLATE_PATH_EVENT."events.php");
+}
+
+function queries(){
+	
+	if(!isset($_SESSION["uid"]))
+	{
+		header("Location:event.php?page=home");
+		exit;
+	}
+	$results = array();
+	include 'getpagination.php';
+	$sql = "SELECT * FROM event_enquiries WHERE enquiry_for = '".$_SESSION['uid']."'";
+	$response = getpagination($sql);
+	$results['post'] = $response['post'];
+	include(TEMPLATE_PATH_EVENT."query.php");
 }
 
 function logout()

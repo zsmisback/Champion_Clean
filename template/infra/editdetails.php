@@ -80,13 +80,15 @@ Current Profile Picture:
     </div>
 </section>
     <script>
-$(document).ready(function(){
+function city(){	
+
+	
 	$("#search").keyup(function(){
 		var search = $("#search").val();
 		if(search.length > 2)
 	{
 		$.ajax({
-			url:"getcities_infra.php",
+			url:"getcities_infra.php?method=infra",
 			method:"POST",
 			data:{search:search},
 			success:function(data){
@@ -99,6 +101,6 @@ $(document).ready(function(){
 	}	
 	});
 	
-});
+}
 </script>
 <?php include_once("footer.php"); ?>

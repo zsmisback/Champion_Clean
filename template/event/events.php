@@ -139,7 +139,7 @@ $(document).ready(function(){
 		if(search.length > 2)
 	{
 		$.ajax({
-			url:"getcities_events.php",
+			url:"getcities.php?method=events",
 			method:"POST",
 			data:{search:search},
 			success:function(data){

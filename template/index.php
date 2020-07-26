@@ -156,9 +156,9 @@
                                     <select class="border w-100 form-control" placeholder="" name="city">
 									<?php
 									
-									foreach($response2 as $city2)
+									foreach($response3 as $city3)
 									{
-										echo'<option value='.$city2['city'].'>'.$city2['city'].'</option>';
+										echo'<option value='.$city3['city'].'>'.$city3['city'].'</option>';
 									}
 									?>
 									</select>
