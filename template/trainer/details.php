@@ -87,7 +87,7 @@ $(document).ready(function(){
 		if(search.length > 2)
 	{
 		$.ajax({
-			url:"getcities.php",
+			url:"getcities.php?method=trainer",
 			method:"POST",
 			data:{search:search},
 			success:function(data){
