@@ -301,18 +301,24 @@ $start = ($count - 1) * $limit;
 			$sql = "SELECT * FROM events LEFT JOIN events_schedule ON events_schedule.event_id = events.event_id WHERE events.sports LIKE'%".$_GET['sport']."%' AND events.city = '".$_GET['city']."' AND events_schedule.registration_start_date = '".$_GET['date']."' ORDER BY events.id DESC LIMIT $start,$limit";
 
 			$response = getallarray($sql);
-			if($response == 0)
+			if(empty($response))
 			{
 				
-				$sql4 = "SELECT * FROM events_schedule WHERE monthname(registration_start_date) = 'July'";
-				$response4 = getallarray($sql4);
-				foreach($response4 as $test)
-				{
-				$te =  $test['registration_start_date'];
-		
-				}
-				echo date('F',strtotime($te));
+				$datemonth = date('F',strtotime($_GET['date']));
+				$sql = "SELECT * FROM events LEFT JOIN events_schedule ON events_schedule.event_id = events.event_id WHERE events.sports LIKE'%".$_GET['sport']."%' AND events.city = '".$_GET['city']."' AND monthname(registration_start_date) = '".$datemonth."' ORDER BY events.id DESC LIMIT $start,$limit";
+				$response = getallarray($sql);
+				$sql2 = "SELECT * FROM events LEFT JOIN events_schedule ON events_schedule.event_id = events.event_id WHERE events.sports LIKE'%".$_GET['sport']."%' AND events.city = '".$_GET['city']."' AND monthname(registration_start_date) = '".$datemonth."' ORDER BY events.id DESC";
+				$data = getpagination($sql2);
+				$results['totalRows'] = $data['total_pages']; 
+				$results['next'] = $data['next'];
+				$results['prev'] = $data['prev'];
+				$results['total_pages'] = $data['total_pages'];
+				$results['count'] = $count;
+				$sql2 = "SELECT DISTINCT city FROM infra_details";
+				$response2 = getallarray($sql2);
 			}
+			else
+			{
 			$sql2 = "SELECT * FROM events LEFT JOIN events_schedule ON events_schedule.event_id = events.event_id WHERE events.sports LIKE'%".$_GET['sport']."%' AND events.city = '".$_GET['city']."' AND events_schedule.registration_start_date = '".$_GET['date']."' ORDER BY events.id DESC";
 			$data = getpagination($sql2);
 			$results['totalRows'] = $data['total_pages']; 
@@ -322,6 +328,7 @@ $start = ($count - 1) * $limit;
 			$results['count'] = $count;
 			$sql2 = "SELECT DISTINCT city FROM infra_details";
 			$response2 = getallarray($sql2);
+			}
 	}
 	include(TEMPLATE_PATH."events_search.php");
 }
