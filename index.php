@@ -314,7 +314,7 @@ $start = ($count - 1) * $limit;
 				$results['prev'] = $data['prev'];
 				$results['total_pages'] = $data['total_pages'];
 				$results['count'] = $count;
-				$sql2 = "SELECT DISTINCT city FROM infra_details";
+				$sql2 = "SELECT DISTINCT city FROM events";
 				$response2 = getallarray($sql2);
 			}
 			else
@@ -326,7 +326,7 @@ $start = ($count - 1) * $limit;
 			$results['prev'] = $data['prev'];
 			$results['total_pages'] = $data['total_pages'];
 			$results['count'] = $count;
-			$sql2 = "SELECT DISTINCT city FROM infra_details";
+			$sql2 = "SELECT DISTINCT city FROM events";
 			$response2 = getallarray($sql2);
 			}
 	}

@@ -5,10 +5,10 @@
 			<div class="col-md-12">
 				<!-- Advance Search -->
 				<div class="advance-search">
-					<form action="index.php?page=infra" method="get">
-					<input type="hidden" name="page" value="infra"/>
+					<form action="index.php?page=events" method="get">
+					<input type="hidden" name="page" value="events"/>
 						<div class="row">	
-                           <div class="col-md-5">
+                           <div class="col-md-3">
                                <div class="form-group">									
                                  <select class="border w-100 form-control" placeholder="" name="sport">
 									<option value="cricket">Cricket</option>
@@ -20,7 +20,7 @@
 								</select>
                                 </div>
                             </div> 						
-                            <div class="col-md-5">
+                            <div class="col-md-3">
                                 <div class="form-group">									
                                     <select class="border w-100 form-control" placeholder="" name="city">
 									<?php
@@ -33,9 +33,13 @@
 									</select>
                                 </div>
                             </div>  
- 
+							<div class="col-md-3">
+                                <div class="form-group">									
+                                   <input type="date" class="form-control" id="email" placeholder="Enter Event Name" name="date"/>
+                                </div>
+                            </div> 
 								
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                              <button type="submit" class="btn btn-primary  pl-5 pr-5">Go !</button>
                             </div>
                         </div>
@@ -171,7 +175,7 @@ echo '
 								}
 								echo'									
 								</ul>								
-								<p class="pr-5">'.$event['about_us'].'</p>
+								<p class="pr-5">Event By '.$event['name'].'</p>
 							</div>
 						</div>';
 						/*<div class="col-lg-3 align-self-center">

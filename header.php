@@ -76,7 +76,7 @@ $base = basename($path);
 				<nav class="navbar navbar-expand-lg navbar-light navigation">
 				<!-- Change the logo's link depending on the current page -->
 				<?php
-				
+				/*
 				switch ( $base ) { 
 				
 				case 'index.php':	
@@ -102,10 +102,11 @@ $base = basename($path);
 				default:
 				echo'<a class="navbar-brand" href="index.php?page=home">';		
 				}
-
+				*/
 				
 				
 				?>
+					<a class="navbar-brand" href="index.php?page=home">
 						<img src="images/home/logo.png" width="200px" height="40" class="d-inline-block align-top" alt="">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -219,26 +220,7 @@ $base = basename($path);
 							</li>';
 							}
 							?>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									About <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- Dropdown list -->
-								<div class="dropdown-menu">
-								<a class="dropdown-item" href="?page=aboutus">The Company</a>
-								<a class="dropdown-item" href="?page=abouttheteam">The Team</a>
-								<a class="dropdown-item" href="?page=listofsport">List of Sports</a>
-								</div>
-							</li>
-						<!--	<li class="nav-item">
-								<a class="nav-link" href="?page=concept">How it works?</a>
-							</li> -->
-						<!--	<li class="nav-item">
-								<a class="nav-link" href="?page=faq">FAQ's</a>
-							</li>-->
-							<li class="nav-item">
-								<a class="nav-link" href="?page=contactus">Contact</a>
-							</li>
+							
 							
 							
 							<li class="nav-item dropdown dropdown-slide">
@@ -270,7 +252,26 @@ $base = basename($path);
 									<a class="dropdown-item" href="event.php?page=home">Events</a>
 								</div>
 							</li>
-							
+							<li class="nav-item dropdown dropdown-slide">
+								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									About <span><i class="fa fa-angle-down"></i></span>
+								</a>
+								<!-- Dropdown list -->
+								<div class="dropdown-menu">
+								<a class="dropdown-item" href="?page=aboutus">The Company</a>
+								<a class="dropdown-item" href="?page=abouttheteam">The Team</a>
+								<a class="dropdown-item" href="?page=listofsport">List of Sports</a>
+								</div>
+							</li>
+						<!--	<li class="nav-item">
+								<a class="nav-link" href="?page=concept">How it works?</a>
+							</li> -->
+						<!--	<li class="nav-item">
+								<a class="nav-link" href="?page=faq">FAQ's</a>
+							</li>-->
+							<li class="nav-item">
+								<a class="nav-link" href="?page=contactus">Contact</a>
+							</li>
 						</ul>
 						<ul class="navbar-nav ml-auto mt-10">
 							<li class="nav-item">
