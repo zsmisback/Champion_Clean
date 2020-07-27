@@ -10,16 +10,18 @@
             
             <th>Email</th>
             <th>Contact</th>
+			 <th>Alternate Contact</th>
+            <th>Enquiry</th>
 			<?php
 			
 			if($_SESSION['type'] == 'Infra')
 			{
 			echo'<th>Sports</th>';
+			
 			}
 			
 			?>
-            <th>Alternate Contact</th>
-            <th>Enquiry</th>
+           
           </tr>
         </thead>
         <tbody>
@@ -33,13 +35,15 @@
     echo"<tr>
 	    <td>$queries[name]</td>
         <td>$queries[email]</td>
-        <td>$queries[contact_number]</td>";
+        <td>$queries[contact_number]</td>
+		<td>$queries[alt_contact_number]</td>
+        <td>$queries[query]</td>";
 		if($_SESSION['type'] == 'Infra')
 		{
-		echo'<td>$queries[sports]</td>';
+		echo"<td>$queries[sports]</td>";
+		
 		}
-	echo"<td>$queries[alt_contact_number]</td>
-        <td>$queries[query]</td>
+	echo"
       </tr>";
 	}
 	 ?>

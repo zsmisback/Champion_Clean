@@ -136,6 +136,7 @@
 		<input type = "hidden" name="infra_enquiries|email" value="<?php echo $_SESSION["username"]; ?>"/>
 		<input type = "hidden" name="infra_enquiries|contact_number" value="<?php echo $_SESSION["contact_no"]; ?>"/>
 		<input type = "hidden" name="infra_enquiries|sports" value="<?php echo $_GET['sport']; ?>"/>
+		<input type = "hidden" name="infra_enquiries|enquiry_ground" value="<?php echo $_GET['id']; ?>"/>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Alternate Contact Number:</label>
             <input type="number" class="form-control" id="recipient-name" name="infra_enquiries|alt_contact_number">

@@ -301,6 +301,18 @@ $start = ($count - 1) * $limit;
 			$sql = "SELECT * FROM events LEFT JOIN events_schedule ON events_schedule.event_id = events.event_id WHERE events.sports LIKE'%".$_GET['sport']."%' AND events.city = '".$_GET['city']."' AND events_schedule.registration_start_date = '".$_GET['date']."' ORDER BY events.id DESC LIMIT $start,$limit";
 
 			$response = getallarray($sql);
+			if($response == 0)
+			{
+				
+				$sql4 = "SELECT * FROM events_schedule WHERE monthname(registration_start_date) = 'July'";
+				$response4 = getallarray($sql4);
+				foreach($response4 as $test)
+				{
+				$te =  $test['registration_start_date'];
+		
+				}
+				echo date('F',strtotime($te));
+			}
 			$sql2 = "SELECT * FROM events LEFT JOIN events_schedule ON events_schedule.event_id = events.event_id WHERE events.sports LIKE'%".$_GET['sport']."%' AND events.city = '".$_GET['city']."' AND events_schedule.registration_start_date = '".$_GET['date']."' ORDER BY events.id DESC";
 			$data = getpagination($sql2);
 			$results['totalRows'] = $data['total_pages']; 

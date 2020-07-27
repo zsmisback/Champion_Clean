@@ -501,11 +501,19 @@ function deleteinfra(){
 				
 					include ('connect.php');
 					
-					$sql = "DELETE FROM ".$_GET['sports']."form_info WHERE ground_uid = '".$_GET['id']."'";
+					$sql = "DELETE ".$_GET['sports']."form_info,infra_images,infra_timings FROM ".$_GET['sports']."form_info JOIN infra_images JOIN infra_timings WHERE ".$_GET['sports']."form_info.ground_uid = '".$_GET['id']."' AND infra_images.ground_uid = '".$_GET['id']."' AND infra_timings.ground_uid = '".$_GET['id']."'";
 					$results = $conn->query($sql);
 					$sql2 = "SELECT * FROM ".$_GET['sports']."form_info WHERE uid = '".$_SESSION['uid']."'";
 			
 					$response = getall($sql2);
+					$sql4 = "SELECT * FROM infra_enquiries WHERE enquiry_ground = '".$_GET['id']."'";
+					$response4 = getall($sql4);
+					
+					if($response4 !== 0)
+					{
+						$sql5 = "DELETE FROM infra_enquiries WHERE enquiry_ground = '".$_GET['id']."'";
+						$results2 = $conn->query($sql5);
+					}
 					if($response == 0)
 					{
 						$sql3 = "SELECT * FROM infra_details WHERE randomid = '".$_SESSION['uid']."'";
@@ -543,6 +551,9 @@ function deleteinfra(){
 						include ('updatedata.php');
 						
 					}
+					header("Location:infra.php?page=home");
+					exit;
+					
 					
 				
 			}
