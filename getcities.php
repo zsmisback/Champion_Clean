@@ -17,6 +17,10 @@ if(isset($_POST['search']))
 	{
 	$sql = "SELECT DISTINCT city FROM events WHERE city LIKE '%".$_POST['search']."%'";
 	}
+	elseif($_GET['method'] == 'sports')
+	{
+		$sql = "SELECT DISTINCT city FROM infra_sports WHERE city LIKE '%".$_POST['search']."%'";
+	}
 	$result = $conn->query($sql);
 	$output ="<ul class='list-unstyled'>";
 	while($row = $result->fetch_assoc())

@@ -224,7 +224,7 @@ function editdetails(){
 	$sql2 = "SELECT * FROM trainer_details LEFT JOIN user_profilepic ON user_profilepic.uid = trainer_details.uid WHERE trainer_details.uid = '".$_SESSION['uid']."'";
 	$response = getall($sql2);
 	$profilepic = explode("/",$response['profilepic']);
-	include(TEMPLATE_PATH_TRAINER."editdetails.php");
+	include(TEMPLATE_PATH_TRAINER."details.php");
 }
 
 //Edit Trainer Charges
@@ -265,7 +265,7 @@ function editcharges(){
 	$degree = explode("/",$response['degree']);
 	$aadhar = explode("/",$response['aadhar']);
 	
-	include(TEMPLATE_PATH_TRAINER."edittimedetails.php");
+	include(TEMPLATE_PATH_TRAINER."timedetails.php");
 }
 
 //Edit Trainer Details
@@ -277,7 +277,7 @@ function login()
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		include("getdata.php");
-		$sql = "SELECT * FROM users WHERE type = 'Trainer' AND username ='".$_POST['users|username']."'";
+		$sql = "SELECT * FROM users WHERE username ='".$_POST['users|username']."'";
 		$response = getall($sql);
 		if(empty($response))
 		{
@@ -294,7 +294,22 @@ function login()
 			$_SESSION["name"] = $response['name'];
 			$_SESSION["uid"] = $response['randomid'];
 			$_SESSION["contact_no"] = $response['contact_no'];
-			header("Location:?page=".$result["redirect_to"]);
+			if($response['type'] == 'User')
+				{
+					header("Location:index.php?page=home");
+				}
+				elseif($response['type'] == 'Infra')
+				{
+					header("Location:infra.php?page=dashboard");
+				}
+				elseif($response['type'] == 'Trainer')
+				{
+					header("Location:trainer.php?page=dashboard");
+				}
+				elseif($response['type'] == 'Vendor')
+				{
+					header("Location:vendor.php?page=dashboard");
+				}
 			}
 			
 		}

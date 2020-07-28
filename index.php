@@ -201,7 +201,7 @@ function home(){
 			include("getarraydata.php");
 	$sql = "SELECT DISTINCT city FROM trainer_details";
 	$response = getallarray($sql);
-	$sql2 = "SELECT DISTINCT city FROM infra_details";
+	$sql2 = "SELECT DISTINCT city FROM infra_sports";
 	$response2 = getallarray($sql2);
 	$sql3 = "SELECT DISTINCT city FROM events";
 	$response3 = getallarray($sql3);
@@ -223,17 +223,17 @@ $start = ($count - 1) * $limit;
 			include("getpagination.php");
 		//	$table = "cricketform_info JOIN users ON users.randomid = cricketform_info.uid";
 		//	$response =  singletable_all( $table, $where = "", $param = "*" );	
-			$sql = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra' AND infra_details.city = '".$_GET['city']."' ORDER BY ".$_GET['sport']."form_info.id DESC LIMIT $start,$limit";
+			$sql = "SELECT * FROM infra_sports LEFT JOIN infra_images ON infra_images.ground_uid = infra_sports.ground_uid LEFT JOIN infra_details ON infra_details.randomid = infra_sports.uid LEFT JOIN users ON users.randomid = infra_sports.uid WHERE infra_sports.sport = '".$_GET['sport']."' AND infra_sports.city = '".$_GET['city']."' ORDER BY infra_sports.id DESC LIMIT $start,$limit";
 
 			$response = getallarray($sql);
-			$sql2 = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra' AND infra_details.city = '".$_GET['city']."' ORDER BY ".$_GET['sport']."form_info.id DESC";
+			$sql2 = "SELECT * FROM infra_sports LEFT JOIN infra_images ON infra_images.ground_uid = infra_sports.ground_uid LEFT JOIN infra_details ON infra_details.randomid = infra_sports.uid LEFT JOIN users ON users.randomid = infra_sports.uid WHERE infra_sports.sport = '".$_GET['sport']."' AND infra_sports.city = '".$_GET['city']."' ORDER BY infra_sports.id DESC";
 			$data = getpagination($sql2);
 			$results['totalRows'] = $data['total_pages']; 
 			$results['next'] = $data['next'];
 			$results['prev'] = $data['prev'];
 			$results['total_pages'] = $data['total_pages'];
 			$results['count'] = $count;
-			$sql2 = "SELECT DISTINCT city FROM infra_details";
+			$sql2 = "SELECT DISTINCT city FROM infra_sports";
 			$response2 = getallarray($sql2);
 	}
 	else
@@ -270,12 +270,16 @@ function infradetails(){
 		include("savedata.php");
 		$results = array();
 		//Get a single row data related to the infrastructure
-		$sql = "SELECT * FROM ".$_GET['sport']."form_info LEFT JOIN infra_details ON infra_details.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = ".$_GET['sport']."form_info.ground_uid LEFT JOIN users ON users.randomid = ".$_GET['sport']."form_info.uid LEFT JOIN user_profilepic ON user_profilepic.uid = ".$_GET['sport']."form_info.uid WHERE users.type = 'Infra' AND ".$_GET['sport']."form_info.ground_uid = '".$_GET['id']."'";
+		$sql = "SELECT * FROM infra_sports LEFT JOIN infra_details ON infra_details.randomid = infra_sports.uid LEFT JOIN infra_images ON infra_images.ground_uid = infra_sports.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = infra_sports.ground_uid LEFT JOIN users ON users.randomid = infra_sports.uid LEFT JOIN user_profilepic ON user_profilepic.uid = infra_sports.uid WHERE users.type = 'Infra' AND infra_sports.ground_uid = '".$_GET['id']."'";
 		
 		$response = getall($sql);
 		//Get all the column names from the table
-		$sql2 = "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'".$_GET['sport']."form_info'";
-		$response2 = getallarray($sql2);
+		/*$sql2 = "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'".$_GET['sport']."form_info'";
+		$response2 = getallarray($sql2);*/
+		$sql2 = "SELECT * FROM infra_sports WHERE ground_uid = '".$_GET['id']."'";
+		$response2 = getall($sql2);
+		$sql4 = "SELECT * FROM infra_mapping WHERE sport = '".$_GET['sport']."'";
+		$response4 = getall($sql4);
 		if(isset($_SESSION['uid']))
 		{
 			$sql3 = "SELECT * FROM infra_enquiries WHERE enquiry_for = '".$response['uid']."' AND enquiry_by = '".$_SESSION['uid']."'";
@@ -373,7 +377,7 @@ function login()
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		include("getdata.php");
-		$sql = "SELECT * FROM users WHERE type = 'User' AND username ='".$_POST['users|username']."'";
+		$sql = "SELECT * FROM users WHERE username ='".$_POST['users|username']."'";
 		$response = getall($sql);
 		if(empty($response))
 		{
@@ -390,7 +394,22 @@ function login()
 			$_SESSION["name"] = $response['name'];
 			$_SESSION["uid"] = $response['randomid'];
 			$_SESSION["contact_no"] = $response['contact_no'];
-			header("Location:?page=".$result["redirect_to"]);
+				if($response['type'] == 'User')
+				{
+					header("Location:index.php?page=home");
+				}
+				elseif($response['type'] == 'Infra')
+				{
+					header("Location:infra.php?page=dashboard");
+				}
+				elseif($response['type'] == 'Trainer')
+				{
+					header("Location:trainer.php?page=dashboard");
+				}
+				elseif($response['type'] == 'Vendor')
+				{
+					header("Location:vendor.php?page=dashboard");
+				}
 			}
 			
 		}

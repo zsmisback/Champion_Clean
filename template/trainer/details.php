@@ -16,12 +16,30 @@
 
 <div class="row">
 <div class="col-md-6">
-<input type="file" class="form-control mb-4" name="user_profilepic|profilepic|0|<?php echo $_SESSION['uid']; ?>" placeholder="Enter your profile picture">
+<input type="file" class="form-control mb-4" name="user_profilepic|profilepic|0|<?php if($_GET['page'] == 'editdetails'){echo $profilepic[1];}else{echo $_SESSION['uid'];} ?>" placeholder="Enter your profile picture">
+<?php
+if($_GET['page'] == 'editdetails')
+{
+ echo'
+<br>
+Current Profile Picture:
+<br>
+<img src="'.$response['profilepic'].'" width="90%" height="250px;"/>
+<br><br>';
+}
+?>
 </div>
 
 
 <div class="col-md-6">
 <select name="trainer_details|type">
+<?php
+if($_GET['page'] == 'editdetails')
+{
+echo'	
+<option value="'.$response['type'].'">'.$response['type'].'</option>';
+}
+?>
 <option value="Coach">Coach</option>
 <option value="Fitness">Fitness Trainer</option>
 <option value="Referee">Referee / Umpire</option>
@@ -32,36 +50,46 @@
 </div>
 
 <div class="col-md-6">
-<input type="text" class="form-control mb-4" name="trainer_details|add_contact_no" placeholder="Enter your contact number">
+<input type="text" class="form-control mb-4" name="trainer_details|add_contact_no" placeholder="Enter your contact number" <?php if($_GET['page'] == 'editdetails'){echo "value='".$response['add_contact_no']."'";}?>>
 </div>
 <div class="col-md-6">
-<input type="text" class="form-control mb-4" name="trainer_details|pincode" placeholder="Enter the pincode of your area">
+<input type="text" class="form-control mb-4" name="trainer_details|pincode" placeholder="Enter the pincode of your area" <?php if($_GET['page'] == 'editdetails'){echo "value='".$response['pincode']."'";}?>>
 </div>
 
 </div>
-<input type="text" class="form-control mb-4" name="trainer_details|address" placeholder="Enter your address" value="">
+<input type="text" class="form-control mb-4" name="trainer_details|address" placeholder="Enter your address" <?php if($_GET['page'] == 'editdetails'){echo "value='".$response['address']."'";}?>>
 <label for="name " class="control-label">City (All Capital Letters:For Example = MUMBAI)</label>
-<input type="text" id="search" class="form-control py-2" name="trainer_details|city">
+<input type="text" id="search" class="form-control py-2" name="trainer_details|city" <?php if($_GET['page'] == 'editdetails'){echo "value='".$response['city']."'";}?>>
 <br>
 <div id="cities">
 	
 </div>
-<textarea class="form-control mb-4" rows="5" name="trainer_details|about_us" placeholder="Enter information about you"></textarea>
+<textarea class="form-control mb-4" rows="5" name="trainer_details|about_us" placeholder="Enter information about you"><?php if($_GET['page'] == 'editdetails'){echo $response['about_us'];}?></textarea>
 
 	
 
 	
 	Select the sport that you coach:
 	<br><br>
-	<input type="checkbox" id="crick" name="trainer_details|sports[]" value="cricket">
+	<?php 
+	
+	if($_GET['page'] == 'editdetails')
+	{
+	//Get all the sports selected by the trainer and convert the string to an array
+	$sports = explode(",",$response['sports']);
+	}
+	
+	
+	?>
+	<input type="checkbox" id="crick" name="trainer_details|sports[]" value="cricket" <?php if($_GET['page'] == 'editdetails'){foreach($sports as $test){if($test === "cricket"){ echo 'checked';}}} ?>>
   <label for="crick">Cricket</label><br>
-  <input type="checkbox" id="footb" name="trainer_details|sports[]" value="football">
+  <input type="checkbox" id="footb" name="trainer_details|sports[]" value="football" <?php if($_GET['page'] == 'editdetails'){foreach($sports as $test){if($test === "football"){ echo 'checked';}}} ?>>
   <label for="footb">Football</label><br>
-  <input type="checkbox" id="basketb" name="trainer_details|sports[]" value="basketball">
+  <input type="checkbox" id="basketb" name="trainer_details|sports[]" value="basketball" <?php if($_GET['page'] == 'editdetails'){foreach($sports as $test){if($test === "basketball"){ echo 'checked';}}} ?>>
   <label for="basketb">Basketball</label><br>
-  <input type="checkbox" id="kick" name="trainer_details|sports[]" value="kickboxing">
+  <input type="checkbox" id="kick" name="trainer_details|sports[]" value="kickboxing" <?php if($_GET['page'] == 'editdetails'){foreach($sports as $test){if($test === "kickboxing"){ echo 'checked';}}} ?>>
   <label for="kick">Kickboxing</label><br>
-  <input type="checkbox" id="rifle" name="trainer_details|sports[]" value="rifleshooting">
+  <input type="checkbox" id="rifle" name="trainer_details|sports[]" value="rifleshooting" <?php if($_GET['page'] == 'editdetails'){foreach($sports as $test){if($test === "rifleshooting"){ echo 'checked';}}} ?>>
   <label for="rifle">Rifle Shooting</label><br><br>
   <!--<input type="checkbox" id="mm" name="trainer_details|sports[]" value="mma">
   <label for="mm">MMA</label><br><br>-->

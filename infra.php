@@ -143,7 +143,7 @@ function login()
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		include("getdata.php");
-		$sql = "SELECT * FROM users WHERE type = 'Infra' AND username ='".$_POST['users|username']."'";
+		$sql = "SELECT * FROM users WHERE username ='".$_POST['users|username']."'";
 		$response = getall($sql);
 		
 		if(empty($response))
@@ -161,7 +161,22 @@ function login()
 			$_SESSION["name"] = $response['name'];
 			$_SESSION["uid"] = $response['randomid'];
 			$_SESSION["contact_no"] = $response['contact_no'];
-			header("Location:?page=".$result["redirect_to"]);
+			if($response['type'] == 'User')
+				{
+					header("Location:index.php?page=home");
+				}
+				elseif($response['type'] == 'Infra')
+				{
+					header("Location:infra.php?page=dashboard");
+				}
+				elseif($response['type'] == 'Trainer')
+				{
+					header("Location:trainer.php?page=dashboard");
+				}
+				elseif($response['type'] == 'Vendor')
+				{
+					header("Location:vendor.php?page=dashboard");
+				}
 			}
 			
 		}
@@ -386,7 +401,7 @@ function infra(){
 		exit;
 	}
 	include 'getarraydata.php';
-	$sql = "SELECT * FROM ".$_GET['sports']."form_info WHERE uid = '".$_SESSION['uid']."'";
+	$sql = "SELECT * FROM infra_sports WHERE uid = '".$_SESSION['uid']."'";
 	$response = getallarray($sql);
 	include(TEMPLATE_PATH_INFRA."editinfratest.php");
 }
@@ -402,7 +417,7 @@ function editinfra(){
 	else
 	{
 		//Get all the data related to the ground form the user wants to edit 
-		$sql = "SELECT * FROM ".$_GET['sports']."form_info LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sports']."form_info.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = ".$_GET['sports']."form_info.ground_uid WHERE ".$_GET['sports']."form_info.ground_uid = '".$_GET['id']."'";
+		$sql = "SELECT * FROM infra_sports LEFT JOIN infra_images ON infra_images.ground_uid = infra_sports.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = infra_sports.ground_uid WHERE infra_sports.ground_uid = '".$_GET['id']."'";
 		include 'getdata.php';
 		$response  = getall($sql);
 		//If the retrieved data's uid column does not match the $_SESSION['uid'] value then throw the user to the infra home page
@@ -486,7 +501,7 @@ function deleteinfra(){
 	}
 	else
 	{
-		$sql = "SELECT * FROM ".$_GET['sports']."form_info LEFT JOIN infra_images ON infra_images.ground_uid = ".$_GET['sports']."form_info.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = ".$_GET['sports']."form_info.ground_uid WHERE ".$_GET['sports']."form_info.ground_uid = '".$_GET['id']."'";
+		$sql = "SELECT * FROM infra_sports LEFT JOIN infra_images ON infra_images.ground_uid = infra_sports.ground_uid LEFT JOIN infra_timings ON infra_timings.ground_uid = infra_sports.ground_uid WHERE infra_sports.ground_uid = '".$_GET['id']."'";
 		include 'getdata.php';
 		$response  = getall($sql);
 		if($response['uid'] !== $_SESSION['uid'])
@@ -501,9 +516,9 @@ function deleteinfra(){
 				
 					include ('connect.php');
 					
-					$sql = "DELETE ".$_GET['sports']."form_info,infra_images,infra_timings FROM ".$_GET['sports']."form_info JOIN infra_images JOIN infra_timings WHERE ".$_GET['sports']."form_info.ground_uid = '".$_GET['id']."' AND infra_images.ground_uid = '".$_GET['id']."' AND infra_timings.ground_uid = '".$_GET['id']."'";
+					$sql = "DELETE infra_sports,infra_images,infra_timings FROM infra_sports JOIN infra_images JOIN infra_timings WHERE infra_sports.ground_uid = '".$_GET['id']."' AND infra_images.ground_uid = '".$_GET['id']."' AND infra_timings.ground_uid = '".$_GET['id']."'";
 					$results = $conn->query($sql);
-					$sql2 = "SELECT * FROM ".$_GET['sports']."form_info WHERE uid = '".$_SESSION['uid']."'";
+					$sql2 = "SELECT * FROM infra_sports WHERE uid = '".$_SESSION['uid']."'";
 			
 					$response = getall($sql2);
 					$sql4 = "SELECT * FROM infra_enquiries WHERE enquiry_ground = '".$_GET['id']."'";

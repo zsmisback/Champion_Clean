@@ -173,7 +173,7 @@
 		  		 
 		<?php 
 		 
-		 //Get all the column names from a sportinfo_form
+		 /*Get all the column names from a sportinfo_form
 		  foreach($response2 as $column_names){
 			  //Filter out/Remove the common parameters/column names
 			  if($column_names['COLUMN_NAME'] == "id" || $column_names['COLUMN_NAME'] == 'uid' || $column_names['COLUMN_NAME'] == 'ground_uid' || $column_names['COLUMN_NAME'] == 'summary' || $column_names['COLUMN_NAME'] == 'features' || $column_names['COLUMN_NAME'] == 'rules'  || $column_names['COLUMN_NAME'] == 'seats' || $column_names['COLUMN_NAME'] == 'locker_room' || $column_names['COLUMN_NAME'] == 'showers')
@@ -185,12 +185,23 @@
 				  //Store the Uncommon parameters in an array
 				  $columns[] = $column_names['COLUMN_NAME'];
 			  }
-		  }
+		  }*/
+		  
+		  
 
 		  ?> 
 		  <!-- Display all the field information with the column name and their values -->
-          <p><?php foreach($columns as $field_info){$fields = str_replace("_"," ",$field_info); echo''.ucwords($fields," ").' - '.$response[$field_info].' &nbspmeters<br>';} ?></p>
-
+          <p><?php /*foreach($columns as $field_info){$fields = str_replace("_"," ",$field_info); echo''.ucwords($fields," ").' - '.$response[$field_info].' &nbspmeters<br>';} */?></p>
+		  <p><?php if(!empty($response4['custom_1']) && !empty($response2['custom_1'])){echo $response4['custom_1'].' - '.$response2['custom_1'].' meters';} ?></p>
+		  <p><?php if(!empty($response4['custom_2']) && !empty($response2['custom_2'])){echo $response4['custom_2'].' - '.$response2['custom_2'].' meters';} ?></p>
+		  <p><?php if(!empty($response4['custom_3']) && !empty($response2['custom_3'])){echo $response4['custom_3'].' - '.$response2['custom_3'].' meters';} ?></p>
+		  <p><?php if(!empty($response4['custom_4']) && !empty($response2['custom_4'])){echo $response4['custom_4'].' - '.$response2['custom_4'].' meters';} ?></p>
+		  <p><?php if(!empty($response4['custom_5']) && !empty($response2['custom_5'])){echo $response4['custom_5'].' - '.$response2['custom_5'].' meters';} ?></p>
+		  <p><?php if(!empty($response4['custom_6']) && !empty($response2['custom_6'])){echo $response4['custom_6'].' - '.$response2['custom_6'].' meters';} ?></p>
+		  <p><?php if(!empty($response4['custom_7']) && !empty($response2['custom_7'])){echo $response4['custom_7'].' - '.$response2['custom_7'].' meters';} ?></p>
+		  <p><?php if(!empty($response4['custom_8']) && !empty($response2['custom_8'])){echo $response4['custom_8'].' - '.$response2['custom_8'].' meters';} ?></p>
+		  <p><?php if(!empty($response4['custom_9']) && !empty($response2['custom_9'])){echo $response4['custom_9'].' - '.$response2['custom_9'].' meters';} ?></p>
+		  <p><?php if(!empty($response4['custom_10']) && !empty($response2['custom_10'])){echo $response4['custom_10'].' - '.$response2['custom_10'].' meters';} ?></p>
       <h2>Summary</h2>
 		  <p><?php echo $response['summary']; ?></p>
       <h2>Features</h2>

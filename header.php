@@ -287,6 +287,12 @@ $base = basename($path);
 							</li>
 							<?php 
 							
+							if(isset($_SESSION['uid']) && $_SESSION['type'] == 'Infra')
+							{
+								echo'<li class="nav-item">
+									<a class="nav-link text-white add-button" href="infra.php?page=addinfra"><i class="fa fa-plus-circle"></i> Add a ground/turf</a>
+									</li>';
+							}
 							
 							if($base == "index.php")
 							{
@@ -306,10 +312,7 @@ $base = basename($path);
 									</li>';
 								}
 							    else{
-									echo'
-									<li class="nav-item">
-									<a class="nav-link text-white add-button" href="infra.php?page=addinfra"><i class="fa fa-plus-circle"></i> Add a ground/turf</a>
-									</li>';
+									echo'';
 									}
 							}
 							elseif($base == "trainer.php")

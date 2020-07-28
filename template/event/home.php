@@ -65,7 +65,12 @@ Champion.in is a platform to fulfill every necessity required to perform a sport
 					<h2>Start today to get more exposure and
 					grow your business</h2>
 					<ul class="list-inline mt-30">
-						<li class="list-inline-item"><a class="btn btn-main" href="?page=signup">Add Listing</a></li>
+					<?php
+					if(!isset($_SESSION['uid']))
+					{
+						echo'<li class="list-inline-item"><a class="btn btn-main" href="?page=signup">Add Listing</a></li>';
+					}
+						?>
 					<!--	<li class="list-inline-item"><a class="btn btn-secondary" href="category.html">Browser Listing</a></li>-->
 					</ul>
 				</div>

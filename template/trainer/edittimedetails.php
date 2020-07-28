@@ -79,7 +79,7 @@
                   
                         <div class="col-md-6 form-group required">
                           <label class="radio-inline">
-                            <input type="radio" name="trainer_charges|question_1" <?php if ($response['question_2'] == 0){ echo "checked";}?> value="0"> No
+                            <input type="radio" name="trainer_charges|question_1" <?php if ($response['question_1'] == 0){ echo "checked";}?> value="0"> No
                           </label>
   
 						</div>
@@ -151,7 +151,7 @@
                   
                         <div class="col-md-6 form-group required">
                           <label class="radio-inline">
-                            <input type="radio" name="trainer_charges|question_5" <?php if ($response['question_1'] == 0){ echo "checked";}?> value="0"> No
+                            <input type="radio" name="trainer_charges|question_5" <?php if ($response['question_5'] == 0){ echo "checked";}?> value="0"> No
                           </label>
   
                   </div>

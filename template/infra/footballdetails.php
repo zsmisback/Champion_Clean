@@ -7,9 +7,10 @@
 						
 <?php if(isset($error_mysql)){echo "<br>".$error_mysql;} ?>
 <input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="infra_images|uid"/>
-<input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="footballform_info|uid"/>
+<input type="hidden" class="form-control" id="" value="<?php echo $_SESSION['uid']; ?>" name="infra_sports|uid"/>
 <input type="hidden" class="form-control" id="" name="infra_timings|ground_uid" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['ground_uid']."'";}else{echo "value='".$random_ground."'";}?>/>
-<input type="hidden" class="form-control" id="" name="footballform_info|ground_uid" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['ground_uid']."'";}else{echo "value='".$random_ground."'";}?>/>
+<input type="hidden" class="form-control" id="" name="infra_sports|ground_uid" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['ground_uid']."'";}else{echo "value='".$random_ground."'";}?>/>
+<input type="hidden" class="form-control" id="" name="infra_sports|sport" value="football" />
 <?php
 //Only add/update infra_details sports column when adding a new ground/turf 
 if($_GET['page'] == 'addinfra')
@@ -28,30 +29,44 @@ if($_GET['page'] == 'addinfra')
 <br>
 <div class="row">
 <div class="col-md-6">
-<input type="text" class="form-control mb-4" name="footballform_info|field_length" id="footfieldlength" placeholder="Football field length size (in meters)" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['field_length']."'";}?>>
+<input type="text" class="form-control mb-4" name="infra_sports|name_sports" id="cricground" placeholder="Football ground/turf name" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['name_sports']."'";}?>>
 </div>
 <div class="col-md-6">
-<input type="text" class="form-control mb-4" name="footballform_info|field_width" id="footfieldwidth" placeholder="Football field width size (in meters)" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['field_width']."'";}?>>
+<!--<label for="name " class="control-label">City (All Capital Letters:For Example = MUMBAI)</label>-->
+<input type="text" id="search" class="form-control py-2" placeholder="City" name="infra_sports|city" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['city']."'";}?>>
+<br>
+<div id="cities">
+	
+</div>
+</div>
+</div>
+<textarea class="form-control mb-4" rows="5" name="infra_sports|address_sports" placeholder="Address"><?php if($_GET['page'] == 'editinfra'){echo $response['address_sports'];}?></textarea>
+<div class="row">
+<div class="col-md-6">
+<input type="text" class="form-control mb-4" name="infra_sports|custom_1" id="footfieldlength" placeholder="Football field length size (in meters)" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['custom_1']."'";}?>>
+</div>
+<div class="col-md-6">
+<input type="text" class="form-control mb-4" name="infra_sports|custom_2" id="footfieldwidth" placeholder="Football field width size (in meters)" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['custom_2']."'";}?>>
 </div>
 </div>
 <h5 class="">The Goal Area</h5>
 <br>
 <div class="row">
 <div class="col-md-6">
-<input type="text" class="form-control mb-4" name="footballform_info|goal_length" id="golength" placeholder="The goal area length size (in meters)" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['goal_length']."'";}?>>
+<input type="text" class="form-control mb-4" name="infra_sports|custom_3" id="golength" placeholder="The goal area length size (in meters)" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['custom_3']."'";}?>>
 </div>
 <div class="col-md-6">
-<input type="text" class="form-control mb-4" name="footballform_info|goal_width" id="gowidth" placeholder="The goal area width size (in meters)" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['goal_width']."'";}?>>
+<input type="text" class="form-control mb-4" name="infra_sports|custom_4" id="gowidth" placeholder="The goal area width size (in meters)" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['custom_4']."'";}?>>
 </div>
 </div>
 <h5 class="">The Penalty Area</h5>
 <br>
 <div class="row">
 <div class="col-md-6">
-<input type="text" class="form-control mb-4" name="footballform_info|penalty_length" id="penlength" placeholder="The penalty area length size (in meters)" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['penalty_length']."'";}?>>
+<input type="text" class="form-control mb-4" name="infra_sports|custom_5" id="penlength" placeholder="The penalty area length size (in meters)" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['custom_5']."'";}?>>
 </div>
 <div class="col-md-6">
-<input type="text" class="form-control mb-4" name="footballform_info|penalty_width" id="penwidth" placeholder="The penalty area width size (in meters)" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['penalty_width']."'";}?>>
+<input type="text" class="form-control mb-4" name="infra_sports|custom_6" id="penwidth" placeholder="The penalty area width size (in meters)" <?php if($_GET['page'] == 'editinfra'){echo "value='".$response['custom_6']."'";}?>>
 </div>
 </div>
 <br>
@@ -60,14 +75,14 @@ if($_GET['page'] == 'addinfra')
                   
 <div class="col-md-6 form-group required">
 <label class="radio-inline">
-<input type="radio" name="cricketform_info|seats" <?php if($_GET['page'] == 'editinfra'){if($response['seats'] == 'seats'){echo "checked";}}?> value="seats" > Yes
+<input type="radio" name="infra_sports|seats" <?php if($_GET['page'] == 'editinfra'){if($response['seats'] == 'seats'){echo "checked";}}?> value="seats" > Yes
 </label>
                      
 </div>
                   
 <div class="col-md-6 form-group required">
 <label class="radio-inline">
-<input type="radio" name="cricketform_info|seats" <?php if($_GET['page'] == 'editinfra'){if(empty($response['seats'])){echo "checked";}}?> value=""> No
+<input type="radio" name="infra_sports|seats" <?php if($_GET['page'] == 'editinfra'){if(empty($response['seats'])){echo "checked";}}?> value=""> No
 </label>
 </div>
 </div>
@@ -76,14 +91,14 @@ if($_GET['page'] == 'addinfra')
                   
 <div class="col-md-6 form-group required">
 <label class="radio-inline">
-<input type="radio" name="cricketform_info|locker_room" <?php if($_GET['page'] == 'editinfra'){if($response['locker_room'] == 'locker_room'){echo "checked";}}?> value="locker_room" > Yes
+<input type="radio" name="infra_sports|locker_room" <?php if($_GET['page'] == 'editinfra'){if($response['locker_room'] == 'locker_room'){echo "checked";}}?> value="locker_room" > Yes
 </label>
                      
 </div>
                   
 <div class="col-md-6 form-group required">
 <label class="radio-inline">
-<input type="radio" name="cricketform_info|locker_room" <?php if($_GET['page'] == 'editinfra'){if(empty($response['locker_room'])){echo "checked";}}?> value=""> No
+<input type="radio" name="infra_sports|locker_room" <?php if($_GET['page'] == 'editinfra'){if(empty($response['locker_room'])){echo "checked";}}?> value=""> No
 </label>
 </div>
 </div>
@@ -92,14 +107,14 @@ if($_GET['page'] == 'addinfra')
                   
 <div class="col-md-6 form-group required">
 <label class="radio-inline">
-<input type="radio" name="cricketform_info|showers" <?php if($_GET['page'] == 'editinfra'){if($response['showers'] == 'showers'){echo "checked";}}?> value="showers" > Yes
+<input type="radio" name="infra_sports|showers" <?php if($_GET['page'] == 'editinfra'){if($response['showers'] == 'showers'){echo "checked";}}?> value="showers" > Yes
 </label>
                      
 </div>
                   
 <div class="col-md-6 form-group required">
 <label class="radio-inline">
-<input type="radio" name="cricketform_info|showers" <?php if($_GET['page'] == 'editinfra'){if(empty($response['showers'])){echo "checked";}}?> value=""> No
+<input type="radio" name="infra_sports|showers" <?php if($_GET['page'] == 'editinfra'){if(empty($response['showers'])){echo "checked";}}?> value=""> No
 </label>
 </div>
 </div>
@@ -111,7 +126,7 @@ if($_GET['page'] == 'addinfra')
 		     <input type='checkbox' class='form-check-input mb-4' name='footballform_info|showers' value='showers' <?php if($_GET['page'] == 'editinfra'){if(!empty($response['showers'])){echo 'checked';}}?>>Do you provide showers?
 			 </div>-->
 <br>
-<textarea class="form-control mb-4" rows="5" name="footballform_info|summary" id="footsummary" placeholder="Add a summary about your football field"><?php if($_GET['page'] == 'editinfra'){echo $response['summary'];}?></textarea>
+<textarea class="form-control mb-4" rows="5" name="infra_sports|summary" id="footsummary" placeholder="Add a summary about your football field"><?php if($_GET['page'] == 'editinfra'){echo $response['summary'];}?></textarea>
 
 
 <fieldset class="border border-gary p-4 mb-5">
@@ -120,10 +135,10 @@ if($_GET['page'] == 'addinfra')
 <hr>
 <p class="mb-3">Features that you provide for your customers (For example:Bats,Balls,Clothes)(Optional):</p> 
 
-<textarea class="form-control mb-4 ckeditor" rows="5" name="footballform_info|features" id="cricfeatures"><?php if($_GET['page'] == 'editinfra'){echo $response['features'];}?></textarea>
+<textarea class="form-control mb-4 ckeditor" rows="5" name="infra_sports|features" id="cricfeatures"><?php if($_GET['page'] == 'editinfra'){echo $response['features'];}?></textarea>
 <br>
 <p class="mb-3">Rules(If any):</p>	
-<textarea class="form-control mb-4 ckeditor" rows="5" name="footballform_info|rules" id="cricrules"><?php if($_GET['page'] == 'editinfra'){echo $response['rules'];}?></textarea>
+<textarea class="form-control mb-4 ckeditor" rows="5" name="infra_sports|rules" id="cricrules"><?php if($_GET['page'] == 'editinfra'){echo $response['rules'];}?></textarea>
 </fieldset>
 <fieldset class="border bg-white p-4 my-5 ad-feature bg-gray">
 <h3 class=" mb-3">Timings</h3>
@@ -330,4 +345,26 @@ if($_GET['page'] == 'editinfra')
 
  </form>
  </div></div>
+ <script>
+$(document).ready(function(){
+	$("#search").keyup(function(){
+		var search = $("#search").val();
+		if(search.length > 2)
+	{
+		$.ajax({
+			url:"getcities.php?method=sports",
+			method:"POST",
+			data:{search:search},
+			success:function(data){
+				$('#cities').html(data);
+			}
+		})
+		$(document).on('click','li',function(){
+			$('#search').val($(this).text());
+		});
+	}	
+	});
+	
+});
+</script>
 <?php include("footer.php"); ?>					

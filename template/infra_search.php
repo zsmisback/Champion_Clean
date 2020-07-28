@@ -160,8 +160,9 @@ echo '
 						<div class="col-lg-9 col-md-10">
 							<div class="ad-listing-content">
 								<div>
-								<a href="index.php?page=infradetails&id='.$infra['ground_uid'].'&sport='.$_GET['sport'].'"><h2 class="font-weight-bold">'.$infra['name'].'</h2></a>
-									<p class="font-weight-bold">Located at '.$infra['address'].'</p>
+								<a href="index.php?page=infradetails&id='.$infra['ground_uid'].'&sport='.$_GET['sport'].'"><h2 class="font-weight-bold">'.$infra['name_sports'].'</h2></a>
+									<p class="font-weight-bold">Located at '.$infra['address_sports'].'</p>
+									<p class="font-weight-bold">By '.$infra['name'].'</p>
 								</div>
 								<ul class="list-inline mt-2 mb-3">';
 								 $sports = explode(",",$infra['sports']);
